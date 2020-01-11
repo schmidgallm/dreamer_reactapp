@@ -1,37 +1,47 @@
-import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
-import './Navbar.css';
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1
+  },
+  appbar: {
+    background: 'linear-gradient(45deg, #c31432, #240b36)'
+  },
+  menuButton: {
+    marginRight: theme.spacing(2)
+  },
+  title: {
+    flexGrow: 1
+  }
+}));
 
 const Navbar = () => {
+  const classes = useStyles();
   return (
-    <Fragment>
-      <nav>
-        <div className='nav-wrapper'>
-          <Link to='/' className='brand-logo'>
-            Dreamers
-          </Link>
-          <a href='#' data-target='mobile-demo' class='sidenav-trigger'>
-            <i class='material-icons'>menu</i>
-          </a>
-          <ul id='nav-mobile' className='right hide-on-med-and-down'>
-            <li>
-              <Link to='/login'>Login</Link>
-            </li>
-            <li>
-              <Link to='/register'>Register</Link>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <ul className='sidenav' id='mobile-demo'>
-        <li>
-          <Link to='/login'>Login</Link>
-        </li>
-        <li>
-          <Link to='/register'>Register</Link>
-        </li>
-      </ul>
-    </Fragment>
+    <AppBar position='static' className={classes.appbar}>
+      <Toolbar>
+        <IconButton
+          edge='start'
+          className={classes.menuButton}
+          color='inherit'
+          aria-label='menu'
+        >
+          <MenuIcon />
+        </IconButton>
+        <Typography variant='h6' className={classes.title}>
+          Dreamers Publishing
+        </Typography>
+        <Button color='inherit'>Register</Button>
+        <Button color='inherit'>Login</Button>
+      </Toolbar>
+    </AppBar>
   );
 };
 
