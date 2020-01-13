@@ -5,17 +5,19 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import useStyles from './useStyles';
 
-const Login = () => {
+const Register = () => {
   // init useStyles function
   const classes = useStyles();
 
   // init state
   const [formData, setFormData] = useState({
+    name: '',
     email: '',
-    password: ''
+    password: '',
+    password2: ''
   });
 
-  const { email, password } = formData;
+  const { name, email, password, password2 } = formData;
 
   // on change handler
   const onChange = e =>
@@ -24,7 +26,11 @@ const Login = () => {
   // on submit handler
   const onSubmit = e => {
     e.preventDefault();
-    console.log(formData);
+    if (password !== password2) {
+      console.log('passwords dont match');
+    } else {
+      console.log(formData);
+    }
   };
 
   return (
@@ -38,6 +44,16 @@ const Login = () => {
           onSubmit={e => onSubmit(e)}
         >
           <div>
+            <TextField
+              id='standard-name-required'
+              required
+              label='Full Name'
+              type='text'
+              className={classes.textField}
+              name='name'
+              value={name}
+              onChange={e => onChange(e)}
+            />
             <TextField
               id='standard-email-required'
               label='Email'
@@ -57,6 +73,16 @@ const Login = () => {
               value={password}
               onChange={e => onChange(e)}
             />
+            <TextField
+              id='standard-password2-input'
+              label='Re-Enter Password'
+              type='password'
+              autoComplete='current-password'
+              className={classes.textField}
+              name='password2'
+              value={password2}
+              onChange={e => onChange(e)}
+            />
           </div>
           <Button
             variant='contained'
@@ -72,4 +98,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

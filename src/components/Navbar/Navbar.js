@@ -1,26 +1,12 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1
-  },
-  appbar: {
-    background: 'linear-gradient(45deg, #c31432, #240b36)'
-  },
-  menuButton: {
-    marginRight: theme.spacing(2)
-  },
-  title: {
-    flexGrow: 1
-  }
-}));
+import Drawer from '@material-ui/core/Drawer';
+import useStyles from './useStyles';
 
 const Navbar = () => {
   const classes = useStyles();
@@ -32,14 +18,22 @@ const Navbar = () => {
           className={classes.menuButton}
           color='inherit'
           aria-label='menu'
+          onClick={() => console.log('hello')}
         >
           <MenuIcon />
         </IconButton>
+        <Drawer anchor='left' children='hello'>
+          hello
+        </Drawer>
         <Typography variant='h6' className={classes.title}>
           Dreamers Publishing
         </Typography>
-        <Button color='inherit'>Register</Button>
-        <Button color='inherit'>Login</Button>
+        <Button href='/register' color='inherit'>
+          Register
+        </Button>
+        <Button href='/login' color='inherit'>
+          Login
+        </Button>
       </Toolbar>
     </AppBar>
   );
