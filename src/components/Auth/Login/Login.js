@@ -24,6 +24,7 @@ const Login = () => {
   // on submit handler
   const onSubmit = e => {
     e.preventDefault();
+    // REDUX ACTION HERE
     console.log(formData);
   };
 
