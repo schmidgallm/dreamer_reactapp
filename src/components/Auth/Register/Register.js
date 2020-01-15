@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { setAlert } from '../../../actions/alert';
 import Container from '@material-ui/core/Container';
 import Card from '@material-ui/core/Card';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import useStyles from './useStyles';
 
-const Register = () => {
+const Register = ({ setAlert }) => {
   // init useStyles function
   const classes = useStyles();
 
@@ -28,6 +30,7 @@ const Register = () => {
     e.preventDefault();
     if (password !== password2) {
       // REDUX ACTION HERE
+      setAlert('passwords dont match');
     }
     // REDUX ACTION HERE
     console.log(formData);
@@ -98,4 +101,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default connect(null, { setAlert })(Register);
