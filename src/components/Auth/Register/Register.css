@@ -1,0 +1,16 @@
+.register {
+  margin-top: 40px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 30px;
+  margin: 30px auto;
+}
+
+.register-btn {
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 5px 5px 8px #2e2e2e;
+}

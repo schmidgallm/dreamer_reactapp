@@ -1,14 +1,7 @@
 import React, { useState } from 'react';
-import Container from '@material-ui/core/Container';
-import Card from '@material-ui/core/Card';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import useStyles from './useStyles';
+import './Login.css';
 
 const Login = () => {
-  // init useStyles function
-  const classes = useStyles();
-
   // init state
   const [formData, setFormData] = useState({
     email: '',
@@ -29,47 +22,36 @@ const Login = () => {
   };
 
   return (
-    <Container>
-      <h1 className={classes.header}>Inspire. Share. Create.</h1>
-      <Card className={classes.root}>
-        <form
-          className={classes.form}
-          noValidate
-          autoComplete='off'
-          onSubmit={e => onSubmit(e)}
-        >
-          <div>
-            <TextField
-              id='standard-email-required'
-              label='Email'
-              type='email'
-              className={classes.textField}
-              name='email'
-              value={email}
-              onChange={e => onChange(e)}
-            />
-            <TextField
-              id='standard-password-input'
-              label='Password'
-              type='password'
-              autoComplete='current-password'
-              className={classes.textField}
-              name='password'
-              value={password}
-              onChange={e => onChange(e)}
-            />
-          </div>
-          <Button
-            variant='contained'
-            color='secondary'
-            className={classes.button}
-            type='submit'
-          >
-            Submit
-          </Button>
-        </form>
-      </Card>
-    </Container>
+    <div className='container register'>
+      <form onSubmit={onSubmit}>
+        <div class='form-group'>
+          <label for='email'>Email address</label>
+          <input
+            type='email'
+            class='form-control'
+            id='email'
+            aria-describedby='emailHelp'
+            name='email'
+            value={email}
+            onChange={e => onChange(e)}
+          />
+        </div>
+        <div class='form-group'>
+          <label for='password'>Password</label>
+          <input
+            type='password'
+            class='form-control'
+            id='password'
+            name='password'
+            value={password}
+            onChange={e => onChange(e)}
+          />
+        </div>
+        <button type='submit' class='login-btn btn btn-primary'>
+          Submit
+        </button>
+      </form>
+    </div>
   );
 };
 

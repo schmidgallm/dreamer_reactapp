@@ -1,0 +1,6 @@
+.alert-danger {
+  background-color: rgb(243, 67, 67);
+  width: 90%;
+  margin: 20px auto;
+  color: #fff;
+}

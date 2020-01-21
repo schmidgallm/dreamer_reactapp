@@ -1,16 +1,10 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setAlert } from '../../../actions/alert';
-import Container from '@material-ui/core/Container';
-import Card from '@material-ui/core/Card';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import useStyles from './useStyles';
+import './Register.css';
 
 const Register = ({ setAlert }) => {
-  // init useStyles function
-  const classes = useStyles();
-
   // init state
   const [formData, setFormData] = useState({
     name: '',
@@ -30,75 +24,77 @@ const Register = ({ setAlert }) => {
     e.preventDefault();
     if (password !== password2) {
       // REDUX ACTION HERE
-      setAlert('passwords dont match');
+      setAlert('passwords dont match', 'danger');
     }
     // REDUX ACTION HERE
     console.log(formData);
   };
 
   return (
-    <Container>
-      <h1 className={classes.header}>Inspire. Share. Create.</h1>
-      <Card className={classes.root}>
-        <form
-          className={classes.form}
-          noValidate
-          autoComplete='off'
-          onSubmit={e => onSubmit(e)}
-        >
-          <div>
-            <TextField
-              id='standard-name-required'
-              required
-              label='Full Name'
-              type='text'
-              className={classes.textField}
-              name='name'
-              value={name}
-              onChange={e => onChange(e)}
-            />
-            <TextField
-              id='standard-email-required'
-              label='Email'
-              type='email'
-              className={classes.textField}
-              name='email'
-              value={email}
-              onChange={e => onChange(e)}
-            />
-            <TextField
-              id='standard-password-input'
-              label='Password'
-              type='password'
-              autoComplete='current-password'
-              className={classes.textField}
-              name='password'
-              value={password}
-              onChange={e => onChange(e)}
-            />
-            <TextField
-              id='standard-password2-input'
-              label='Re-Enter Password'
-              type='password'
-              autoComplete='current-password'
-              className={classes.textField}
-              name='password2'
-              value={password2}
-              onChange={e => onChange(e)}
-            />
-          </div>
-          <Button
-            variant='contained'
-            color='secondary'
-            className={classes.button}
-            type='submit'
-          >
-            Submit
-          </Button>
-        </form>
-      </Card>
-    </Container>
+    <div className='container register'>
+      <h1>Inspire. Share. Create.</h1>
+      <form onSubmit={onSubmit}>
+        <div class='form-group'>
+          <label for='name'>Full Name</label>
+          <input
+            type='name'
+            class='form-control'
+            id='name'
+            name='name'
+            value={name}
+            onChange={e => onChange(e)}
+          />
+        </div>
+        <div class='form-group'>
+          <label for='email'>Email address</label>
+          <input
+            type='email'
+            class='form-control'
+            id='email'
+            aria-describedby='emailHelp'
+            name='email'
+            value={email}
+            onChange={e => onChange(e)}
+          />
+          <small id='emailHelp' class='form-text text-muted'>
+            We'll never share your email with anyone else.
+          </small>
+        </div>
+        <div class='form-group'>
+          <label for='password'>Password</label>
+          <input
+            type='password'
+            class='form-control'
+            id='password'
+            name='password'
+            value={password}
+            onChange={e => onChange(e)}
+          />
+        </div>
+        <div class='form-group'>
+          <label for='password2'>Re-Enter Password</label>
+          <input
+            type='password'
+            class='form-control'
+            id='password2'
+            name='password2'
+            value={password2}
+            onChange={e => onChange(e)}
+          />
+        </div>
+
+        <button type='submit' class='register-btn btn btn-primary'>
+          Submit
+        </button>
+      </form>
+    </div>
   );
 };
 
+Register.propTypes = {
+  setAlert: PropTypes.func.isRequired
+};
+
+// connect takes two args. First is any state to map. Second is object with any actions to bring in
+// connect also allows us to use actions as props
 export default connect(null, { setAlert })(Register);
