@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setAlert } from '../../../actions/alert';
@@ -32,7 +33,10 @@ const Register = ({ setAlert }) => {
 
   return (
     <div className='container register'>
-      <h1>Inspire. Share. Create.</h1>
+      <div className='jumbotron'>
+        <h1>Inspire. Share. Create.</h1>
+        <div className='diagonal'></div>
+      </div>
       <form onSubmit={onSubmit}>
         <div class='form-group'>
           <label for='name'>Full Name</label>
@@ -87,6 +91,12 @@ const Register = ({ setAlert }) => {
           Submit
         </button>
       </form>
+      <p>
+        Alredy have an account?{' '}
+        <Link to='/login' className='sign-in-msg'>
+          Sign In
+        </Link>
+      </p>
     </div>
   );
 };
