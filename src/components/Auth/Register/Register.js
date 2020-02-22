@@ -34,7 +34,9 @@ const Register = ({ setAlert }) => {
   return (
     <div className='container register'>
       <div className='jumbotron'>
-        <h1>Inspire. Share. Create.</h1>
+        <h1>
+          Inspire. Share. <span>Create.</span>
+        </h1>
         <div className='diagonal'></div>
       </div>
       <form onSubmit={onSubmit}>

@@ -22,7 +22,13 @@ const Login = () => {
   };
 
   return (
-    <div className='container register'>
+    <div className='container login'>
+      <div className='jumbotron'>
+        <h1>
+          Inspire. Share. <span>Create.</span>
+        </h1>
+        <div className='diagonal'></div>
+      </div>
       <form onSubmit={onSubmit}>
         <div class='form-group'>
           <label for='email'>Email address</label>
