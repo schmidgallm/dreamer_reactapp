@@ -1,33 +1,75 @@
 .header {
+  height: auto;
   height: 80vh;
-  display: grid;
-  grid-gap: 1em;
-  grid-template-columns: repeat(2, 1fr);
+  position: relative;
 }
 
-.header-text,
-.header-img {
-  display: grid;
-  align-self: center;
-  justify-content: center;
+.header-text {
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  /* color: #f5588b; */
+  z-index: 5;
 }
 
 .header-text h1 {
-  font-size: 4rem;
+  font-size: 5rem;
+}
+
+.header-text span {
+  /* color: #1ae6ef; */
+  text-decoration: underline;
 }
 
 .header-text p {
-  font-size: 20px;
+  font-size: 26px;
   margin-top: 0;
 }
 
 .header-text button {
-  margin-top: 30px;
-  border-radius: 20px;
+  margin-top: 10px;
+  width: 70%;
+  border-radius: 15px;
+  padding: 10px 20px;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.header-img {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('./img/bg_primary.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .header-img img {
-  width: 75%;
-  margin: auto;
-  height: auto;
+  width: 100%;
+}
+
+.circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  z-index: 5;
+}
+
+.circle-1 {
+  position: absolute;
+  bottom: 0;
+  left: 18%;
+  background-color: #1ae6ef;
+  margin-bottom: -100px;
+}
+
+.circle-2 {
+  position: absolute;
+  bottom: 0;
+  right: 25%;
+  background-color: #f5588b;
+  margin-bottom: -120px;
 }

@@ -3,7 +3,7 @@ import './Navbar.css';
 
 const Navbar = () => {
   return (
-    <nav className='navbar navbar-expand-lg navbar-dark bg-primary'>
+    <nav className='navbar navbar-expand-lg navbar-light'>
       <a className='navbar-brand' href='/'>
         Quill & Parchment
       </a>
