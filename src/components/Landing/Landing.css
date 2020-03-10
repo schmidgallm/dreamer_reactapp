@@ -86,15 +86,28 @@ SECTIONS
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 2em;
-  padding: 50px;
+  padding: 50px 0;
 }
 
 .section-text h2 {
   color: #f5588b;
 }
 
+.section h3 {
+  color: #1ae6ef;
+}
+
 .section-text p {
   font-size: 20px;
+}
+
+.section button {
+  display: block;
+  width: 100%;
+  border-radius: 15px;
+  padding: 10px 20px;
+  font-size: 20px;
+  text-transform: uppercase;
 }
 
 /* SECTION 1 */
@@ -103,4 +116,39 @@ SECTIONS
   margin-top: 150px;
   justify-content: center;
   align-items: center;
+}
+
+/* SECTION 2 */
+
+.section-2 {
+  margin-top: 100px;
+  position: relative;
+}
+
+.section-2-text h2 {
+  font-size: 3.5rem;
+}
+
+.section-2 .quotes {
+  background-color: #1ae6ef;
+  padding: 50px;
+  position: relative;
+}
+
+.quotes .quote {
+  font-size: 25px;
+  color: #fff;
+}
+
+.quotes .author {
+  font-style: italic;
+}
+
+.section-2 .quotes span {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  margin-top: -75px;
+  font-size: 100px;
+  color: #f5588b;
 }

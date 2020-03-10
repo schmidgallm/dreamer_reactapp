@@ -1,9 +1,12 @@
 import React, { Fragment } from 'react';
 import './Landing.css';
+import quotes from '../../config/quotes';
 
 const Landing = () => {
   return (
     <Fragment>
+      {console.log(quotes)}
+      {/* Header */}
       <div className='header'>
         <div className='header-text'>
           <h1>
@@ -16,6 +19,8 @@ const Landing = () => {
         <div className='circle circle-1'></div>
         <div className='circle circle-2'></div>
       </div>
+
+      {/* Section 1 */}
       <div className='section section-1 container'>
         <div className='section-text section-1-text'>
           <h2>Find inspiration across the globe.</h2>
@@ -27,10 +32,19 @@ const Landing = () => {
           </p>
         </div>
         <div className='section-cta section-1-cta'>
-          <p>Sing up and start writing!</p>
+          <h3>Sign up and start writing!</h3>
           <form>
             <div className='form-group'>
-              <label for='exampleInputEmail1'>Email address</label>
+              <label htmlFor='username'>User Name</label>
+              <input
+                type='text'
+                className='form-control'
+                id='user'
+                aria-describedby='name'
+              />
+            </div>
+            <div className='form-group'>
+              <label htmlFor='exampleInputEmail1'>Email address</label>
               <input
                 type='email'
                 className='form-control'
@@ -42,12 +56,12 @@ const Landing = () => {
               </small>
             </div>
             <div className='form-group'>
-              <label for='exampleInputPassword1'>Password</label>
-              <input
-                type='password'
-                className='form-control'
-                id='exampleInputPassword1'
-              />
+              <label htmlFor='password1'>Password</label>
+              <input type='password' className='form-control' id='password1' />
+            </div>
+            <div className='form-group'>
+              <label htmlFor='password2'>Re-Type Password</label>
+              <input type='password' className='form-control' id='password2' />
             </div>
             <div className='form-group form-check'>
               <input
@@ -55,14 +69,32 @@ const Landing = () => {
                 className='form-check-input'
                 id='exampleCheck1'
               />
-              <label className='form-check-label' for='exampleCheck1'>
-                Check me out
+              <label className='form-check-label' htmlFor='exampleCheck1'>
+                Email me for updates and new features
               </label>
             </div>
-            <button type='submit' className='btn btn-primary'>
+            <button type='submit' className='btn btn-warning'>
               Submit
             </button>
           </form>
+        </div>
+      </div>
+
+      {/* Section 2 */}
+      <div className='section section-2 container'>
+        <div className='quotes'>
+          <span>
+            <i className='fa fa-quote-left'></i>
+          </span>
+          <p className='quote'>
+            {quotes[Math.floor(Math.random() * quotes.length)].quote}
+          </p>
+          <p className='author'>
+            - {quotes[Math.floor(Math.random() * quotes.length)].author}
+          </p>
+        </div>
+        <div className='section-text section-2-text'>
+          <h2>Join millions of authors in the new way to publicate.</h2>
         </div>
       </div>
     </Fragment>
