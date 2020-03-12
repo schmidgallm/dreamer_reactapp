@@ -152,3 +152,9 @@ SECTIONS
   font-size: 100px;
   color: #f5588b;
 }
+
+.section-2-text {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
