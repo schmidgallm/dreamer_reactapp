@@ -5,7 +5,6 @@ import quotes from '../../config/quotes';
 const Landing = () => {
   return (
     <Fragment>
-      {console.log(quotes)}
       {/* Header */}
       <div className='header'>
         <div className='header-text'>
