@@ -40,48 +40,48 @@ const Register = ({ setAlert }) => {
         <div className='diagonal'></div>
       </div>
       <form onSubmit={onSubmit}>
-        <div class='form-group'>
-          <label for='name'>Full Name</label>
+        <div className='form-group'>
+          <label htmlFor='name'>Full Name</label>
           <input
             type='name'
-            class='form-control'
+            className='form-control'
             id='name'
             name='name'
             value={name}
             onChange={e => onChange(e)}
           />
         </div>
-        <div class='form-group'>
-          <label for='email'>Email address</label>
+        <div className='form-group'>
+          <label htmlFor='email'>Email address</label>
           <input
             type='email'
-            class='form-control'
+            className='form-control'
             id='email'
             aria-describedby='emailHelp'
             name='email'
             value={email}
             onChange={e => onChange(e)}
           />
-          <small id='emailHelp' class='form-text text-muted'>
+          <small id='emailHelp' className='form-text text-muted'>
             We'll never share your email with anyone else.
           </small>
         </div>
-        <div class='form-group'>
-          <label for='password'>Password</label>
+        <div className='form-group'>
+          <label htmlFor='password'>Password</label>
           <input
             type='password'
-            class='form-control'
+            className='form-control'
             id='password'
             name='password'
             value={password}
             onChange={e => onChange(e)}
           />
         </div>
-        <div class='form-group'>
-          <label for='password2'>Re-Enter Password</label>
+        <div className='form-group'>
+          <label htmlFor='password2'>Re-Enter Password</label>
           <input
             type='password'
-            class='form-control'
+            className='form-control'
             id='password2'
             name='password2'
             value={password2}
@@ -89,7 +89,7 @@ const Register = ({ setAlert }) => {
           />
         </div>
 
-        <button type='submit' class='register-btn btn btn-primary'>
+        <button type='submit' className='register-btn btn btn-primary'>
           Submit
         </button>
       </form>
