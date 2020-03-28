@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import './Landing.css';
+import Logo from './img/logo.png';
 import quotes from '../../config/quotes';
 
 const Landing = () => {
@@ -8,15 +9,17 @@ const Landing = () => {
       {/* Header */}
       <div className='header'>
         <div className='header-text'>
-          <h1>
-            Create. Share. <em>Inspire</em>
-          </h1>
-          <p>For writers by writers.</p>
-          <button className='btn btn-warning'>Begin</button>
+          <div className='grid'>
+            <h1>
+              Create. Share. <em>Inspire</em>
+            </h1>
+            <p>For writers by writers.</p>
+            <button className='btn btn-warning'>Begin</button>
+          </div>
         </div>
-        <div className='header-img'></div>
-        <div className='circle circle-1'></div>
-        <div className='circle circle-2'></div>
+        <div className='header-img'>
+          <img src={Logo} alt='vector-building' />
+        </div>
       </div>
 
       {/* Section 1 */}
