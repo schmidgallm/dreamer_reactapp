@@ -20,11 +20,54 @@ const Landing = () => {
             </div>
           </div>
           <div className='header-img'>
-            <img src={HeaderImg} alt='vector-building' />
+            <img
+              src={HeaderImg}
+              alt='vector-building'
+              className='animated pulse infinite'
+            />
           </div>
-          <div className='wavyborder'>
-            <img src={WavyBorder} alt='wavy border' />
-          </div>
+
+          <svg
+            version='1.1'
+            id='Layer_1'
+            xmlns='http://www.w3.org/2000/svg'
+            x='0px'
+            y='0px'
+            viewBox='0 0 694 138'
+          >
+            <path
+              className='st0'
+              d='M-1,122c0,0,49-60,96-78c65.3-25.01,82,24,137,47s58,33,95,12s44-46,88-50s77,48.53,109,40
+  c45-12,65.08-50.19,87-51c27-1,83-43,83-43v139H-1V122z'
+              fill='#fff'
+            />
+          </svg>
+        </div>
+      </div>
+
+      {/* Card Section */}
+      <div className='cards container'>
+        <div className='card'>
+          <h3>Get Inspired</h3>
+          <p>
+            Stuck on blank page? Lets try and make it easy for you. Check out
+            all the writing prompts for ideas.
+          </p>
+        </div>
+        <div className='card'>
+          <h3>Upload Work</h3>
+          <p>
+            We make uploading as easy as possible. Once uploaded your work will
+            be ready for the public. Want to boost it top of page. Check out our
+            Sponsered Books section.
+          </p>
+        </div>
+        <div className='card'>
+          <h3>Get Paid</h3>
+          <p>
+            Its your work so why let some publishing company take most of
+            earnings? Here you will recieve 80% of all sales.
+          </p>
         </div>
       </div>
 
