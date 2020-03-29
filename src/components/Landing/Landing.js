@@ -9,9 +9,6 @@ const Landing = () => {
     <Fragment>
       {/* Header */}
       <div className='header'>
-        <div className='wavyborder'>
-          <img src={WavyBorder} alt='wavy-border' />
-        </div>
         <div className='wrapper'>
           <div className='header-text'>
             <div className='grid'>
@@ -24,6 +21,9 @@ const Landing = () => {
           </div>
           <div className='header-img'>
             <img src={HeaderImg} alt='vector-building' />
+          </div>
+          <div className='wavyborder'>
+            <img src={WavyBorder} alt='wavy border' />
           </div>
         </div>
       </div>
