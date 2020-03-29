@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import './Landing.css';
-import Logo from './img/logo.png';
+import HeaderImg from './img/header-img.png';
+import WavyBorder from './img/wavyborder2.png';
 import quotes from '../../config/quotes';
 
 const Landing = () => {
@@ -8,17 +9,22 @@ const Landing = () => {
     <Fragment>
       {/* Header */}
       <div className='header'>
-        <div className='header-text'>
-          <div className='grid'>
-            <h1>
-              Create. Share. <em>Inspire</em>
-            </h1>
-            <p>For writers by writers.</p>
-            <button className='btn btn-warning'>Begin</button>
-          </div>
+        <div className='wavyborder'>
+          <img src={WavyBorder} alt='wavy-border' />
         </div>
-        <div className='header-img'>
-          <img src={Logo} alt='vector-building' />
+        <div className='wrapper'>
+          <div className='header-text'>
+            <div className='grid'>
+              <h1>
+                Create. Share. <em>Inspire</em>
+              </h1>
+              <p>For writers by writers.</p>
+              <button className='btn btn-warning'>Begin</button>
+            </div>
+          </div>
+          <div className='header-img'>
+            <img src={HeaderImg} alt='vector-building' />
+          </div>
         </div>
       </div>
 

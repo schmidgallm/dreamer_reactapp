@@ -4,7 +4,7 @@ import './Navbar.css';
 const Navbar = () => {
   return (
     <nav className='navbar navbar-expand-lg navbar-dark'>
-      <a className='navbar-brand' href='/'>
+      <a className='navbar-brand ml-5' href='/'>
         Quill & Parchment
       </a>
       <button
@@ -19,7 +19,7 @@ const Navbar = () => {
         <span className='navbar-toggler-icon'></span>
       </button>
       <div className='collapse navbar-collapse' id='navbarNav'>
-        <ul className='navbar-nav ml-auto'>
+        <ul className='navbar-nav ml-auto mr-5'>
           <li className='nav-item'>
             <a className='nav-link' href='/register'>
               Register
