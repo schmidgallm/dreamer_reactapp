@@ -3,32 +3,33 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setAlert } from '../../../actions/alert';
+import { register } from '../../../actions/auth';
 import './Register.css';
 
-const Register = ({ setAlert }) => {
+const Register = ({ setAlert, register }) => {
   // init state
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     password: '',
-    password2: ''
+    password2: '',
   });
 
   const { name, email, password, password2 } = formData;
 
   // on change handler
-  const onChange = e =>
+  const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
   // on submit handler
-  const onSubmit = e => {
+  const onSubmit = (e) => {
     e.preventDefault();
     if (password !== password2) {
       // REDUX ACTION HERE
       setAlert('passwords dont match', 'danger');
     }
     // REDUX ACTION HERE
-    console.log(formData);
+    register({ name, email, password });
   };
 
   return (
@@ -48,7 +49,8 @@ const Register = ({ setAlert }) => {
             id='name'
             name='name'
             value={name}
-            onChange={e => onChange(e)}
+            onChange={(e) => onChange(e)}
+            required
           />
         </div>
         <div className='form-group'>
@@ -60,7 +62,8 @@ const Register = ({ setAlert }) => {
             aria-describedby='emailHelp'
             name='email'
             value={email}
-            onChange={e => onChange(e)}
+            onChange={(e) => onChange(e)}
+            required
           />
           <small id='emailHelp' className='form-text text-muted'>
             We'll never share your email with anyone else.
@@ -74,7 +77,8 @@ const Register = ({ setAlert }) => {
             id='password'
             name='password'
             value={password}
-            onChange={e => onChange(e)}
+            onChange={(e) => onChange(e)}
+            required
           />
         </div>
         <div className='form-group'>
@@ -85,7 +89,8 @@ const Register = ({ setAlert }) => {
             id='password2'
             name='password2'
             value={password2}
-            onChange={e => onChange(e)}
+            onChange={(e) => onChange(e)}
+            required
           />
         </div>
 
@@ -104,9 +109,10 @@ const Register = ({ setAlert }) => {
 };
 
 Register.propTypes = {
-  setAlert: PropTypes.func.isRequired
+  setAlert: PropTypes.func.isRequired,
+  register: PropTypes.func.isRequired,
 };
 
 // connect takes two args. First is any state to map. Second is object with any actions to bring in
 // connect also allows us to use actions as props
-export default connect(null, { setAlert })(Register);
+export default connect(null, { setAlert, register })(Register);
