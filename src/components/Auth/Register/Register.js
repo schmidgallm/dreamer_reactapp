@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setAlert } from '../../../actions/alert';
 import { register } from '../../../actions/auth';
 import './Register.css';
 
-const Register = ({ setAlert, register }) => {
+const Register = ({ setAlert, register, isAuthenticated }) => {
   // init state
   const [formData, setFormData] = useState({
     name: '',
@@ -31,6 +31,11 @@ const Register = ({ setAlert, register }) => {
     // REDUX ACTION HERE
     register({ name, email, password });
   };
+
+  // Redirect on successful registeration
+  if (isAuthenticated) {
+    return <Redirect to='/dashboard' />;
+  }
 
   return (
     <div className='container register'>
@@ -108,11 +113,18 @@ const Register = ({ setAlert, register }) => {
   );
 };
 
+// init prop types
 Register.propTypes = {
   setAlert: PropTypes.func.isRequired,
   register: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool,
 };
+
+// map state to props to find if authenticated
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
 
 // connect takes two args. First is any state to map. Second is object with any actions to bring in
 // connect also allows us to use actions as props
-export default connect(null, { setAlert, register })(Register);
+export default connect(mapStateToProps, { setAlert, register })(Register);

@@ -1,49 +1,83 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { logout } from '../../../actions/auth';
 import './Navbar.css';
 
-const Navbar = () => {
-	return (
-		<nav className="navbar navbar-expand-lg navbar-dark">
-			<a className="navbar-brand ml-5" href="/">
-				Quill & Parchment
-			</a>
-			<button
-				className="navbar-toggler"
-				type="button"
-				data-toggle="collapse"
-				data-target="#navbarNav"
-				aria-controls="navbarNav"
-				aria-expanded="false"
-				aria-label="Toggle navigation"
-			>
-				<span className="navbar-toggler-icon" />
-			</button>
-			<div className="collapse navbar-collapse" id="navbarNav">
-				<ul className="navbar-nav ml-auto mr-5">
-					<li className="nav-item">
-						<a className="nav-link" href="/register">
-							Register
-						</a>
-					</li>
-					<li className="nav-item">
-						<a className="nav-link" href="/login">
-							Login
-						</a>
-					</li>
-					<li className="nav-item">
-						<a className="nav-link" href="/prompts">
-							Prompts
-						</a>
-					</li>
-					{/* <li className='nav-item'>
-            <a className='nav-link' href='/stories'>
-              Login
-            </a>
-          </li> */}
-				</ul>
-			</div>
-		</nav>
-	);
+const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
+  const authLinks = (
+    <ul className='navbar-nav ml-auto mr-5'>
+      <li className='nav-item'>
+        <Link onClick={logout} className='nav-link' to='/'>
+          <span className='hide-sm'>Logout</span>
+        </Link>
+      </li>
+
+      <li className='nav-item'>
+        <Link className='nav-link' to='/prompts'>
+          Prompts
+        </Link>
+      </li>
+      {/* <li className='nav-item'>
+	  <a className='nav-link' href='/stories'>
+		Login
+	  </a>
+	</li> */}
+    </ul>
+  );
+
+  const guestLinks = (
+    <ul className='navbar-nav ml-auto mr-5'>
+      <li className='nav-item'>
+        <Link className='nav-link' to='/register'>
+          Register
+        </Link>
+      </li>
+      <li className='nav-item'>
+        <Link className='nav-link' to='/login'>
+          Login
+        </Link>
+      </li>
+      <li className='nav-item'>
+        <Link className='nav-link' to='/prompts'>
+          Prompts
+        </Link>
+      </li>
+    </ul>
+  );
+  return (
+    <nav className='navbar navbar-expand-lg navbar-dark'>
+      <a className='navbar-brand ml-5' href='/'>
+        Quill & Parchment
+      </a>
+      <button
+        className='navbar-toggler'
+        type='button'
+        data-toggle='collapse'
+        data-target='#navbarNav'
+        aria-controls='navbarNav'
+        aria-expanded='false'
+        aria-label='Toggle navigation'
+      >
+        <span className='navbar-toggler-icon' />
+      </button>
+      <div className='collapse navbar-collapse' id='navbarNav'>
+        {!loading && (
+          <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
+        )}
+      </div>
+    </nav>
+  );
 };
 
-export default Navbar;
+Navbar.propTypes = {
+  logout: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
+
+export default connect(mapStateToProps, { logout })(Navbar);
