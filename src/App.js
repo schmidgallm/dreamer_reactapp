@@ -5,6 +5,8 @@ import Navbar from './components/Layout/Navbar';
 import Landing from './components/Pages/Landing';
 import Register from './components/Auth/Register';
 import Login from './components/Auth/Login';
+import Dashboard from './components/Dashboard';
+import PrivateRoute from './components/Routing/PrivateRoute';
 import Prompts from './components/Pages/Prompts';
 import Alert from './components/Alert';
 import Footer from './components/Layout/Footer';
@@ -34,6 +36,7 @@ const App = () => {
               <Route exact path='/register' component={Register} />
               <Route exact path='/login' component={Login} />
               <Route exact path='/prompts' component={Prompts} />
+              <PrivateRoute exact path='/dashboard' component={Dashboard} />
             </Switch>
           </section>
           <Footer />
