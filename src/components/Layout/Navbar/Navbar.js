@@ -9,21 +9,23 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <ul className='navbar-nav ml-auto mr-5'>
       <li className='nav-item'>
-        <Link onClick={logout} className='nav-link' to='/'>
+        <a onClick={logout} className='nav-link' href='#!'>
+          <i className='fa fa-sign-out' />
+          {` `}
           <span className='hide-sm'>Logout</span>
-        </Link>
+        </a>
       </li>
-
       <li className='nav-item'>
         <Link className='nav-link' to='/prompts'>
           Prompts
         </Link>
       </li>
-      {/* <li className='nav-item'>
-	  <a className='nav-link' href='/stories'>
-		Login
-	  </a>
-	</li> */}
+      <li className='nav-item'>
+        <a className='nav-link' href='/dashboard'>
+          <i className='fa fa-user' /> {` `}
+          <span className='hide-sm'>Dashboard</span>
+        </a>
+      </li>
     </ul>
   );
 
