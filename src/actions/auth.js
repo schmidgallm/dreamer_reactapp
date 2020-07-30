@@ -18,7 +18,9 @@ export const loadUser = () => async (dispatch) => {
   }
 
   try {
-    const res = await axios.get('http://localhost:5000/api/v1/auth');
+    const res = await axios.get(
+      'https://dreamers-api.herokuapp.com/api/v1/auth'
+    );
 
     dispatch({
       type: USER_LOADED,

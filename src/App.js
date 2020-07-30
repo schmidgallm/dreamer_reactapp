@@ -5,7 +5,7 @@ import Navbar from './components/Layout/Navbar';
 import Landing from './components/Pages/Landing';
 import Register from './components/Auth/Register';
 import Login from './components/Auth/Login';
-import Dashboard from './components/Dashboard';
+import Dashboard from './components/Pages/Dashboard';
 import PrivateRoute from './components/Routing/PrivateRoute';
 import Prompts from './components/Pages/Prompts';
 import Alert from './components/Alert';

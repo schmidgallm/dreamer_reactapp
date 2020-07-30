@@ -14,7 +14,7 @@ const Footer = () => {
             height='24'
           />
           <small className='d-block mb-3 text-muted'>
-            Quill & Parchment &copy; 2020
+            Dreamers &copy; 2020
           </small>
         </div>
         <div className='col-6 col-md grid-col'>
