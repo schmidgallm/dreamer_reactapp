@@ -48,7 +48,7 @@ export const register = ({ name, email, password }) => async (dispatch) => {
   try {
     // post to endpoint passing in config headers and stringified body
     const res = await axios.post(
-      'http://localhost:5000/api/v1/users',
+      'https://dreamers-api.herokuapp.com/api/v1/users',
       body,
       config
     );
@@ -92,7 +92,7 @@ export const login = (email, password) => async (dispatch) => {
   try {
     // post to endpoint passing in config headers and stringified body
     const res = await axios.post(
-      'http://localhost:5000/api/v1/auth',
+      'https://dreamers-api.herokuapp.com/api/v1/auth',
       body,
       config
     );
