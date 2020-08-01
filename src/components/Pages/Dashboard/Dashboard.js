@@ -7,8 +7,32 @@ import './Dashboard.css';
 const Dashboard = ({ getCurrentProfile, auth, profile }) => {
   useEffect(() => {
     getCurrentProfile();
+    console.log(profile);
   }, []);
-  return <div>Dashboard</div>;
+  return (
+    <div className='dashboard'>
+      <div className='menu'>
+        <div className='profile'></div>
+        <ul>
+          <li>
+            <i className='fa fa-user'></i>Profile
+          </li>
+          <li>
+            <i className='fa fa-pencil'></i>Prompts
+          </li>
+          <li>
+            <i className='fa fa-book'></i>Stories
+          </li>
+          <li>
+            <i className='fa fa-line-chart'></i>Charts
+          </li>
+        </ul>
+      </div>
+      <div className='data'>
+        <div className='box'></div>
+      </div>
+    </div>
+  );
 };
 
 Dashboard.propTypes = {
