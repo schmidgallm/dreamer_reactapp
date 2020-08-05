@@ -29,11 +29,6 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
               Prompts
             </NavLink>
           </li>
-          <li className='nav-item'>
-            <NavLink className='nav-link' to='/stories'>
-              Stories
-            </NavLink>
-          </li>
         </ul>
 
         <form className='form-inline my-2 my-lg-0'>

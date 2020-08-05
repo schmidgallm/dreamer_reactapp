@@ -1,15 +1,30 @@
-import React, { useEffect } from 'react';
+// Dependencies
+import React, { Fragment, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getCurrentProfile } from '../../../actions/profile';
-import './Dashboard.css';
 
-const Dashboard = ({ getCurrentProfile, auth, profile }) => {
+// Redux Actions
+import { getCurrentProfile } from '../../../actions/profile';
+
+// Components
+import Spinner from '../../Layout/Spinner';
+
+const Dashboard = ({
+  getCurrentProfile,
+  auth: { user },
+  profile: { profile, loading },
+}) => {
+  // get profile on component render
   useEffect(() => {
     getCurrentProfile();
     console.log(profile);
   }, []);
-  return (
+
+  // return
+  return loading && profile === null ? (
+    <Spinner />
+  ) : (
     <div className='dashboard'>
       <div className='menu'>
         <div className='profile'></div>
@@ -29,7 +44,21 @@ const Dashboard = ({ getCurrentProfile, auth, profile }) => {
         </ul>
       </div>
       <div className='data'>
-        <div className='box'></div>
+        <div className='box'>
+          <p className='lead'>
+            <i className='fa fa-user'></i> Welcome {user && user.name}
+          </p>
+          {profile !== null ? (
+            <Fragment>has</Fragment>
+          ) : (
+            <Fragment>
+              <p>No profile created yet. Please create one below.</p>
+              <Link to='/create-profile' className='btn btn-primary my-2'>
+                Create Profile
+              </Link>
+            </Fragment>
+          )}
+        </div>
       </div>
     </div>
   );

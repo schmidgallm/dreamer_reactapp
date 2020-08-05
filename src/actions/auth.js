@@ -8,6 +8,7 @@ import {
   LOGIN_SUCCESS,
   LOGIN_FAIL,
   LOGOUT,
+  CLEAR_PROFILE,
 } from './types';
 import setAuthToken from '../utils/setAuthToken';
 
@@ -18,9 +19,7 @@ export const loadUser = () => async (dispatch) => {
   }
 
   try {
-    const res = await axios.get(
-      'https://dreamers-api.herokuapp.com/api/v1/auth'
-    );
+    const res = await axios.get('http://localhost:5000/api/v1/auth');
 
     dispatch({
       type: USER_LOADED,
@@ -48,7 +47,7 @@ export const register = ({ name, email, password }) => async (dispatch) => {
   try {
     // post to endpoint passing in config headers and stringified body
     const res = await axios.post(
-      'https://dreamers-api.herokuapp.com/api/v1/users',
+      'http://localhost:5000/api/v1/users',
       body,
       config
     );
@@ -92,7 +91,7 @@ export const login = (email, password) => async (dispatch) => {
   try {
     // post to endpoint passing in config headers and stringified body
     const res = await axios.post(
-      'https://dreamers-api.herokuapp.com/api/v1/auth',
+      'http://localhost:5000/api/v1/auth',
       body,
       config
     );
@@ -123,5 +122,6 @@ export const login = (email, password) => async (dispatch) => {
 
 // Logout User && Clear Profile
 export const logout = () => (dispatch) => {
+  dispatch({ type: CLEAR_PROFILE });
   dispatch({ type: LOGOUT });
 };

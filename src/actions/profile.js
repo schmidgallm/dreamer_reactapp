@@ -5,9 +5,7 @@ import { GET_PROFILE, PROFILE_ERROR } from './types';
 // Get current users profile
 export const getCurrentProfile = () => async (dispatch) => {
   try {
-    const res = await axios.get(
-      'https://dreamers-api.herokuapp.com/api/v1/profiles/me'
-    );
+    const res = await axios.get('http://localhost:5000/api/v1/profiles/me');
     dispatch({
       type: GET_PROFILE,
       payload: res.data,
