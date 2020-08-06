@@ -1,6 +1,14 @@
-// REACT
+// Dependencies
 import React, { Fragment, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+// Redux actions and store
+import { Provider } from 'react-redux';
+import store from './store';
+import { loadUser } from './actions/auth';
+import setAuthToken from './utils/setAuthToken';
+
+// Components
 import Navbar from './components/Layout/Navbar';
 import Landing from './components/Pages/Landing';
 import Register from './components/Auth/Register';
@@ -10,10 +18,9 @@ import PrivateRoute from './components/Routing/PrivateRoute';
 import Prompts from './components/Pages/Prompts';
 import Alert from './components/Alert';
 import Footer from './components/Layout/Footer';
-import { Provider } from 'react-redux';
-import store from './store';
-import { loadUser } from './actions/auth';
-import setAuthToken from './utils/setAuthToken';
+import CreateProfile from './components/Auth/CreateProfile/CreateProfile';
+
+// CSS
 import './App.css';
 
 if (localStorage.token) {
@@ -37,6 +44,11 @@ const App = () => {
             <Route exact path='/login' component={Login} />
             <Route exact path='/prompts' component={Prompts} />
             <PrivateRoute exact path='/dashboard' component={Dashboard} />
+            <PrivateRoute
+              exact
+              path='/create-profile'
+              component={CreateProfile}
+            />
           </Switch>
           <Footer />
         </Fragment>
