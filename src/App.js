@@ -18,7 +18,8 @@ import PrivateRoute from './components/Routing/PrivateRoute';
 import Prompts from './components/Pages/Prompts';
 import Alert from './components/Alert';
 import Footer from './components/Layout/Footer';
-import CreateProfile from './components/Auth/CreateProfile/CreateProfile';
+import CreateProfile from './components/Auth/CreateProfile';
+import EditProfile from './components/Auth/EditProfile';
 
 // CSS
 import './App.css';
@@ -49,6 +50,7 @@ const App = () => {
               path='/create-profile'
               component={CreateProfile}
             />
+            <PrivateRoute exact path='/edit-profile' component={EditProfile} />
           </Switch>
           <Footer />
         </Fragment>

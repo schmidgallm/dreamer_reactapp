@@ -72,9 +72,6 @@ const Dashboard = ({
       </div>
       <div className='data'>
         <div className='center my-5'>
-          <p className='lead'>
-            <i className='fa fa-user'></i> Welcome {user && user.name}
-          </p>
           {profile !== null ? (
             <div className='center'>{renderTab(tab)}</div>
           ) : (
