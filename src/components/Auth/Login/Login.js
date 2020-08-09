@@ -3,7 +3,6 @@ import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { login } from '../../../actions/auth';
-import './Login.css';
 
 const Login = ({ login, isAuthenticated }) => {
   // init state

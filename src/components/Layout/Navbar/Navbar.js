@@ -6,7 +6,7 @@ import { logout } from '../../../actions/auth';
 
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   return (
-    <nav className='navbar navbar-expand-lg navbar-light'>
+    <nav className='navbar navbar-expand-lg navbar-light sm-hide'>
       <NavLink className='navbar-brand' to='/'>
         Dreamers
       </NavLink>

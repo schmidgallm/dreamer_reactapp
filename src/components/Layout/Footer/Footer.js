@@ -1,11 +1,10 @@
 import React from 'react';
-import './Footer.css';
 
 const Footer = () => {
   return (
-    <footer className='pt-4 my-md-5 pt-md-5 border-top'>
+    <footer className='pt-4 my-mb-5 pt-md-5 border-top'>
       <div className='row container footer'>
-        <div className='col-12 col-md grid-col'>
+        <div className='col-12 col-md'>
           <img
             className='mb-2'
             src='/docs/4.4/assets/brand/bootstrap-solid.svg'
@@ -17,77 +16,57 @@ const Footer = () => {
             Dreamers &copy; 2020
           </small>
         </div>
-        <div className='col-6 col-md grid-col'>
-          <h5>Features</h5>
+        <div className='col-4 col-md'>
+          <h5>Coming soon</h5>
           <ul className='list-unstyled text-small'>
             <li>
               <a className='text-muted' href='/'>
-                Cool stuff
+                Writers Space
               </a>
             </li>
             <li>
               <a className='text-muted' href='/'>
-                Random feature
+                Peer Edits and Reviews
               </a>
             </li>
             <li>
               <a className='text-muted' href='/'>
-                Team feature
+                Publishing
               </a>
             </li>
             <li>
               <a className='text-muted' href='/'>
-                Stuff for developers
-              </a>
-            </li>
-            <li>
-              <a className='text-muted' href='/'>
-                Another one
-              </a>
-            </li>
-            <li>
-              <a className='text-muted' href='/'>
-                Last time
+                Writers Discussion
               </a>
             </li>
           </ul>
         </div>
-        <div className='col-6 col-md grid-col'>
+        <div className='col-4 col-md'>
           <h5>Resources</h5>
           <ul className='list-unstyled text-small'>
             <li>
               <a className='text-muted' href='/'>
-                Resource
+                Resource 1
               </a>
             </li>
             <li>
               <a className='text-muted' href='/'>
-                Resource name
+                Resource 2
               </a>
             </li>
             <li>
               <a className='text-muted' href='/'>
-                Another resource
-              </a>
-            </li>
-            <li>
-              <a className='text-muted' href='/'>
-                Final resource
+                Resource 3
               </a>
             </li>
           </ul>
         </div>
-        <div className='col-6 col-md grid-col'>
+        <div className='col-4 col-md'>
           <h5>About</h5>
           <ul className='list-unstyled text-small'>
             <li>
               <a className='text-muted' href='/'>
-                Team
-              </a>
-            </li>
-            <li>
-              <a className='text-muted' href='/'>
-                Locations
+                Our Mission
               </a>
             </li>
             <li>

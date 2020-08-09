@@ -53,25 +53,28 @@ const Dashboard = ({
     <Spinner />
   ) : (
     <div className='dashboard'>
-      <div className='menu'>
-        <div className='profile'></div>
+      <div className='menu center'>
         <ul>
           <li onClick={() => changeTabHandler('profile')}>
-            <i className='fa fa-user'></i>Profile
+            <i className='fa fa-user'></i>
+            <span className='sm-hide'>Profile</span>
           </li>
           <li onClick={() => changeTabHandler('prompts')}>
-            <i className='fa fa-pencil'></i>Prompts
+            <i className='fa fa-pencil'></i>
+            <span className='sm-hide'>Prompts</span>
           </li>
           <li onClick={() => changeTabHandler('stories')}>
-            <i className='fa fa-book'></i>Stories
+            <i className='fa fa-book'></i>
+            <span className='sm-hide'>Stories</span>
           </li>
           <li onClick={() => changeTabHandler('charts')}>
-            <i className='fa fa-line-chart'></i>Charts
+            <i className='fa fa-line-chart'></i>
+            <span className='sm-hide'>Charts</span>
           </li>
         </ul>
       </div>
       <div className='data'>
-        <div className='center my-5'>
+        <div className='center'>
           {profile !== null ? (
             <div className='center'>{renderTab(tab)}</div>
           ) : (

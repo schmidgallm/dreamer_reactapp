@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setAlert } from '../../../actions/alert';
 import { register } from '../../../actions/auth';
-import './Register.css';
 
 const Register = ({ setAlert, register, isAuthenticated }) => {
   // init state
@@ -26,7 +25,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
     e.preventDefault();
     if (password !== password2) {
       // REDUX ACTION HERE
-      setAlert('passwords dont match', 'danger');
+      return setAlert('passwords do not match', 'danger');
     }
     // REDUX ACTION HERE
     register({ name, email, password });

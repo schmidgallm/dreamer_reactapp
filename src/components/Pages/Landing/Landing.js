@@ -15,7 +15,7 @@ const Landing = () => {
           </a>
         </div>
       </div>
-      <div className='cards grid'>
+      <div className='cards'>
         <div className='card'>
           <div className='card-header center'>Inspiration</div>
           <div className='card-body'>
@@ -66,22 +66,22 @@ const Landing = () => {
       <div className='cta center'>
         <h2>Browse Popular Genres</h2>
         <div className='icons'>
-          <div>
+          <div className='btn btn-primary'>
             <h4>Fiction</h4>
           </div>
-          <div>
+          <div className='btn btn-primary'>
             <h4>Fantasy</h4>
           </div>
-          <div>
+          <div className='btn btn-primary'>
             <h4>SciFi</h4>
           </div>
-          <div>
+          <div className='btn btn-primary'>
             <h4>Romance</h4>
           </div>
-          <div>
+          <div className='btn btn-primary'>
             <h4>Horror</h4>
           </div>
-          <div>
+          <div className='btn btn-primary'>
             <h4>Mystery</h4>
           </div>
         </div>
