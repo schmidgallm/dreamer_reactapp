@@ -5,8 +5,8 @@ import Prompt from '../Prompt';
 const Prompts = (props) => {
   console.log(props.match.url + '/test');
   return (
-    <div className='prompt-wrapper'>
-      <div className='prompt-header'>
+    <div className='prompts-wrapper'>
+      <div className='prompts-header'>
         <img src={promptheader} alt='writing on paper' />
         <h1>Writing Prompts</h1>
         <span>1,502,503 prompts submitted</span>
