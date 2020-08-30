@@ -23,7 +23,6 @@ import EditProfile from './components/Auth/EditProfile';
 
 // CSS
 import './App.css';
-import MobileNav from './components/Layout/MobileNav/MobileNav';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -39,7 +38,6 @@ const App = () => {
       <Router>
         <Fragment>
           <Navbar />
-          <MobileNav />
           <Route exact path='/' component={Landing} />
           <Alert />
           <Switch>

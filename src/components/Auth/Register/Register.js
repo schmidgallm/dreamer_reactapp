@@ -29,21 +29,17 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
     }
     // REDUX ACTION HERE
     register({ name, email, password });
+
+    // Redirect on successful registeration
+    if (isAuthenticated) {
+      return <Redirect to='/dashboard' />;
+    }
   };
 
-  // Redirect on successful registeration
-  if (isAuthenticated) {
-    return <Redirect to='/dashboard' />;
-  }
+ 
 
   return (
     <div className='container register'>
-      <div className='jumbotron'>
-        <h1>
-          Inspire. Share. <span>Create.</span>
-        </h1>
-        <div className='diagonal'></div>
-      </div>
       <form onSubmit={onSubmit}>
         <div className='form-group'>
           <label htmlFor='name'>Full Name</label>

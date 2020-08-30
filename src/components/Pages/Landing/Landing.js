@@ -1,4 +1,6 @@
 import React from 'react';
+import Register from '../../Auth/Register';
+import cta from '../../../assets/img/cta.jpg';
 
 const Landing = () => {
   return (
@@ -40,7 +42,7 @@ const Landing = () => {
           </div>
         </div>
         <div className='card'>
-          <div className='card-header center'>Whats New</div>
+          <div className='card-header center'>Coming Soon</div>
           <div className='card-body'>
             <h3>Mentorship Programs</h3>
             <p>
@@ -63,28 +65,16 @@ const Landing = () => {
           </div>
         </div>
       </div>
-      <div className='cta center'>
-        <h2>Browse Popular Genres</h2>
-        <div className='icons'>
-          <div className='btn btn-primary'>
-            <h4>Fiction</h4>
-          </div>
-          <div className='btn btn-primary'>
-            <h4>Fantasy</h4>
-          </div>
-          <div className='btn btn-primary'>
-            <h4>SciFi</h4>
-          </div>
-          <div className='btn btn-primary'>
-            <h4>Romance</h4>
-          </div>
-          <div className='btn btn-primary'>
-            <h4>Horror</h4>
-          </div>
-          <div className='btn btn-primary'>
-            <h4>Mystery</h4>
+      {/* CTA SECTION */}
+      <div className="cta">
+        <div className="cta-container">
+          <div className="cta-copy">
+            <h2>Start you dream now!</h2>
+            <p className="mt-0">Join our community to get inspiration, inspire others, share, and create. </p>
+            <img src={cta} alt='writing cartoon'/>
           </div>
         </div>
+        <Register />
       </div>
     </div>
   );

@@ -34,39 +34,11 @@ nav .fa {
   border-radius: 20px;
 }
 
-/* Mobile Nav */
-.mobile-nav {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: #2e2e2e;
-  overflow: hidden;
-  z-index: 5;
-  padding: 20px 0;
-}
-
-.mobile-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-  margin: 0;
-}
-
-.mobile-nav ul li {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.mobile-nav ul li i {
-  font-size: 40px;
-}
-
 /* Footer */
 footer {
   margin-bottom: 100px;
 }
+
 /* Landing Page */
 .landing {
   width: 95%;
@@ -88,15 +60,16 @@ footer {
 }
 
 .hero .copy {
-  margin-left: 5%;
-  margin-top: 30%;
+  position: absolute;
+  left: 5%;
+  top: 30%;
 }
 
 .copy h1 {
   color: #fff;
   margin: 0;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 3rem;
 }
 
 .copy p {
@@ -106,10 +79,13 @@ footer {
 
 .copy a {
   margin-top: 5px;
+  padding: 10px 20px;
 }
 
 .cards {
-  margin-top: 15px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
 }
 
 .card {
@@ -150,15 +126,31 @@ footer {
 }
 
 .cta {
+  width: 70%;
+  margin: 75px auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.cta-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+}
+
+.cta h2 {
+  color: #d64379;
+  margin: 0;
+}
+
+
+.genres {
   margin-top: 15px;
   background: #2e2e2e;
   color: #fff;
   min-height: 400px;
-}
-
-.icons {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
 }
 
 .icons > div {

@@ -6,7 +6,7 @@ import { logout } from '../../../actions/auth';
 
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   return (
-    <nav className='navbar navbar-expand-lg navbar-light sm-hide'>
+    <nav className='navbar navbar-expand-lg navbar-light'>
       <NavLink className='navbar-brand' to='/'>
         Dreamers
       </NavLink>
@@ -30,16 +30,6 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
             </NavLink>
           </li>
         </ul>
-
-        <form className='form-inline my-2 my-lg-0'>
-          <input
-            className='form-control mr-sm-2'
-            style={{ fontFamily: 'Arial, FontAwesome' }}
-            type='search'
-            placeholder='&#xf002; Search topics'
-            aria-label='Search'
-          />
-        </form>
         <NavLink
           className='nav-link ml-4'
           to={isAuthenticated ? '/dashboard' : '/login'}
@@ -68,3 +58,17 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, { logout })(Navbar);
+
+
+// Form Section to search site
+/*
+  <form className='form-inline my-2 my-lg-0'>
+    <input
+      className='form-control mr-sm-2'
+      style={{ fontFamily: 'Arial, FontAwesome' }}
+      type='search'
+      placeholder='&#xf002; Search topics'
+      aria-label='Search'
+    />
+  </form>
+*/
