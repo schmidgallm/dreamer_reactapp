@@ -36,8 +36,28 @@ nav .fa {
 
 /* Footer */
 footer {
-  margin-bottom: 100px;
+  margin: 100px 0 100px 100px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
+
+.footer-section {
+  padding: 20px;
+  
+}
+footer img {
+  width: 50%;
+}
+
+footer h4 {
+  display: inline-block;
+  border-bottom: 1px solid #d64379;
+}
+
+footer ul {
+  list-style: none;
+}
+
 
 /* Landing Page */
 .landing {

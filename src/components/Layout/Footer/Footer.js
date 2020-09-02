@@ -1,86 +1,40 @@
 import React from 'react';
+import dreamersLogo from '../../../assets/img/dreamersLogo.gif'
 
 const Footer = () => {
   return (
-    <footer className='pt-4 my-mb-5 pt-md-5 border-top'>
-      <div className='row container footer'>
-        <div className='col-12 col-md'>
-          <img
-            className='mb-2'
-            src='/docs/4.4/assets/brand/bootstrap-solid.svg'
-            alt=''
-            width='24'
-            height='24'
-          />
-          <small className='d-block mb-3 text-muted'>
-            Dreamers &copy; 2020
-          </small>
-        </div>
-        <div className='col-4 col-md'>
-          <h5>Coming soon</h5>
-          <ul className='list-unstyled text-small'>
-            <li>
-              <a className='text-muted' href='/'>
-                Writers Space
-              </a>
-            </li>
-            <li>
-              <a className='text-muted' href='/'>
-                Peer Edits and Reviews
-              </a>
-            </li>
-            <li>
-              <a className='text-muted' href='/'>
-                Publishing
-              </a>
-            </li>
-            <li>
-              <a className='text-muted' href='/'>
-                Writers Discussion
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div className='col-4 col-md'>
-          <h5>Resources</h5>
-          <ul className='list-unstyled text-small'>
-            <li>
-              <a className='text-muted' href='/'>
-                Resource 1
-              </a>
-            </li>
-            <li>
-              <a className='text-muted' href='/'>
-                Resource 2
-              </a>
-            </li>
-            <li>
-              <a className='text-muted' href='/'>
-                Resource 3
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div className='col-4 col-md'>
-          <h5>About</h5>
-          <ul className='list-unstyled text-small'>
-            <li>
-              <a className='text-muted' href='/'>
-                Our Mission
-              </a>
-            </li>
-            <li>
-              <a className='text-muted' href='/'>
-                Privacy
-              </a>
-            </li>
-            <li>
-              <a className='text-muted' href='/'>
-                Terms
-              </a>
-            </li>
-          </ul>
-        </div>
+    <footer className='pt-4 my-mb-5 pt-md-5 border-top container'>
+      <div className='footer-section'>
+        <img src={dreamersLogo} alt="dreamers logo" className='img-fluid img-responsive' />
+        <p>@2020 Dreamers LLC</p>
+      </div>
+      <div className='footer-section'>
+        <h4>Coming Soon</h4>
+        <ul>
+          <li>Writing Spaces</li>
+          <li>Peer Edit and Review</li>
+          <li>Publishing</li>
+          <li>Community Discussions</li>
+          <li>Resources</li>
+        </ul>
+      </div>
+      <div className='footer-section'>
+      <h4>Resources</h4>
+        <ul>
+          <li>Resource 1</li>
+          <li>Resource 2</li>
+          <li>Resource 3</li>
+          <li>Resource 4</li>
+          <li>More</li>
+        </ul>
+      </div>
+      <div className='footer-section'>
+      <h4>About</h4>
+        <ul>
+          <li>Our Mission</li>
+          <li>Privacy</li>
+          <li>Terms</li>
+        </ul>
       </div>
     </footer>
   );

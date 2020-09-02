@@ -70,7 +70,7 @@ const Landing = () => {
         <div className="cta-container">
           <div className="cta-copy">
             <h2>Start you dream now!</h2>
-            <p className="mt-0">Join our community to get inspiration, inspire others, share, and create. </p>
+            <p className="mt-0">Join our community to create, share, get inspiration or inspire others.</p>
             <img src={cta} alt='writing cartoon'/>
           </div>
         </div>
