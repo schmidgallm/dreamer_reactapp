@@ -2,7 +2,7 @@ import React from 'react';
 
 const Prompt = () => {
   return (
-    <div className='prompt-container'>
+    <div className='prompt-container container'>
       <div className='prompt'>
         <div className='prompt-header'>
           <span>Rockey Meyers | 8-9-20</span>
