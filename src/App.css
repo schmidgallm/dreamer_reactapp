@@ -1,13 +1,63 @@
+/* Colors */
+:root {
+    --primary: #3a8c7d;
+    --secondary: #164038;
+    --accent: #f25eb4;
+    --accent2: #f362fc;
+    --light: whitesmoke;
+    --dark: #2e2e2e;
+}
+
+/* Fonts */
+@font-face {
+    font-family: 'futuraBook';
+    src: local('futuraBook'), url('./assets/fonts/futuraBook.ttf');
+}
+
+@font-face {
+    font-family: 'futuraBold';
+    src: local('futuraBold'), url('./assets/fonts/futuraBold.ttf');
+}
+
+@font-face {
+    font-family: 'futuraLight';
+    src: local('futuraLight'), url('./assets/fonts/futuraLight.ttf');
+}
+
+/* Sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-size: 12px;
 }
 
+/* Global Styles */
 body {
-    background-color: whitesmoke;
+    background-color: var(--light);
 }
 
+/* Buttons */
+.btn-primary {
+    background-color: var(--accent);
+    border: none;
+}
+
+.btn:hover {
+    background-color: var(--accent2);
+    border: none;
+}
+
+.btn-secondary {
+    background-color: var(--primary);
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary);
+}
+
+/* Positioning */
 .center {
     display: flex;
     flex-direction: column;
@@ -15,7 +65,7 @@ body {
     justify-content: center;
 }
 
-/* Navbars */
+/* Navbar */
 
 nav {
     width: 96%;
@@ -55,134 +105,6 @@ footer h4 {
 
 footer ul {
     list-style: none;
-}
-
-/* Landing Page */
-.landing {
-    width: 95%;
-    margin: 10px auto;
-    min-height: 100vh;
-}
-
-.hero {
-    position: relative;
-    background-image: url('./assets/img/hero.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 55vh;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-}
-
-.hero .copy {
-    position: absolute;
-    left: 5%;
-    top: 30%;
-}
-
-.copy h1 {
-    color: #fff;
-    margin: 0;
-    font-weight: bold;
-    font-size: 3rem;
-}
-
-.copy p {
-    color: #fff;
-    margin: 15px 0;
-}
-
-.copy a {
-    margin-top: 5px;
-    padding: 10px 20px;
-}
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-}
-
-.card {
-    min-height: 200px;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-    margin: 10px auto;
-}
-
-.card:hover {
-    transform: scale(1.05);
-}
-
-.card-header {
-    min-height: 200px;
-    color: #fff;
-    font-size: 30px;
-}
-
-.card:nth-child(1) .card-header {
-    background-image: url('./assets/img/inspiration.jpg');
-    background-repeat: no-repeat;
-}
-
-.card:nth-child(2) .card-header {
-    background-image: url('./assets/img/justin.jpg');
-    background-position: center;
-}
-
-.card:nth-child(3) .card-header {
-    background-image: url('./assets/img/mentor.jpg');
-    background-position: center;
-}
-
-.card:nth-child(4) .card-header {
-    background-image: url('./assets/img/team.jpg');
-    background-position: center;
-}
-
-.cta {
-    width: 70%;
-    margin: 75px auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.cta-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: left;
-}
-
-.cta h2 {
-    color: #d64379;
-    margin: 0;
-}
-
-.genres {
-    margin-top: 15px;
-    background: #2e2e2e;
-    color: #fff;
-    min-height: 400px;
-}
-
-.icons > div {
-    background-color: #202020;
-    margin: 10px;
-    border-radius: 10px;
-}
-
-.icons > div:hover {
-    background-color: #2780e3;
-}
-
-.icons .fa {
-    color: #2780e3;
-    font-size: 20px;
 }
 
 /* Dashboard */
