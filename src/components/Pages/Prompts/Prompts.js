@@ -1,5 +1,4 @@
 import React from 'react'
-import promptheader from '../../../assets/img/promptheader.jpg'
 
 const Prompts = (props) => {
     console.log(props.match.url + '/test')
@@ -7,7 +6,6 @@ const Prompts = (props) => {
         <div className="prompts-wrapper">
             <div className="prompts-header">
                 <div className="header-hero">
-                    <img src={promptheader} alt="writing on paper" />
                     <h1>Writing Prompts</h1>
                 </div>
                 <span>1,502,503 prompts submitted</span>
