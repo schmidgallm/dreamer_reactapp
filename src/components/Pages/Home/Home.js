@@ -3,7 +3,7 @@ import React from 'react'
 const Home = () => {
     return (
         <div className="home">
-            <div className="grid hero container py-3 my-5">
+            <div className="grid hero p-3 my-5">
                 <div className="hero-item hero-item-1 bg-image center">
                     <h3>Prompts</h3>
                 </div>

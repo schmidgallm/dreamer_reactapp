@@ -24,7 +24,7 @@
     src: local('futuraLight'), url('./assets/fonts/futuraLight.ttf');
 }
 
-/* Sizing */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -35,6 +35,42 @@
 /* Global Styles */
 body {
     background-color: var(--light);
+}
+
+/* Application Grid Layout */
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.navigation {
+    grid-column: 1/3;
+    background-color: var(--dark);
+    height: 100%;
+}
+
+.content-container {
+    grid-column: 3/13;
+}
+
+/* Positioning */
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid {
+    display: grid;
+    gap: 10px;
+}
+
+/* Images */
+.bg-image {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 /* Buttons */
@@ -57,53 +93,35 @@ body {
     background-color: var(--secondary);
 }
 
-/* Positioning */
-.center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.grid {
-    display: grid;
-    gap: 10px;
-}
-
-.bg-image {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-
 /* Navbar */
-
-nav {
-    width: 96%;
-    margin: 0 auto;
+.nav-brand {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: var(--primary);
 }
 
-.navbar-brand {
-    font-size: 30px;
+.nav-brand:hover {
+    text-decoration: none;
+    color: var(--primary);
 }
 
-nav .fa {
-    font-size: 40px;
+.nav-item a {
+    color: var(--primary);
+    font-size: 18px;
+    margin: 5px auto;
+    transition: 0.3s ease-in-out;
 }
 
-.form-control {
-    border-radius: 20px;
+.nav-item a:hover {
+    background-color: var(--accent);
+    color: var(--light);
 }
 
 /* Footer */
 footer {
-    margin: 100px 0 100px 100px;
+    padding: 50px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-}
-
-.footer-section {
-    padding: 20px;
 }
 
 footer img {

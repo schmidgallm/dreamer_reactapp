@@ -6,49 +6,51 @@ import { logout } from '../../../actions/auth'
 
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light">
-            <div className="container">
-                <NavLink className="navbar-brand" to="/">
-                    Dreamers
-                </NavLink>
-                <button
-                    className="navbar-toggler"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-
-                <div
-                    className="collapse navbar-collapse"
-                    id="navbarSupportedContent"
-                >
-                    <ul className="navbar-nav mr-auto ml-4">
-                        <li className="nav-item">
-                            <NavLink className="nav-link" to="/prompts">
-                                Prompts
-                            </NavLink>
-                        </li>
-                    </ul>
+        <nav>
+            <ul className="nav-list">
+                <li className="nav-link nav-brand">
+                    <NavLink className="nav-brand" to="/">
+                        Dreamers
+                    </NavLink>
+                </li>
+                <li className="nav-item">
+                    <NavLink className="nav-link" to="/prompts">
+                        Prompts
+                    </NavLink>
+                </li>
+                <li className="nav-item">
+                    <NavLink className="nav-link" to="/prompts">
+                        Resources
+                    </NavLink>
+                </li>
+                <li className="nav-item">
+                    <NavLink className="nav-link" to="/prompts">
+                        Community
+                    </NavLink>
+                </li>
+                <li className="nav-item">
+                    <NavLink className="nav-link" to="/prompts">
+                        Dashboard
+                    </NavLink>
+                </li>
+                <li className="nav-item">
                     <NavLink
-                        className="nav-link ml-4"
+                        className="nav-link"
                         to={isAuthenticated ? '/dashboard' : '/login'}
                     >
-                        <i className="fa fa-user"></i>
+                        <i className="fa fa-user"></i> Profile
                     </NavLink>
+                </li>
+                <li className="nav-link">
                     {isAuthenticated && (
-                        <NavLink onClick={logout} className="nav-link" to="#!">
+                        <NavLink onClick={logout} to="#!">
                             <i className="fa fa-sign-out" />
                             {` `}
                             <span className="hide-sm">Logout</span>
                         </NavLink>
                     )}
-                </div>
-            </div>
+                </li>
+            </ul>
         </nav>
     )
 }

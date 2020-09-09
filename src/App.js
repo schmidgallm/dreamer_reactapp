@@ -1,5 +1,5 @@
 // Dependencies
-import React, { Fragment, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 // Redux actions and store
@@ -36,32 +36,40 @@ const App = () => {
     return (
         <Provider store={store}>
             <Router>
-                <Fragment>
-                    <Navbar />
-                    <Route exact path="/" component={Home} />
-                    <Alert />
-                    <Switch>
-                        <Route exact path="/register" component={Register} />
-                        <Route exact path="/login" component={Login} />
-                        <Route exact path="/prompts" component={Prompts} />
-                        <PrivateRoute
-                            exact
-                            path="/dashboard"
-                            component={Dashboard}
-                        />
-                        <PrivateRoute
-                            exact
-                            path="/create-profile"
-                            component={CreateProfile}
-                        />
-                        <PrivateRoute
-                            exact
-                            path="/edit-profile"
-                            component={EditProfile}
-                        />
-                    </Switch>
-                    <Footer />
-                </Fragment>
+                <div className="wrapper">
+                    <div className="navigation">
+                        <Navbar />
+                    </div>
+                    <div className="content-container">
+                        <Route exact path="/" component={Home} />
+                        <Alert />
+                        <Switch>
+                            <Route
+                                exact
+                                path="/register"
+                                component={Register}
+                            />
+                            <Route exact path="/login" component={Login} />
+                            <Route exact path="/prompts" component={Prompts} />
+                            <PrivateRoute
+                                exact
+                                path="/dashboard"
+                                component={Dashboard}
+                            />
+                            <PrivateRoute
+                                exact
+                                path="/create-profile"
+                                component={CreateProfile}
+                            />
+                            <PrivateRoute
+                                exact
+                                path="/edit-profile"
+                                component={EditProfile}
+                            />
+                        </Switch>
+                    </div>
+                </div>
+                <Footer />
             </Router>
         </Provider>
     )
