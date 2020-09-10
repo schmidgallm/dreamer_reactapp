@@ -69,7 +69,6 @@ const App = () => {
                         </Switch>
                     </div>
                 </div>
-                <Footer />
             </Router>
         </Provider>
     )
