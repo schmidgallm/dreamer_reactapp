@@ -9,6 +9,7 @@ import { loadUser } from './actions/auth'
 import setAuthToken from './utils/setAuthToken'
 
 // Components
+import TopNav from './components/Layout/TopNav'
 import Navbar from './components/Layout/Navbar'
 import Home from './components/Pages/Home'
 import Register from './components/Auth/Register'
@@ -36,6 +37,7 @@ const App = () => {
     return (
         <Provider store={store}>
             <Router>
+                <TopNav />
                 <div className="wrapper">
                     <div className="navigation">
                         <Navbar />
@@ -67,6 +69,7 @@ const App = () => {
                                 component={EditProfile}
                             />
                         </Switch>
+                        <Footer />
                     </div>
                 </div>
             </Router>

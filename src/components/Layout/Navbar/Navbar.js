@@ -15,7 +15,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
                 </li>
                 <li className="nav-item">
                     <NavLink className="nav-link" to="/">
-                        <i class="fa fa-home"></i>Home
+                        <i class="fa fa-home "></i>Home
                     </NavLink>
                 </li>
                 <li className="nav-item">
@@ -24,17 +24,17 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
                     </NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink className="nav-link" to="/prompts">
+                    <NavLink className="nav-link" to="/resources">
                         <i className="fa fa-book"></i>Resources
                     </NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink className="nav-link" to="/prompts">
+                    <NavLink className="nav-link" to="/community">
                         <i className="fa fa-users"></i>Community
                     </NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink className="nav-link" to="/prompts">
+                    <NavLink className="nav-link" to="/dashboard">
                         <i className="fa fa-pie-chart"></i>Dashboard
                     </NavLink>
                 </li>
