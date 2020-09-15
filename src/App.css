@@ -157,6 +157,7 @@ footer {
     padding: 50px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    margin-top: 50px;
 }
 
 footer img {
@@ -307,6 +308,29 @@ footer ul {
 .message p {
     font-size: 16px;
 }
+
+/* Prompt Page */
+.prompt-wrapper-header {
+    background-color: #fff;
+}
+
+.prompt-wrapper-header {
+    margin-bottom: 50px;
+    padding: 50px;
+    background-color: var(--accent2);
+    color: var(--light);
+}
+
+.prompt-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.prompt-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
 /* Dashboard */
 .dashboard {
     width: 95%;
