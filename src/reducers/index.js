@@ -2,11 +2,11 @@ import { combineReducers } from 'redux'
 import alert from './alert'
 import auth from './auth'
 import profile from './profile'
-import prompt from './prompt'
+import prompts from './prompts'
 
 export default combineReducers({
     alert,
     auth,
     profile,
-    prompt,
+    prompts,
 })

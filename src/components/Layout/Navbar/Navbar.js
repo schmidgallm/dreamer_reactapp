@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { logout } from '../../../actions/auth'
 
-const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
+const Navbar = ({ auth: { isAuthenticated }, logout }) => {
     return (
         <nav>
             <ul className="nav-list">
@@ -15,12 +15,12 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
                 </li>
                 <li className="nav-item">
                     <NavLink className="nav-link" to="/">
-                        <i class="fa fa-home "></i>Home
+                        <i className="fa fa-home "></i>Home
                     </NavLink>
                 </li>
                 <li className="nav-item">
                     <NavLink className="nav-link" to="/prompts">
-                        <i class="fa fa-paper-plane"></i>Prompts
+                        <i className="fa fa-paper-plane"></i>Prompts
                     </NavLink>
                 </li>
                 <li className="nav-item">
@@ -70,16 +70,3 @@ const mapStateToProps = (state) => ({
 })
 
 export default connect(mapStateToProps, { logout })(Navbar)
-
-// Form Section to search site
-/*
-  <form className='form-inline my-2 my-lg-0'>
-    <input
-      className='form-control mr-sm-2'
-      style={{ fontFamily: 'Arial, FontAwesome' }}
-      type='search'
-      placeholder='&#xf002; Search topics'
-      aria-label='Search'
-    />
-  </form>
-*/

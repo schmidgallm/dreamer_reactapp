@@ -321,9 +321,17 @@ footer ul {
     color: var(--light);
 }
 
+.prompt {
+    margin: 25px auto;
+}
+
 .prompt-header {
     display: flex;
     justify-content: space-between;
+}
+
+.prompt-body {
+    min-height: 150px;
 }
 
 .prompt-footer {

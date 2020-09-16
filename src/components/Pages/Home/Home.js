@@ -36,64 +36,64 @@ const Home = () => {
             <div className="writers-block">
                 <h2>Writers Block</h2>
                 <div className="cards">
-                    <div class="card">
+                    <div className="card">
                         <img
                             src={inspiration}
-                            class="card-img-top"
+                            className="card-img-top"
                             alt="person writing"
                         />
                         <div className="overlay" />
-                        <div class="card-body">
-                            <h5 class="card-title">Inspiration</h5>
-                            <p class="card-text">
+                        <div className="card-body">
+                            <h5 className="card-title">Inspiration</h5>
+                            <p className="card-text">
                                 Wheter your story has yet to begin or you're
                                 already suffering from witer's block, a little
                                 inspiration will go a long way. Check out
                                 thousand of prompts to get that imagination
                                 going or post one to help your fellow authors.
                             </p>
-                            <a href="propmpts" class="btn btn-secondary">
+                            <a href="propmpts" className="btn btn-secondary">
                                 Get Inspiration
                             </a>
                         </div>
                     </div>
-                    <div class="card">
+                    <div className="card">
                         <img
                             src={resources}
-                            class="card-img-top"
+                            className="card-img-top"
                             alt="person writing"
                         />
                         <div className="overlay" />
-                        <div class="card-body">
-                            <h5 class="card-title">Resources</h5>
-                            <p class="card-text">
+                        <div className="card-body">
+                            <h5 className="card-title">Resources</h5>
+                            <p className="card-text">
                                 Writing can be tough without the right resources
                                 backing you up. We keep a treasure trove of
                                 resources for you disposal. Got a question or
                                 need some advise? Just check out all the
                                 resources. Keep writing we know you can do it!
                             </p>
-                            <a href="resources" class="btn btn-secondary">
+                            <a href="resources" className="btn btn-secondary">
                                 Get Resources
                             </a>
                         </div>
                     </div>
-                    <div class="card">
+                    <div className="card">
                         <img
                             src={analytics}
-                            class="card-img-top"
+                            className="card-img-top"
                             alt="person writing"
                         />
                         <div className="overlay" />
-                        <div class="card-body">
-                            <h5 class="card-title">Analytics</h5>
-                            <p class="card-text">
+                        <div className="card-body">
+                            <h5 className="card-title">Analytics</h5>
+                            <p className="card-text">
                                 Keep leveling up your skill as an author and
                                 check out your analytics daily. See how many
                                 people have viewed your submissions. How many
                                 people liked it, left comments, and much more.
                             </p>
-                            <a href="#" class="btn btn-secondary">
+                            <a href="#" className="btn btn-secondary">
                                 Get Stats
                             </a>
                         </div>
