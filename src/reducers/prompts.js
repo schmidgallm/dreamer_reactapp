@@ -1,4 +1,4 @@
-import { GET_ALL_PROMPTS } from '../actions/types'
+import { GET_ALL_PROMPTS, PROMPT_ERROR } from '../actions/types'
 
 // init initial state
 const initialState = {
@@ -14,6 +14,11 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 prompts: payload,
+                loading: false,
+            }
+        case PROMPT_ERROR:
+            return {
+                ...state,
                 loading: false,
             }
         default:

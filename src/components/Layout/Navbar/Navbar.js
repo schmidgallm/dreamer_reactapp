@@ -15,27 +15,32 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
                 </li>
                 <li className="nav-item">
                     <NavLink className="nav-link" to="/">
-                        <i className="fa fa-home "></i>Home
+                        <i className="fa fa-home " />
+                        Home
                     </NavLink>
                 </li>
                 <li className="nav-item">
                     <NavLink className="nav-link" to="/prompts">
-                        <i className="fa fa-paper-plane"></i>Prompts
+                        <i className="fa fa-paper-plane" />
+                        Prompts
                     </NavLink>
                 </li>
                 <li className="nav-item">
                     <NavLink className="nav-link" to="/resources">
-                        <i className="fa fa-book"></i>Resources
+                        <i className="fa fa-book" />
+                        Resources
                     </NavLink>
                 </li>
                 <li className="nav-item">
                     <NavLink className="nav-link" to="/community">
-                        <i className="fa fa-users"></i>Community
+                        <i className="fa fa-users" />
+                        Community
                     </NavLink>
                 </li>
                 <li className="nav-item">
                     <NavLink className="nav-link" to="/dashboard">
-                        <i className="fa fa-pie-chart"></i>Dashboard
+                        <i className="fa fa-pie-chart" />
+                        Dashboard
                     </NavLink>
                 </li>
                 <li className="nav-item">
@@ -46,12 +51,11 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
                         <i className="fa fa-user"></i> Profile
                     </NavLink>
                 </li>
-                <li className="nav-link">
+                <li className="nav-item">
                     {isAuthenticated && (
-                        <NavLink onClick={logout} to="#!">
+                        <NavLink className="nav-link" onClick={logout} to="#!">
                             <i className="fa fa-sign-out" />
-                            {` `}
-                            <span className="hide-sm">Logout</span>
+                            Logout
                         </NavLink>
                     )}
                 </li>
