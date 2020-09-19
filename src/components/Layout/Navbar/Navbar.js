@@ -20,35 +20,43 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
                     </NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink className="nav-link" to="/prompts">
+                    <NavLink
+                        activeClassName="nav-active"
+                        className="nav-link"
+                        to="/prompts"
+                    >
                         <i className="fa fa-paper-plane" />
                         Prompts
                     </NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink className="nav-link" to="/resources">
+                    <NavLink
+                        activeClassName="nav-active"
+                        className="nav-link"
+                        to="/resources"
+                    >
                         <i className="fa fa-book" />
                         Resources
                     </NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink className="nav-link" to="/community">
+                    <NavLink
+                        activeClassName="nav-active"
+                        className="nav-link"
+                        to="/community"
+                    >
                         <i className="fa fa-users" />
                         Community
                     </NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink className="nav-link" to="/dashboard">
+                    <NavLink
+                        activeClassName="nav-active"
+                        className="nav-link"
+                        to="/dashboard"
+                    >
                         <i className="fa fa-pie-chart" />
                         Dashboard
-                    </NavLink>
-                </li>
-                <li className="nav-item">
-                    <NavLink
-                        className="nav-link"
-                        to={isAuthenticated ? '/dashboard' : '/login'}
-                    >
-                        <i className="fa fa-user"></i> Profile
                     </NavLink>
                 </li>
                 <li className="nav-item">

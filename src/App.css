@@ -101,6 +101,10 @@ body {
 }
 
 /* Top Nav */
+.nav-active {
+    background-color: var(--accent);
+    color: var(--light);
+}
 .navbar {
     display: flex;
     justify-content: space-between;

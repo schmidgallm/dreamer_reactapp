@@ -52,7 +52,7 @@ const Home = () => {
                                 thousand of prompts to get that imagination
                                 going or post one to help your fellow authors.
                             </p>
-                            <a href="propmpts" className="btn btn-secondary">
+                            <a href="prompts" className="btn btn-secondary">
                                 Get Inspiration
                             </a>
                         </div>
@@ -93,7 +93,7 @@ const Home = () => {
                                 people have viewed your submissions. How many
                                 people liked it, left comments, and much more.
                             </p>
-                            <a href="#" className="btn btn-secondary">
+                            <a href="/dashboard" className="btn btn-secondary">
                                 Get Stats
                             </a>
                         </div>
