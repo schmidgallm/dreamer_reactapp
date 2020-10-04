@@ -464,6 +464,11 @@ footer ul {
     font-size: 14px;
 }
 
+/* Resources Page */
+.resources {
+    margin-top: 50px;
+}
+
 /* Media Queries */
 
 @media screen and (max-width: 940px) {

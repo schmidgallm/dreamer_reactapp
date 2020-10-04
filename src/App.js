@@ -17,6 +17,7 @@ import Login from './components/Auth/Login'
 import Dashboard from './components/Pages/Dashboard'
 import PrivateRoute from './components/Routing/PrivateRoute'
 import Prompts from './components/Pages/Prompts'
+import Resources from './components/Pages/Resources'
 import Alert from './components/Alert'
 import Footer from './components/Layout/Footer'
 import CreateProfile from './components/Auth/CreateProfile'
@@ -53,6 +54,11 @@ const App = () => {
                             />
                             <Route exact path="/login" component={Login} />
                             <Route exact path="/prompts" component={Prompts} />
+                            <Route
+                                exact
+                                path="/resources"
+                                component={Resources}
+                            />
                             <PrivateRoute
                                 exact
                                 path="/dashboard"
