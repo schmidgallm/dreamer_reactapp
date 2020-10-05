@@ -30,30 +30,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: 12px;
 }
 
 /* Global Styles */
 body {
     overflow-x: hidden;
-}
-
-/* Application Grid Layout */
-.wrapper {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    min-height: 100vh;
-}
-
-.navigation {
-    grid-column: 1/3;
-    height: 100%;
-    background-color: var(--dark);
-}
-
-.content-container {
-    grid-column: 3/13;
-    background-color: var(--light);
 }
 
 /* Positioning */
@@ -100,60 +81,30 @@ body {
     background-color: var(--accent);
 }
 
-/* Top Nav */
-.nav-active {
-    background-color: var(--accent);
-    color: var(--light);
-}
+/* Navar */
 .navbar {
+    background-color: var(--dark);
+    padding: 20px 0;
+}
+
+.nav-container {
+    width: 85%;
+    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
-    background-color: #fff;
 }
 
-.navbar .navbar-brand {
-    color: var(--dark);
-    font-size: 24px;
-    margin-left: 20px;
+.nav-active {
+    border-bottom: 1px solid var(--accent);
 }
 
-.navbar .user {
+.navbar i {
+    color: var(--light);
+    font-size: 25px;
     cursor: pointer;
 }
 
-.navbar .user i {
-    color: var(--dark);
-    font-size: 24px;
-    margin-right: 20px;
-}
-
-/* Navbar */
-.nav-brand {
-    font-size: 4rem;
-    margin-bottom: 20px;
-    color: var(--light);
-}
-
-.nav-brand:hover {
-    text-decoration: none;
-    color: var(--light);
-}
-
-.nav-item a {
-    color: var(--light);
-    font-size: 18px;
-    margin: 5px auto;
-    transition: 0.3s ease-in-out;
-}
-
-.nav-item a:hover {
-    background-color: var(--accent);
-    color: var(--light);
-}
-
-nav i {
-    color: var(--light);
-    margin-right: 15px;
+.auth-links {
+    list-style: none;
 }
 
 /* Footer */
@@ -177,140 +128,19 @@ footer ul {
     list-style: none;
 }
 
-/* Home */
-.home {
-    position: relative;
-}
-
-/* Home - Header */
-.header-container {
-    width: 95%;
-    height: 40vh;
-    overflow: hidden;
-    margin: 25px auto;
-    position: relative;
-    background-color: var(--dark);
-}
-
-.header-container img {
-    width: 100%;
-    margin-top: -250px;
-    opacity: 0.3;
-}
-
-.header-container .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: var(--dark);
-    z-index: 5;
-}
-
-.header-text {
-    position: absolute;
-    top: 10%;
-    left: 40px;
-    z-index: 10;
-    color: var(--light);
-}
-
-.header-text h1 {
-    font-family: futuraBook;
-    font-size: 5rem;
-    margin: 0;
-}
-
-.header-text p {
-    width: 55%;
-    font-family: futuraBook;
-    font-size: 17px;
-    margin: 30px 0;
-}
-
-.header-text .home-btn {
-    width: 55%;
-}
-
-/* Home - Writers Block */
-.writers-block {
-    width: 95%;
-    margin: 75px auto;
-}
-
-.writers-block h2 {
-    margin: 25px auto;
-    text-align: center;
-    font-family: futuraBook;
-    font-size: 2.5rem;
-}
-
-.writers-block .cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    border-top: 1px solid #2e2e2e;
-}
-
-.writers-block .card {
-    margin-top: 25px;
-}
-
-.writers-block .card-body h5 {
-    font-family: futuraLight;
-    font-size: 18px;
-}
-
-.writers-block .card-body a {
-    display: block;
-}
-
-/* Home - Authors Spotlight */
-.spotlights {
-    width: 95%;
-    margin: 75px auto;
-}
-
-.spotlights h2 {
-    margin: 25px auto;
-    text-align: center;
-    font-family: futuraBook;
-    font-size: 2.5rem;
-}
-.spotlights .authors {
-    width: 60%;
-    margin: 0 auto;
-}
-
-.spotlights .author {
+/* Home Page */
+.home-header {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    width: 75%;
     margin: 50px auto;
 }
 
-.spotlights .author-img img {
-    width: 100%;
-}
-
-/* Home - Message From Us */
-.message {
-    width: 95%;
-    margin: 75px auto;
-    background-color: var(--dark);
-    padding: 75px;
-    color: var(--light);
-    text-align: center;
-}
-
-.message h2 {
-    margin: 25px auto;
-    font-family: futuraBook;
-    font-size: 2.5rem;
-    color: var(--accent);
-}
-
-.message p {
-    font-size: 16px;
+.home-header .copy {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
 }
 
 /* Prompt Page */
