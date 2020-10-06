@@ -45,6 +45,10 @@ body {
     justify-content: center;
 }
 
+.container-wrapper {
+    margin: 150px auto;
+}
+
 .grid {
     display: grid;
     gap: 10px;
@@ -141,6 +145,88 @@ footer ul {
     flex-direction: column;
     align-items: left;
     justify-content: center;
+}
+
+.home-header .copy h1 {
+    margin: 0;
+}
+
+.home-header .copy p {
+    margin: 20px auto;
+}
+
+.home-header a {
+    width: 35%;
+    margin-top: 10px;
+}
+
+/* CTA Section */
+.card-container-header {
+    text-align: center;
+    margin: 50px auto;
+}
+
+.card-container-header h2 {
+    font-size: 3rem;
+    display: inline-block;
+    border-bottom: 1px solid var(--accent);
+}
+
+.card-container-header p {
+    font-size: 18px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.card i {
+    font-size: 50px;
+}
+
+.card h5 {
+    margin: 20px auto;
+    font-size: 26px;
+}
+
+.card p {
+    margin: 0;
+}
+
+.card-container-footer {
+    text-align: center;
+}
+
+.card-container-footer a {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.info {
+    text-align: center;
+    background-color: var(--light);
+    padding: 75px;
+}
+
+.info-copy {
+    width: 65%;
+    margin: 0 auto;
+}
+
+.info h2 {
+    font-size: 3rem;
+    display: inline-block;
+    border-bottom: 1px solid var(--accent);
+}
+
+.info p {
+    margin: 25px auto;
+    line-height: 1.8;
 }
 
 /* Prompt Page */

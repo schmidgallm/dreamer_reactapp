@@ -7,10 +7,14 @@ const Header = () => {
             <div className="copy">
                 <h1>Welcome to Dreamers!</h1>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Dicta, maxime expedita! Consequuntur saepe esse, voluptatum
-                    sit ut delectus molestias similique.
+                    Join our creative community for authors by authors.
+                    Thousands of prompts, published stories, analytics boosts,
+                    and tons of resources. All for you to level up your writing
+                    skills.
                 </p>
+                <a href="/subscribe" className="btn btn-primary">
+                    Level Up
+                </a>
             </div>
             <div className="img">
                 <img src={cta} alt="vector drawn computer and pens" />
