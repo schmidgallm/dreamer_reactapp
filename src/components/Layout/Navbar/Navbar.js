@@ -9,7 +9,7 @@ const Navbar = ({ auth: { isAuthenticated, user }, logout }) => {
         <Fragment>
             <div className="nav-header">
                 <p>
-                    Dreamers is the premier writing management and communication
+                    Dreamers is the premier writing resource and communication
                     tool for authors and avid readers.
                 </p>
             </div>

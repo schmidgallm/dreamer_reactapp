@@ -7,8 +7,8 @@ const Header = () => {
             <div className="home-header-content">
                 <div className="copy">
                     <h1>
-                        The Exclusive Toolkit for authors of all levels and avid
-                        readers
+                        The Exclusive Toolkit For Authors Of All Levels And Avid
+                        Readers
                     </h1>
                     <p>
                         Join our creative community for authors by authors.

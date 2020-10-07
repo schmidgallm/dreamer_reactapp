@@ -38,7 +38,6 @@ const App = () => {
         <Provider store={store}>
             <Router>
                 <div className="wrapper">
-                    <Navbar />
                     <div className="content-container">
                         <Route exact path="/" component={Home} />
                         <Alert />
