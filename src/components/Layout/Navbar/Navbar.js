@@ -6,174 +6,146 @@ import { logout } from '../../../actions/auth'
 
 const Navbar = ({ auth: { isAuthenticated, user }, logout }) => {
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark">
-            <div className="nav-container">
-                <NavLink className="navbar-brand" to="/">
-                    Dreamers
-                </NavLink>
-                <button
-                    className="navbar-toggler"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <span className="navbar-toggler-icon"></span>
-                </button>
+        <Fragment>
+            <div className="nav-header">
+                <p>
+                    Dreamers is the premier writing management and communication
+                    tool for authors and avid readers.
+                </p>
+            </div>
+            <nav className="navbar navbar-expand-lg navbar-light">
+                <div className="nav-container">
+                    <NavLink className="navbar-brand" to="/">
+                        Dreamers
+                    </NavLink>
+                    <button
+                        className="navbar-toggler"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
 
-                <div
-                    className="collapse navbar-collapse"
-                    id="navbarSupportedContent"
-                >
-                    <ul className="navbar-nav mr-auto">
-                        <li className="nav-item">
-                            <NavLink
-                                className="nav-link"
-                                to="/prompts"
-                                activeClassName="nav-active"
-                            >
-                                Prompts
-                            </NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink
-                                className="nav-link"
-                                to="/stories"
-                                activeClassName="nav-active"
-                            >
-                                Stories
-                            </NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink
-                                className="nav-link"
-                                to="/community"
-                                activeClassName="nav-active"
-                            >
-                                Community
-                            </NavLink>
-                        </li>
-                        <li className="nav-item dropdown">
-                            <a
-                                className="nav-link dropdown-toggle"
-                                href="#"
-                                id="navbarDropdown"
-                                role="button"
-                                data-toggle="dropdown"
-                                aria-haspopup="true"
-                                aria-expanded="false"
-                            >
-                                Resources
-                            </a>
-                            <div
-                                className="dropdown-menu"
-                                aria-labelledby="navbarDropdown"
-                            >
-                                <a
-                                    className="dropdown-item"
-                                    href="/resources/copyrights"
+                    <div
+                        className="collapse navbar-collapse"
+                        id="navbarSupportedContent"
+                    >
+                        <ul className="navbar-nav ml-auto">
+                            <li className="nav-item">
+                                <NavLink
+                                    className="nav-link"
+                                    to="/prompts"
+                                    activeClassName="nav-active"
                                 >
-                                    Copyrights
-                                </a>
-                                <a
-                                    className="dropdown-item"
-                                    href="/resources/editing"
+                                    Prompts
+                                </NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink
+                                    className="nav-link"
+                                    to="/stories"
+                                    activeClassName="nav-active"
                                 >
-                                    Editing
-                                </a>
-                                <a
-                                    className="dropdown-item"
-                                    href="/resources/agents"
+                                    Stories
+                                </NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink
+                                    className="nav-link"
+                                    to="/community"
+                                    activeClassName="nav-active"
                                 >
-                                    Literary Agents
-                                </a>
+                                    Community
+                                </NavLink>
+                            </li>
+                            <li className="nav-item dropdown">
                                 <a
-                                    className="dropdown-item"
-                                    href="/resources/marketing"
+                                    className="nav-link dropdown-toggle"
+                                    href="#"
+                                    id="navbarDropdown"
+                                    role="button"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="false"
                                 >
-                                    Marketing
+                                    Resources
                                 </a>
-                                <a
-                                    className="dropdown-item"
-                                    href="/resources/publishing"
+                                <div
+                                    className="dropdown-menu"
+                                    aria-labelledby="navbarDropdown"
                                 >
-                                    Publishing
-                                </a>
-                                <a
-                                    className="dropdown-item"
-                                    href="/resources/classes"
+                                    <a
+                                        className="dropdown-item"
+                                        href="/resources/copyrights"
+                                    >
+                                        Copyrights
+                                    </a>
+                                    <a
+                                        className="dropdown-item"
+                                        href="/resources/editing"
+                                    >
+                                        Editing
+                                    </a>
+                                    <a
+                                        className="dropdown-item"
+                                        href="/resources/agents"
+                                    >
+                                        Literary Agents
+                                    </a>
+                                    <a
+                                        className="dropdown-item"
+                                        href="/resources/marketing"
+                                    >
+                                        Marketing
+                                    </a>
+                                    <a
+                                        className="dropdown-item"
+                                        href="/resources/publishing"
+                                    >
+                                        Publishing
+                                    </a>
+                                    <a
+                                        className="dropdown-item"
+                                        href="/resources/classes"
+                                    >
+                                        Classes
+                                    </a>
+                                    <div className="dropdown-divider"></div>
+                                    <a
+                                        className="dropdown-item"
+                                        href="/resources"
+                                    >
+                                        All Resources
+                                    </a>
+                                </div>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink
+                                    className="btn btn-outline-primary ml-3 login-link"
+                                    to="/login"
+                                    activeClassName="nav-active"
                                 >
-                                    Classes
-                                </a>
-                                <div className="dropdown-divider"></div>
-                                <a className="dropdown-item" href="/resources">
-                                    All Resources
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                    <div className="form-inline my-2 my-lg-0">
-                        <div className="dropdown auth-links">
-                            <a
-                                className="nav-link dropdown-toggle"
-                                href="#"
-                                id="navbarDropdown"
-                                role="button"
-                                data-toggle="dropdown"
-                                aria-haspopup="true"
-                                aria-expanded="false"
-                            >
-                                <i className="fa fa-user"></i>
-                            </a>
-                            <div
-                                className="dropdown-menu"
-                                aria-labelledby="navbarDropdown"
-                            >
-                                {!isAuthenticated && (
-                                    <Fragment>
-                                        <a
-                                            className="dropdown-item"
-                                            href="/login"
-                                        >
-                                            Login
-                                        </a>
-                                        <a
-                                            className="dropdown-item"
-                                            href="/register"
-                                        >
-                                            Register
-                                        </a>
-                                    </Fragment>
-                                )}
-                                <a className="dropdown-item" href="/subscribe">
-                                    Subscribe
-                                </a>
-                                {isAuthenticated && (
-                                    <Fragment>
-                                        <a
-                                            className="dropdown-item"
-                                            href="#"
-                                            onClick={logout}
-                                        >
-                                            Logout
-                                        </a>
-                                        <div className="dropdown-divider"></div>
-                                        <a
-                                            className="dropdown-item"
-                                            href="/dashboard"
-                                        >
-                                            Dashboard
-                                        </a>
-                                    </Fragment>
-                                )}
-                            </div>
-                        </div>
+                                    Login
+                                </NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink
+                                    className="btn btn-primary ml-3 subscribe-link"
+                                    to="/subscribe"
+                                    activeClassName="nav-active"
+                                >
+                                    Try it FREE
+                                </NavLink>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </Fragment>
     )
 }
 

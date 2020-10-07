@@ -6,7 +6,7 @@
     --accent2: #326a75;
     --light: rgb(211, 211, 211);
     --dark: #1f2126;
-    --dark2: #111316;
+    --dark2: #040405;
 }
 
 /* Fonts */
@@ -66,29 +66,56 @@ body {
     padding: 10px 20px;
     font-size: 16px;
 }
+
 .btn-primary {
-    background-color: var(--accent);
+    background-color: var(--dark);
     border: none;
 }
 
-.btn:hover {
-    background-color: var(--accent2);
+.btn-primary:hover {
+    background-color: var(--dark2);
     border: none;
+    color: var(--accent);
 }
 
 .btn-secondary {
-    background-color: var(--primary);
+    background-color: var(--accent);
     border: none;
 }
 
 .btn-secondary:hover {
-    background-color: var(--accent);
+    background-color: var(--accent2);
+}
+
+.btn-outline-primary {
+    border: 1px solid var(--dark);
+    color: var(--dark);
+}
+
+.btn-outline-primary:hover {
+    background-color: #fff;
+    color: var(--dark);
+    border: 1px solid var(--accent);
 }
 
 /* Navar */
+.nav-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: var(--secondary);
+    color: var(--light);
+    font-weight: bold;
+}
+
+.nav-header p {
+    margin: 0;
+}
+
 .navbar {
-    background-color: var(--dark);
-    padding: 20px 0;
+    padding: 25px 0;
+    font-weight: bold;
 }
 
 .nav-container {
@@ -97,18 +124,12 @@ body {
     display: flex;
 }
 
+.navbar-brand {
+    font-size: 20px;
+}
+
 .nav-active {
     border-bottom: 1px solid var(--accent);
-}
-
-.navbar i {
-    color: var(--light);
-    font-size: 25px;
-    cursor: pointer;
-}
-
-.auth-links {
-    list-style: none;
 }
 
 /* Footer */
@@ -134,10 +155,16 @@ footer ul {
 
 /* Home Page */
 .home-header {
+    width: 100%;
+    padding: 75px;
+}
+
+.home-header-content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
     width: 75%;
-    margin: 50px auto;
+    margin: 0 auto;
 }
 
 .home-header .copy {
@@ -149,6 +176,8 @@ footer ul {
 
 .home-header .copy h1 {
     margin: 0;
+    font-weight: bold;
+    font-size: 3rem;
 }
 
 .home-header .copy p {
@@ -156,8 +185,10 @@ footer ul {
 }
 
 .home-header a {
-    width: 35%;
+    width: 45%;
     margin-top: 10px;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 /* CTA Section */
