@@ -9,6 +9,7 @@ import { getCurrentProfile } from '../../../actions/profile'
 
 // Components
 import Spinner from '../../Layout/Spinner'
+import AuthNav from '../../Layout/AuthNav'
 import Profile from './Profile'
 import Prompts from './Prompts'
 import Stories from './Stories'
@@ -33,6 +34,7 @@ const Dashboard = ({
         console.log(tab)
     }
 
+    // render component based on tab state
     const renderTab = (tab) => {
         switch (tab) {
             case 'profile':
@@ -52,44 +54,47 @@ const Dashboard = ({
     return loading && profile === null ? (
         <Spinner />
     ) : (
-        <div className="dashboard">
-            <div className="menu center">
-                <ul>
-                    <li onClick={() => changeTabHandler('profile')}>
-                        <i className="fa fa-user"></i>
-                        <span className="sm-hide">Profile</span>
-                    </li>
-                    <li onClick={() => changeTabHandler('prompts')}>
-                        <i className="fa fa-pencil"></i>
-                        <span className="sm-hide">Prompts</span>
-                    </li>
-                    <li onClick={() => changeTabHandler('stories')}>
-                        <i className="fa fa-book"></i>
-                        <span className="sm-hide">Stories</span>
-                    </li>
-                    <li onClick={() => changeTabHandler('charts')}>
-                        <i className="fa fa-line-chart"></i>
-                        <span className="sm-hide">Charts</span>
-                    </li>
-                </ul>
-            </div>
-            <div className="dashboard-data">
-                <div>
-                    {profile !== null ? (
-                        <div>{renderTab(tab)}</div>
-                    ) : (
-                        <Fragment>
-                            <p>
-                                No profile created yet. Please create one below.
-                            </p>
-                            <Link
-                                to="/create-profile"
-                                className="btn btn-primary my-2"
-                            >
-                                Create Profile
-                            </Link>
-                        </Fragment>
-                    )}
+        <div className="dashboard-container">
+            <div className="dashboard">
+                <div className="menu">
+                    <ul>
+                        <li onClick={() => changeTabHandler('profile')}>
+                            <i className="fa fa-user"></i>
+                            <span className="sm-hide">Profile</span>
+                        </li>
+                        <li onClick={() => changeTabHandler('prompts')}>
+                            <i className="fa fa-pencil"></i>
+                            <span className="sm-hide">Prompts</span>
+                        </li>
+                        <li onClick={() => changeTabHandler('stories')}>
+                            <i className="fa fa-book"></i>
+                            <span className="sm-hide">Stories</span>
+                        </li>
+                        <li onClick={() => changeTabHandler('charts')}>
+                            <i className="fa fa-line-chart"></i>
+                            <span className="sm-hide">Charts</span>
+                        </li>
+                    </ul>
+                </div>
+                <div className="data">
+                    <div className="data-wrapper">
+                        {profile !== null ? (
+                            <div>{renderTab(tab)}</div>
+                        ) : (
+                            <Fragment>
+                                <p>
+                                    No profile created yet. Please create one
+                                    below.
+                                </p>
+                                <Link
+                                    to="/create-profile"
+                                    className="btn btn-primary my-2"
+                                >
+                                    Create Profile
+                                </Link>
+                            </Fragment>
+                        )}
+                    </div>
                 </div>
             </div>
         </div>

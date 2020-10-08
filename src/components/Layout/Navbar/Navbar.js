@@ -38,19 +38,19 @@ const Navbar = ({ auth: { isAuthenticated, user }, logout }) => {
                             <li className="nav-item">
                                 <NavLink
                                     className="nav-link"
-                                    to="/prompts"
+                                    to="/how-it-works"
                                     activeClassName="nav-active"
                                 >
-                                    Prompts
+                                    How it Works
                                 </NavLink>
                             </li>
                             <li className="nav-item">
                                 <NavLink
                                     className="nav-link"
-                                    to="/stories"
+                                    to="/pricing"
                                     activeClassName="nav-active"
                                 >
-                                    Stories
+                                    Pricing
                                 </NavLink>
                             </li>
                             <li className="nav-item">
@@ -59,69 +59,8 @@ const Navbar = ({ auth: { isAuthenticated, user }, logout }) => {
                                     to="/community"
                                     activeClassName="nav-active"
                                 >
-                                    Community
+                                    Our Community
                                 </NavLink>
-                            </li>
-                            <li className="nav-item dropdown">
-                                <a
-                                    className="nav-link dropdown-toggle"
-                                    href="#"
-                                    id="navbarDropdown"
-                                    role="button"
-                                    data-toggle="dropdown"
-                                    aria-haspopup="true"
-                                    aria-expanded="false"
-                                >
-                                    Resources
-                                </a>
-                                <div
-                                    className="dropdown-menu"
-                                    aria-labelledby="navbarDropdown"
-                                >
-                                    <a
-                                        className="dropdown-item"
-                                        href="/resources/copyrights"
-                                    >
-                                        Copyrights
-                                    </a>
-                                    <a
-                                        className="dropdown-item"
-                                        href="/resources/editing"
-                                    >
-                                        Editing
-                                    </a>
-                                    <a
-                                        className="dropdown-item"
-                                        href="/resources/agents"
-                                    >
-                                        Literary Agents
-                                    </a>
-                                    <a
-                                        className="dropdown-item"
-                                        href="/resources/marketing"
-                                    >
-                                        Marketing
-                                    </a>
-                                    <a
-                                        className="dropdown-item"
-                                        href="/resources/publishing"
-                                    >
-                                        Publishing
-                                    </a>
-                                    <a
-                                        className="dropdown-item"
-                                        href="/resources/classes"
-                                    >
-                                        Classes
-                                    </a>
-                                    <div className="dropdown-divider"></div>
-                                    <a
-                                        className="dropdown-item"
-                                        href="/resources"
-                                    >
-                                        All Resources
-                                    </a>
-                                </div>
                             </li>
                             <li className="nav-item">
                                 <NavLink
@@ -159,69 +98,3 @@ const mapStateToProps = (state) => ({
 })
 
 export default connect(mapStateToProps, { logout })(Navbar)
-
-/*
- <nav>
-            <ul className="nav-list">
-                <li className="nav-link nav-brand">
-                    <NavLink className="nav-brand" to="/">
-                        Dreamers
-                    </NavLink>
-                </li>
-                <li className="nav-item">
-                    <NavLink className="nav-link" to="/">
-                        <i className="fa fa-home " />
-                        Home
-                    </NavLink>
-                </li>
-                <li className="nav-item">
-                    <NavLink
-                        activeClassName="nav-active"
-                        className="nav-link"
-                        to="/prompts"
-                    >
-                        <i className="fa fa-paper-plane" />
-                        Prompts
-                    </NavLink>
-                </li>
-                <li className="nav-item">
-                    <NavLink
-                        activeClassName="nav-active"
-                        className="nav-link"
-                        to="/resources"
-                    >
-                        <i className="fa fa-book" />
-                        Resources
-                    </NavLink>
-                </li>
-                <li className="nav-item">
-                    <NavLink
-                        activeClassName="nav-active"
-                        className="nav-link"
-                        to="/community"
-                    >
-                        <i className="fa fa-users" />
-                        Community
-                    </NavLink>
-                </li>
-                <li className="nav-item">
-                    <NavLink
-                        activeClassName="nav-active"
-                        className="nav-link"
-                        to="/dashboard"
-                    >
-                        <i className="fa fa-pie-chart" />
-                        Dashboard
-                    </NavLink>
-                </li>
-                <li className="nav-item">
-                    {isAuthenticated && (
-                        <NavLink className="nav-link" onClick={logout} to="#!">
-                            <i className="fa fa-sign-out" />
-                            Logout
-                        </NavLink>
-                    )}
-                </li>
-            </ul>
-        </nav>
-*/
