@@ -99,29 +99,9 @@ body {
 }
 
 /* Navar */
-.nav-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    background-color: var(--secondary);
-    color: var(--light);
-    font-weight: bold;
-}
-
-.nav-header p {
-    margin: 0;
-}
-
 .navbar {
     padding: 25px 0;
     font-weight: bold;
-}
-
-.nav-container {
-    width: 85%;
-    margin: 0 auto;
-    display: flex;
 }
 
 .navbar-brand {
@@ -130,134 +110,6 @@ body {
 
 .nav-active {
     border-bottom: 1px solid var(--accent);
-}
-
-/* Footer */
-footer {
-    padding: 50px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    margin-top: 50px;
-}
-
-footer img {
-    width: 50%;
-}
-
-footer h4 {
-    display: inline-block;
-    border-bottom: 1px solid #d64379;
-}
-
-footer ul {
-    list-style: none;
-}
-
-/* Home Page */
-.home-header {
-    width: 100%;
-    padding: 75px;
-}
-
-.home-header-content {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    width: 75%;
-    margin: 0 auto;
-}
-
-.home-header .copy {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: center;
-}
-
-.home-header .copy h1 {
-    margin: 0;
-    font-weight: bold;
-    font-size: 3rem;
-}
-
-.home-header .copy p {
-    margin: 20px auto;
-}
-
-.home-header a {
-    width: 45%;
-    margin-top: 10px;
-    font-weight: bold;
-    font-size: 20px;
-}
-
-/* CTA Section */
-.card-container-header {
-    text-align: center;
-    margin: 50px auto;
-}
-
-.card-container-header h2 {
-    font-size: 3rem;
-    display: inline-block;
-    border-bottom: 1px solid var(--accent);
-}
-
-.card-container-header p {
-    font-size: 18px;
-}
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin: 50px auto;
-    text-align: center;
-}
-
-.card i {
-    font-size: 50px;
-}
-
-.card h5 {
-    margin: 20px auto;
-    font-size: 26px;
-}
-
-.card p {
-    margin: 0;
-}
-
-.card-container-footer {
-    text-align: center;
-}
-
-.card-container-footer a {
-    display: block;
-    width: 50%;
-    margin: 0 auto;
-}
-
-.info {
-    text-align: center;
-    background-color: var(--light);
-    padding: 75px;
-}
-
-.info-copy {
-    width: 65%;
-    margin: 0 auto;
-}
-
-.info h2 {
-    font-size: 3rem;
-    display: inline-block;
-    border-bottom: 1px solid var(--accent);
-}
-
-.info p {
-    margin: 25px auto;
-    line-height: 1.8;
 }
 
 /* Prompt Page */

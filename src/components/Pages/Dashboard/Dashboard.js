@@ -9,7 +9,6 @@ import { getCurrentProfile } from '../../../actions/profile'
 
 // Components
 import Spinner from '../../Layout/Spinner'
-import AuthNav from '../../Layout/AuthNav'
 import Profile from './Profile'
 import Prompts from './Prompts'
 import Stories from './Stories'
