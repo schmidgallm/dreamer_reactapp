@@ -30,14 +30,10 @@ const Login = ({ login, isAuthenticated }) => {
     }
 
     return (
-        <div className="container login">
-            <div className="jumbotron">
-                <h1>
-                    Inspire. Share. <span>Create.</span>
-                </h1>
-                <div className="diagonal"></div>
-            </div>
+        <div className="auth-form">
+            <div className="form-container">
             <form onSubmit={onSubmit}>
+            <h3 className="text-center">Login to Dreamers</h3>
                 <div className="form-group">
                     <label htmlFor="email">Email address</label>
                     <input
@@ -74,6 +70,8 @@ const Login = ({ login, isAuthenticated }) => {
                     </Link>
                 </p>
             </form>
+            </div>
+            <a href="/forgot-password" className='forgot-password'>Forgot Your Password?</a>
         </div>
     )
 }

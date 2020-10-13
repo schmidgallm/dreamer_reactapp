@@ -63,11 +63,11 @@ const Dashboard = ({
                         </li>
                         <li onClick={() => changeTabHandler('prompts')}>
                             <i className="fa fa-pencil"></i>
-                            <span className="sm-hide">Prompts</span>
+                            <span className="sm-hide">Your Prompts</span>
                         </li>
                         <li onClick={() => changeTabHandler('stories')}>
                             <i className="fa fa-book"></i>
-                            <span className="sm-hide">Stories</span>
+                            <span className="sm-hide">Your Stories</span>
                         </li>
                         <li onClick={() => changeTabHandler('charts')}>
                             <i className="fa fa-line-chart"></i>

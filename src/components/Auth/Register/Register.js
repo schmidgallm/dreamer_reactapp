@@ -37,8 +37,10 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
     }
 
     return (
-        <div className="container register">
+        <div className="auth-form">
+            <div className="form-container">
             <form onSubmit={onSubmit}>
+            <h3 className="text-center">Register For Dreamers</h3>
                 <div className="form-group">
                     <label htmlFor="name">Full Name</label>
                     <input
@@ -95,13 +97,15 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                 <button type="submit" className="register-btn btn btn-primary">
                     Submit
                 </button>
-            </form>
-            <p>
+                <p>
                 Alredy have an account?{' '}
                 <Link to="/login" className="sign-in-msg">
                     Sign In
                 </Link>
             </p>
+            </form>
+           
+            </div>
         </div>
     )
 }
