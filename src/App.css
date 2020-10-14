@@ -100,7 +100,6 @@ body {
 
 /* Navar */
 .navbar {
-    height: 10vh;
     padding: 25px 0;
     font-weight: bold;
     box-shadow: 2px 2px 15px #2e2e2e;
@@ -120,10 +119,25 @@ body {
 }
 
 .prompt-wrapper-header {
-    margin-bottom: 50px;
     padding: 50px;
     background-color: var(--accent2);
     color: var(--light);
+}
+
+.prompt-wrapper-body {
+    width: 50%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 15px;
+}
+
+.prompt-wrapper-body main {
+    grid-column: 1/6;
+}
+
+.prompt-wrapper-body aside {
+    grid-column: 6/9;
 }
 
 .prompt {

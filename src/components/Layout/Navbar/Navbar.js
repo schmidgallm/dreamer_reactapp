@@ -15,9 +15,9 @@ const Navbar = ({ auth: { isAuthenticated, user }, logout }) => {
 
   return (
     <nav className="px-5 navbar navbar-expand-lg navbar-light">
-    <a className="navbar-brand" href="#">
+    <div className="navbar-brand">
         Hi {user.name}
-    </a>
+    </div>
     <button
         className="navbar-toggler"
         type="button"
