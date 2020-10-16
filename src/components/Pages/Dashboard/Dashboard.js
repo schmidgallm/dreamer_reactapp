@@ -37,7 +37,7 @@ const Dashboard = ({
     const renderTab = (tab) => {
         switch (tab) {
             case 'profile':
-                return <Profile profile={profile} />
+                return <Profile profile={profile} user={user} />
             case 'prompts':
                 return <Prompts profile={profile} />
             case 'stories':

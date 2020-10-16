@@ -11,12 +11,10 @@ const Navbar = ({ auth: { isAuthenticated, user }, logout }) => {
       )
   }
 
-  console.log(user.name)
-
   return (
     <nav className="px-5 navbar navbar-expand-lg navbar-light">
     <div className="navbar-brand">
-        Hi {user.name}
+        Hi {user ? user.name : null}
     </div>
     <button
         className="navbar-toggler"
@@ -35,6 +33,11 @@ const Navbar = ({ auth: { isAuthenticated, user }, logout }) => {
         id="navbarSupportedContent"
     >
         <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
+                <a className="nav-link" href="/community">
+                    Community
+                </a>
+            </li>
             <li className="nav-item">
                 <a className="nav-link" href="/dashboard">
                     Dashboard

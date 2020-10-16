@@ -13,6 +13,7 @@ import Navbar from './components/Layout/Navbar'
 import Register from './components/Auth/Register'
 import Login from './components/Auth/Login'
 import Dashboard from './components/Pages/Dashboard'
+import Community from './components/Pages/Community'
 import PrivateRoute from './components/Routing/PrivateRoute'
 import Prompts from './components/Pages/Prompts'
 import Resources from './components/Pages/Resources'
@@ -48,6 +49,7 @@ const App = () => {
                             />
                             <Route exact path="/login" component={Login} />
                             <Route exact path="/prompts" component={Prompts} />
+                            <Route exact path="/community" component={Community} />
                             <Route
                                 exact
                                 path="/resources"
