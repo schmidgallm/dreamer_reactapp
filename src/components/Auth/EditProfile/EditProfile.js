@@ -1,37 +1,43 @@
-import React, { useState } from 'react'
-import { Link, withRouter } from 'react-router-dom'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
-import { createProfile } from '../../../actions/profile'
+import React, { useState } from 'react';
+import { Link, withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { createProfile } from '../../../actions/profile';
+import { deleteAccount } from '../../../actions/auth';
 
-const EditProfile = ({ createProfile, history, toggleEditableProfile }) => {
+const EditProfile = ({
+    createProfile,
+    history,
+    toggleEditableProfile,
+    deleteAccount,
+}) => {
     // set state
     const [formData, setFormData] = useState({
         penName: '',
         bio: '',
         favoriteBook: '',
         favoriteAuthor: '',
-    })
+    });
 
-    const { penName, bio, favoriteBook, favoriteAuthor } = formData
+    const { penName, bio, favoriteBook, favoriteAuthor } = formData;
 
     // on change handler
-    const onChange = (e) =>
-        setFormData({ ...formData, [e.target.name]: e.target.value })
+    const onChange = e =>
+        setFormData({ ...formData, [e.target.name]: e.target.value });
 
     // on submit handler
-    const onSubmit = (e) => {
-        e.preventDefault()
+    const onSubmit = e => {
+        e.preventDefault();
         // dispatch redux action
-        createProfile(formData, history, true)
+        createProfile(formData, history, true);
 
         // prop function from dashboard page that will hide form after submission
-        toggleEditableProfile()
-    }
+        toggleEditableProfile();
+    };
 
     return (
         <div className="container register my-5">
-            <form onSubmit={(e) => onSubmit(e)}>
+            <form onSubmit={e => onSubmit(e)}>
                 <div className="form-group">
                     <label htmlFor="penName">Pen Name</label>
                     <input
@@ -40,7 +46,7 @@ const EditProfile = ({ createProfile, history, toggleEditableProfile }) => {
                         id="penName"
                         name="penName"
                         value={penName}
-                        onChange={(e) => onChange(e)}
+                        onChange={e => onChange(e)}
                     />
                     <small id="penNameHelp" className="form-text text-muted">
                         Pen Name is optional if you wish to use your real name.
@@ -54,7 +60,7 @@ const EditProfile = ({ createProfile, history, toggleEditableProfile }) => {
                         id="bio"
                         name="bio"
                         value={bio}
-                        onChange={(e) => onChange(e)}
+                        onChange={e => onChange(e)}
                     />
                 </div>
                 <div className="form-group">
@@ -65,7 +71,7 @@ const EditProfile = ({ createProfile, history, toggleEditableProfile }) => {
                         id="favoriteBook"
                         name="favoriteBook"
                         value={favoriteBook}
-                        onChange={(e) => onChange(e)}
+                        onChange={e => onChange(e)}
                     />
                 </div>
                 <div className="form-group">
@@ -76,7 +82,7 @@ const EditProfile = ({ createProfile, history, toggleEditableProfile }) => {
                         id="favoriteAuthor"
                         name="favoriteAuthor"
                         value={favoriteAuthor}
-                        onChange={(e) => onChange(e)}
+                        onChange={e => onChange(e)}
                     />
                 </div>
 
@@ -84,12 +90,21 @@ const EditProfile = ({ createProfile, history, toggleEditableProfile }) => {
                     Submit
                 </button>
             </form>
+            <button
+                className="mt-4 btn btn-danger d-block ml-auto"
+                onClick={() => deleteAccount()}
+            >
+                Delete Profile
+            </button>
         </div>
-    )
-}
+    );
+};
 
 EditProfile.propTypes = {
     createProfile: PropTypes.func.isRequired,
-}
+    deleteAccount: PropTypes.func.isRequired,
+};
 
-export default connect(null, { createProfile })(withRouter(EditProfile))
+export default connect(null, { createProfile, deleteAccount })(
+    withRouter(EditProfile)
+);

@@ -1,11 +1,6 @@
 import axios from 'axios';
 import { setAlert } from './alert';
-import {
-    CLEAR_PROFILE,
-    PROFILE_DELETED,
-    GET_PROFILE,
-    PROFILE_ERROR,
-} from './types';
+import { GET_PROFILE, PROFILE_ERROR } from './types';
 
 // Get current users profile
 export const getCurrentProfile = () => async dispatch => {
@@ -80,29 +75,5 @@ export const createProfile = (
                 status: err.response.status,
             },
         });
-    }
-};
-
-// Delete Profile
-export const deleteProfile = id => async dispatch => {
-    if (window.confirm('Plese confirm you wish to delete your profile')) {
-        try {
-            const res = await axios.delete(
-                `http://localhost:5000/api/v1/profiles/${id}`
-            );
-
-            dispatch({ type: CLEAR_PROFILE });
-            dispatch({ type: PROFILE_DELETED });
-
-            dispatch(setAlert('Profile succesfully deleted', 'danger'));
-        } catch (err) {
-            dispatch({
-                type: PROFILE_ERROR,
-                payload: {
-                    msg: err.response.statusText,
-                    status: err.response.status,
-                },
-            });
-        }
     }
 };

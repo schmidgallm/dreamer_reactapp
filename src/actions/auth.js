@@ -9,6 +9,8 @@ import {
     LOGIN_FAIL,
     LOGOUT,
     CLEAR_PROFILE,
+    ACCOUNT_DELETED,
+    PROFILE_ERROR,
 } from './types';
 import setAuthToken from '../utils/setAuthToken';
 
@@ -124,4 +126,28 @@ export const login = (email, password) => async dispatch => {
 export const logout = () => dispatch => {
     dispatch({ type: CLEAR_PROFILE });
     dispatch({ type: LOGOUT });
+};
+
+// Delete User
+export const deleteAccount = () => async dispatch => {
+    if (window.confirm('Plese confirm you wish to delete your account')) {
+        try {
+            const res = await axios.delete(
+                'http://localhost:5000/api/v1/profiles'
+            );
+
+            dispatch({ type: CLEAR_PROFILE });
+            dispatch({ type: ACCOUNT_DELETED });
+
+            dispatch(setAlert('Profile succesfully deleted', 'danger'));
+        } catch (err) {
+            dispatch({
+                type: PROFILE_ERROR,
+                payload: {
+                    msg: err.response.statusText,
+                    status: err.response.status,
+                },
+            });
+        }
+    }
 };

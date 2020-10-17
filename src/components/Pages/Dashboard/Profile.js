@@ -1,11 +1,8 @@
 // Dependencies
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { deleteProfile } from '../../../actions/profile';
 import EditProfile from '../../Auth/EditProfile';
 
-const Profile = ({ profile, user, deleteProfile }) => {
+const Profile = ({ profile, user, deleteAccount }) => {
     const [showEditableProfile, toggleEditableProfile] = useState(false);
 
     return (
@@ -19,14 +16,7 @@ const Profile = ({ profile, user, deleteProfile }) => {
                 >
                     Edit Profile
                 </button>
-                <button
-                    className="btn btn-danger ml-3"
-                    onClick={() => deleteProfile()}
-                >
-                    Delete Profile
-                </button>
             </header>
-
             {showEditableProfile && (
                 <div className="edit-profile">
                     <EditProfile
@@ -38,8 +28,4 @@ const Profile = ({ profile, user, deleteProfile }) => {
     );
 };
 
-Profile.propTypes = {
-    deleteProfile: PropTypes.func.isRequired,
-};
-
-export default connect(null, { deleteProfile })(Profile);
+export default Profile;

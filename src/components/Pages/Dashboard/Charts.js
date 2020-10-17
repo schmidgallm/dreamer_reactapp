@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-const Charts = (profile) => {
-    const userProfile = profile.profile
+const Charts = profile => {
+    const userProfile = profile.profile;
     return (
         <div className="dashboard-header">
             <header>
@@ -9,7 +9,7 @@ const Charts = (profile) => {
                 <p>Coming Soon!</p>
             </header>
         </div>
-    )
-}
+    );
+};
 
-export default Charts
+export default Charts;
