@@ -98,6 +98,10 @@ body {
     border: 1px solid var(--accent);
 }
 
+.btn-danger {
+    border: none;
+}
+
 /* Navar */
 .navbar {
     padding: 25px 0;
@@ -111,6 +115,11 @@ body {
 
 .nav-active {
     border-bottom: 1px solid var(--accent);
+}
+
+.navbar i {
+    font-size: 26px;
+    color: var(--accent);
 }
 
 /* Prompt Page */

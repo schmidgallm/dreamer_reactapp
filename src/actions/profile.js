@@ -1,15 +1,20 @@
-import axios from 'axios'
-import { setAlert } from './alert'
-import { GET_PROFILE, PROFILE_ERROR } from './types'
+import axios from 'axios';
+import { setAlert } from './alert';
+import {
+    CLEAR_PROFILE,
+    PROFILE_DELETED,
+    GET_PROFILE,
+    PROFILE_ERROR,
+} from './types';
 
 // Get current users profile
-export const getCurrentProfile = () => async (dispatch) => {
+export const getCurrentProfile = () => async dispatch => {
     try {
-        const res = await axios.get('http://localhost:5000/api/v1/profiles/me')
+        const res = await axios.get('http://localhost:5000/api/v1/profiles/me');
         dispatch({
             type: GET_PROFILE,
             payload: res.data,
-        })
+        });
     } catch (err) {
         dispatch({
             type: PROFILE_ERROR,
@@ -17,52 +22,54 @@ export const getCurrentProfile = () => async (dispatch) => {
                 msg: err.response.statusText,
                 status: err.response.status,
             },
-        })
+        });
     }
-}
+};
 
 // Create or Update profile
-export const createProfile = (formData, history, edit = false) => async (
-    dispatch
-) => {
+export const createProfile = (
+    formData,
+    history,
+    edit = false
+) => async dispatch => {
     try {
         const config = {
             headers: {
                 'Content-Type': 'application/json',
             },
-        }
+        };
 
         // post formData to api end point
         const res = await axios.post(
             'http://localhost:5000/api/v1/profiles',
             formData,
             config
-        )
+        );
 
         // dispatch action
         dispatch({
             type: GET_PROFILE,
             payload: res.data,
-        })
+        });
 
         // dispatch alert action
         dispatch(
             setAlert(edit ? 'Profile Updated' : 'Profile Created', 'success')
-        )
+        );
 
         // if profile is being created and not updated
         if (!edit) {
-            history.push('/dashboard')
+            history.push('/dashboard');
         }
     } catch (err) {
         // check if errors
-        const errors = err.response.data.errors
+        const errors = err.response.data.errors;
 
         // if errors exist loop through each one and dipatch alert action to display them to user
         if (errors) {
-            errors.forEach((error) => {
-                dispatch(setAlert(error.msg, 'danger'))
-            })
+            errors.forEach(error => {
+                dispatch(setAlert(error.msg, 'danger'));
+            });
         }
 
         // dispatch error on error
@@ -72,6 +79,30 @@ export const createProfile = (formData, history, edit = false) => async (
                 msg: err.response.statusText,
                 status: err.response.status,
             },
-        })
+        });
     }
-}
+};
+
+// Delete Profile
+export const deleteProfile = id => async dispatch => {
+    if (window.confirm('Plese confirm you wish to delete your profile')) {
+        try {
+            const res = await axios.delete(
+                `http://localhost:5000/api/v1/profiles/${id}`
+            );
+
+            dispatch({ type: CLEAR_PROFILE });
+            dispatch({ type: PROFILE_DELETED });
+
+            dispatch(setAlert('Profile succesfully deleted', 'danger'));
+        } catch (err) {
+            dispatch({
+                type: PROFILE_ERROR,
+                payload: {
+                    msg: err.response.statusText,
+                    status: err.response.status,
+                },
+            });
+        }
+    }
+};
