@@ -1,37 +1,37 @@
 // Dependencies
-import React, { useEffect } from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // Redux actions and store
-import { Provider } from 'react-redux'
-import store from './store'
-import { loadUser } from './actions/auth'
-import setAuthToken from './utils/setAuthToken'
+import { Provider } from 'react-redux';
+import store from './store';
+import { loadUser } from './actions/auth';
+import setAuthToken from './utils/setAuthToken';
 
 // Components
-import Navbar from './components/Layout/Navbar'
-import Register from './components/Auth/Register'
-import Login from './components/Auth/Login'
-import Dashboard from './components/Pages/Dashboard'
-import Community from './components/Pages/Community'
-import PrivateRoute from './components/Routing/PrivateRoute'
-import Prompts from './components/Pages/Prompts'
-import Resources from './components/Pages/Resources'
-import Alert from './components/Alert'
-import CreateProfile from './components/Auth/CreateProfile'
-import EditProfile from './components/Auth/EditProfile'
+import Navbar from './components/Layout/Navbar';
+import Register from './components/Auth/Register';
+import Login from './components/Auth/Login';
+import Dashboard from './components/Pages/Dashboard';
+import Community from './components/Pages/Community';
+import PrivateRoute from './components/Routing/PrivateRoute';
+import Prompts from './components/Pages/Prompts';
+import Resources from './components/Pages/Resources';
+import Alert from './components/Alert';
+import CreateProfile from './components/Auth/CreateProfile';
+import EditProfile from './components/Auth/EditProfile';
 
 // CSS
-import './App.css'
+import './App.css';
 
 if (localStorage.token) {
-    setAuthToken(localStorage.token)
+    setAuthToken(localStorage.token);
 }
 
 const App = () => {
     useEffect(() => {
-        store.dispatch(loadUser())
-    }, [])
+        store.dispatch(loadUser());
+    }, []);
 
     return (
         <Provider store={store}>
@@ -48,9 +48,17 @@ const App = () => {
                                 component={Register}
                             />
                             <Route exact path="/login" component={Login} />
-                            <Route exact path="/prompts" component={Prompts} />
-                            <Route exact path="/community" component={Community} />
-                            <Route
+                            <PrivateRoute
+                                exact
+                                path="/prompts"
+                                component={Prompts}
+                            />
+                            <PrivateRoute
+                                exact
+                                path="/community"
+                                component={Community}
+                            />
+                            <PrivateRoute
                                 exact
                                 path="/resources"
                                 component={Resources}
@@ -75,7 +83,7 @@ const App = () => {
                 </div>
             </Router>
         </Provider>
-    )
-}
+    );
+};
 
-export default App
+export default App;
