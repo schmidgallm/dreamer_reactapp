@@ -8,6 +8,7 @@ import {
 // init initial state
 const initialState = {
     profile: null,
+    profiles: [],
     prompts: [],
     stories: [],
     loading: true,
@@ -26,7 +27,7 @@ export default function(state = initialState, action) {
         case GET_ALL_PROFILES:
             return {
                 ...state,
-                profile: payload,
+                profiles: payload,
                 loading: false,
             };
         case PROFILE_ERROR:

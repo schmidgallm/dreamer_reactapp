@@ -12,14 +12,15 @@ import setAuthToken from './utils/setAuthToken';
 import Navbar from './components/Layout/Navbar';
 import Register from './components/Auth/Register';
 import Login from './components/Auth/Login';
+import CreateProfile from './components/Auth/CreateProfile';
+import EditProfile from './components/Auth/EditProfile';
 import Dashboard from './components/Pages/Dashboard';
 import Community from './components/Pages/Community';
 import PrivateRoute from './components/Routing/PrivateRoute';
 import Prompts from './components/Pages/Prompts';
 import Resources from './components/Pages/Resources';
+import Profiles from './components/Pages/Profiles';
 import Alert from './components/Alert';
-import CreateProfile from './components/Auth/CreateProfile';
-import EditProfile from './components/Auth/EditProfile';
 
 // CSS
 import './App.css';
@@ -62,6 +63,11 @@ const App = () => {
                                 exact
                                 path="/resources"
                                 component={Resources}
+                            />
+                            <PrivateRoute
+                                exact
+                                path="/profiles"
+                                component={Profiles}
                             />
                             <PrivateRoute
                                 exact

@@ -101,7 +101,11 @@ const Navbar = ({ auth: { isAuthenticated, user }, logout }) => {
                             Stories
                         </a>
                     </li>
-
+                    <li className="nav-item">
+                        <a className="nav-link" href="/profiles">
+                            Author Connect
+                        </a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a
                             class="nav-link dropdown-toggle"
