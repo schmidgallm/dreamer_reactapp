@@ -19,7 +19,7 @@ import Community from './components/Pages/Community';
 import PrivateRoute from './components/Routing/PrivateRoute';
 import Prompts from './components/Pages/Prompts';
 import Resources from './components/Pages/Resources';
-import Profiles from './components/Pages/Profiles';
+import Profile from './components/Pages/Profile';
 import Alert from './components/Alert';
 
 // CSS
@@ -66,8 +66,8 @@ const App = () => {
                             />
                             <PrivateRoute
                                 exact
-                                path="/profiles"
-                                component={Profiles}
+                                path="/profile/:id"
+                                component={Profile}
                             />
                             <PrivateRoute
                                 exact
