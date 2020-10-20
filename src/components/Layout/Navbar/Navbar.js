@@ -101,9 +101,9 @@ const Navbar = ({ auth: { isAuthenticated, user }, logout }) => {
                             Stories
                         </a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li className="nav-item dropdown">
                         <a
-                            class="nav-link dropdown-toggle"
+                            className="nav-link dropdown-toggle"
                             href="#"
                             id="navbarDropdownMenuLink"
                             role="button"
@@ -114,14 +114,18 @@ const Navbar = ({ auth: { isAuthenticated, user }, logout }) => {
                             <i className="fa fa-user"></i>
                         </a>
                         <div
-                            class="dropdown-menu dropdown-menu-right"
+                            className="dropdown-menu dropdown-menu-right"
                             aria-labelledby="navbarDropdownMenuLink"
                         >
-                            <a class="dropdown-item" href="/dashboard">
+                            <a className="dropdown-item" href="/dashboard">
                                 Dashboard
                             </a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#" onClick={logout}>
+                            <div className="dropdown-divider"></div>
+                            <a
+                                className="dropdown-item"
+                                href="#"
+                                onClick={logout}
+                            >
                                 Logout
                             </a>
                         </div>

@@ -88,7 +88,7 @@ const Prompts = ({ getAllPrompts, prompts: { prompts, loading } }) => {
 
 Prompts.propTypes = {
     getAllPrompts: PropTypes.func.isRequired,
-    prompts: PropTypes.array.isRequired,
+    prompts: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = state => ({
