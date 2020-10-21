@@ -31,7 +31,6 @@ const Navbar = ({ auth: { isAuthenticated, user }, logout }) => {
                     <li className="nav-item dropdown">
                         <a
                             className="nav-link dropdown-toggle"
-                            href="#"
                             id="navbarDropdown"
                             role="button"
                             data-toggle="dropdown"
