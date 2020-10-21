@@ -1,53 +1,54 @@
 // Dependencies
-import React, { Fragment, useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
+import React, { Fragment, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 // Redux Actions
-import { getCurrentProfile } from '../../../actions/profile'
+import { getCurrentProfile } from '../../../actions/profile';
 
 // Components
-import Spinner from '../../Layout/Spinner'
-import Profile from './Profile'
-import Prompts from './Prompts'
-import Stories from './Stories'
-import Charts from './Charts'
+import Spinner from '../../Layout/Spinner';
+import Profile from './Profile';
+import Prompts from './Prompts';
+import Stories from './Stories';
+import Charts from './Charts';
 
 const Dashboard = ({
     getCurrentProfile,
     auth: { user },
     profile: { profile, loading },
+    location,
 }) => {
     // init all state
-    const [tab, setTab] = useState('profile')
+    const [tab, setTab] = useState('profile');
 
     // get profile on component render
     useEffect(() => {
-        getCurrentProfile()
-    }, [])
+        getCurrentProfile();
+    }, [getCurrentProfile]);
 
     // render tab on state selected
-    const changeTabHandler = (tab) => {
-        setTab(tab)
-        console.log(tab)
-    }
+    const changeTabHandler = tab => {
+        setTab(tab);
+        console.log(tab);
+    };
 
     // render component based on tab state
-    const renderTab = (tab) => {
+    const renderTab = tab => {
         switch (tab) {
             case 'profile':
-                return <Profile profile={profile} user={user} />
+                return <Profile profile={profile} user={user} />;
             case 'prompts':
-                return <Prompts profile={profile} />
+                return <Prompts profile={profile} />;
             case 'stories':
-                return <Stories profile={profile} />
+                return <Stories profile={profile} />;
             case 'charts':
-                return <Charts profile={profile} />
+                return <Charts profile={profile} />;
             default:
-                return <Profile profile={profile} />
+                return <Profile profile={profile} />;
         }
-    }
+    };
 
     // return
     return loading && profile === null ? (
@@ -81,10 +82,16 @@ const Dashboard = ({
                             <div>{renderTab(tab)}</div>
                         ) : (
                             <Fragment>
-                                <p>
-                                    No profile created yet. Please create one
-                                    below.
-                                </p>
+                                {location.state.newUser && (
+                                    <Fragment>
+                                        <h1>Welcome to Dreamers!!!</h1>
+                                        <p>
+                                            While you are here please create a
+                                            profile for yourself. Feel free to
+                                            include a pen name as well!!
+                                        </p>
+                                    </Fragment>
+                                )}
                                 <Link
                                     to="/create-profile"
                                     className="btn btn-primary my-2"
@@ -97,18 +104,18 @@ const Dashboard = ({
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 Dashboard.propTypes = {
     getCurrentProfile: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired,
     profile: PropTypes.object.isRequired,
-}
+};
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
     auth: state.auth,
     profile: state.profile,
-})
+});
 
-export default connect(mapStateToProps, { getCurrentProfile })(Dashboard)
+export default connect(mapStateToProps, { getCurrentProfile })(Dashboard);
