@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
-const Prompts = (profile) => {
-    const userProfile = profile.profile
-    const promptLength = userProfile.prompts.length
+const Prompts = profile => {
+    const userProfile = profile.profile;
+    const promptLength = userProfile.prompts.length;
     return (
         <div className="dashboard-header">
             <header>
@@ -13,12 +13,12 @@ const Prompts = (profile) => {
                 </p>
             </header>
             <div className="profile-prompt-container">
-                {userProfile.prompts.map((prompt) => (
+                {userProfile.prompts.map(prompt => (
                     <div key={prompt._id}>{prompt.title}</div>
                 ))}
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Prompts
+export default Prompts;

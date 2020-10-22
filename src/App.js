@@ -9,12 +9,13 @@ import { loadUser } from './actions/auth';
 import setAuthToken from './utils/setAuthToken';
 
 // Components
-import Navbar from './components/Layout/Navbar';
+import SideNav from './components/Layout/SideNav';
+import GridWrapper from './components/Layout/GridWrapper';
+import RouteWrapper from './components/Layout/RouteWrapper';
 import Register from './components/Auth/Register';
 import Login from './components/Auth/Login';
 import CreateProfile from './components/Auth/CreateProfile';
 import EditProfile from './components/Auth/EditProfile';
-import Dashboard from './components/Pages/Dashboard';
 import Community from './components/Pages/Community';
 import PrivateRoute from './components/Routing/PrivateRoute';
 import Prompts from './components/Pages/Prompts';
@@ -24,6 +25,7 @@ import Alert from './components/Alert';
 
 // CSS
 import './App.css';
+import Dashboard from './components/Pages/Dashboard/Dashboard';
 
 if (localStorage.token) {
     setAuthToken(localStorage.token);
@@ -37,10 +39,10 @@ const App = () => {
     return (
         <Provider store={store}>
             <Router>
-                <div className="wrapper">
-                    <div className="content-container">
-                        <Navbar />
-                        <Route exact path="/" component={Login} />
+                <Route exact path="/" component={Login} />
+                <GridWrapper>
+                    <SideNav />
+                    <RouteWrapper>
                         <Alert />
                         <Switch>
                             <Route
@@ -48,7 +50,6 @@ const App = () => {
                                 path="/register"
                                 component={Register}
                             />
-                            <Route exact path="/login" component={Login} />
                             <PrivateRoute
                                 exact
                                 path="/prompts"
@@ -70,9 +71,22 @@ const App = () => {
                                 component={Profile}
                             />
                             <PrivateRoute
-                                exact
-                                path="/dashboard"
-                                component={Dashboard}
+                                path="/dashboard/profile"
+                                component={() => <Dashboard slug={'profile'} />}
+                            />
+                            <PrivateRoute
+                                path="/dashboard/prompts"
+                                component={() => <Dashboard slug={'prompts'} />}
+                            />
+
+                            <PrivateRoute
+                                path="/dashboard/stories"
+                                component={() => <Dashboard slug={'stories'} />}
+                            />
+
+                            <PrivateRoute
+                                path="/dashboard/charts"
+                                component={() => <Dashboard slug={'charts'} />}
                             />
                             <PrivateRoute
                                 exact
@@ -85,8 +99,8 @@ const App = () => {
                                 component={EditProfile}
                             />
                         </Switch>
-                    </div>
-                </div>
+                    </RouteWrapper>
+                </GridWrapper>
             </Router>
         </Provider>
     );

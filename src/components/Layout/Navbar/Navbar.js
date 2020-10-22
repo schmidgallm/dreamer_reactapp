@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../../../actions/auth';
@@ -9,128 +10,35 @@ const Navbar = ({ auth: { isAuthenticated, user }, logout }) => {
     }
 
     return (
-        <nav className="px-5 navbar navbar-expand-lg navbar-light">
+        <nav id="top-nav" className="navbar navbar-expand-lg navbar-light">
             <div className="navbar-brand">Hi {user ? user.name : null}</div>
-            <button
-                className="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
-                <span className="navbar-toggler-icon"></span>
-            </button>
-
-            <div
-                className="collapse navbar-collapse"
-                id="navbarSupportedContent"
-            >
-                <ul className="navbar-nav ml-auto">
-                    <li className="nav-item dropdown">
-                        <a
-                            className="nav-link dropdown-toggle"
-                            id="navbarDropdown"
-                            role="button"
-                            data-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                        >
-                            Resources
+            <ul className="navbar-nav ml-auto">
+                <li className="nav-item dropdown">
+                    <a
+                        className="nav-link dropdown-toggle"
+                        href="#"
+                        id="navbarDropdownMenuLink"
+                        role="button"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                    >
+                        <i id="top-nav-fa" className="fa fa-user"></i>
+                    </a>
+                    <div
+                        className="dropdown-menu dropdown-menu-right"
+                        aria-labelledby="navbarDropdownMenuLink"
+                    >
+                        <a className="dropdown-item" href="/dashboard">
+                            Dashboard
                         </a>
-                        <div
-                            className="dropdown-menu"
-                            aria-labelledby="navbarDropdown"
-                        >
-                            <a
-                                className="dropdown-item"
-                                href="/resources/copyrights"
-                            >
-                                Copyrights
-                            </a>
-                            <a
-                                className="dropdown-item"
-                                href="/resources/editing"
-                            >
-                                Editing
-                            </a>
-                            <a
-                                className="dropdown-item"
-                                href="/resources/agents"
-                            >
-                                Literary Agents
-                            </a>
-                            <a
-                                className="dropdown-item"
-                                href="/resources/marketing"
-                            >
-                                Marketing
-                            </a>
-                            <a
-                                className="dropdown-item"
-                                href="/resources/publishing"
-                            >
-                                Publishing
-                            </a>
-                            <a
-                                className="dropdown-item"
-                                href="/resources/classes"
-                            >
-                                Classes
-                            </a>
-                            <div className="dropdown-divider"></div>
-                            <a className="dropdown-item" href="/resources">
-                                All Resources
-                            </a>
-                        </div>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="/community">
-                            Community
+                        <div className="dropdown-divider"></div>
+                        <a className="dropdown-item" href="#" onClick={logout}>
+                            Logout
                         </a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="/prompts">
-                            Prompts
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="/stories">
-                            Stories
-                        </a>
-                    </li>
-                    <li className="nav-item dropdown">
-                        <a
-                            className="nav-link dropdown-toggle"
-                            href="#"
-                            id="navbarDropdownMenuLink"
-                            role="button"
-                            data-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                        >
-                            <i className="fa fa-user"></i>
-                        </a>
-                        <div
-                            className="dropdown-menu dropdown-menu-right"
-                            aria-labelledby="navbarDropdownMenuLink"
-                        >
-                            <a className="dropdown-item" href="/dashboard">
-                                Dashboard
-                            </a>
-                            <div className="dropdown-divider"></div>
-                            <a
-                                className="dropdown-item"
-                                href="#"
-                                onClick={logout}
-                            >
-                                Logout
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+                    </div>
+                </li>
+            </ul>
         </nav>
     );
 };
