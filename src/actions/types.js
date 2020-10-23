@@ -10,6 +10,6 @@ export const LOGOUT = 'LOGOUT';
 export const GET_PROFILE = 'GET_PROFILE';
 export const PROFILE_ERROR = 'PROFILE_ERROR';
 export const CLEAR_PROFILE = 'CLEAR_PROFILE';
-export const GET_ALL_PROMPTS = 'GET_ALL_PROMPTS';
+export const GET_PROMPTS = 'GET_PROMPTS';
 export const PROMPT_ERROR = 'PROMPT_ERROR';
 export const ACCOUNT_DELETED = 'ACCOUNT_DELETED';

@@ -1,14 +1,22 @@
+// Dependencies
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { getAllPrompts } from '../../../actions/prompts';
-import Spinner from '../../Layout/Spinner';
+import { connect } from 'react-redux';
 
-const Prompts = ({ getAllPrompts, prompts: { prompts, loading } }) => {
+// Redux Actions
+import { getPrompts } from '../../../actions/prompts';
+
+// Componenets
+import Spinner from '../../Layout/Spinner';
+import PromptItem from './PromptItem';
+
+const Prompts = ({ getPrompts, prompts: { prompts, loading } }) => {
     // run effect on component mount to fetch all prompts
     useEffect(() => {
-        getAllPrompts();
-    }, []);
+        getPrompts();
+    }, [getPrompts]);
+
+    // return jsx
     return (
         <div className="prompt-wrapper">
             <div className="prompt-wrapper-header container-fluid">
@@ -29,54 +37,7 @@ const Prompts = ({ getAllPrompts, prompts: { prompts, loading } }) => {
                         <Spinner />
                     ) : (
                         prompts.map(prompt => (
-                            <div key={prompt._id} className="prompt card">
-                                <div className="prompt-header card-header">
-                                    <span>
-                                        <a href={`profile/${prompt.user}`}>
-                                            {prompt.penName}
-                                        </a>{' '}
-                                        | {prompt.publishedDate}
-                                    </span>
-
-                                    <span>
-                                        {' '}
-                                        <i className="fa fa-ellipsis-h"></i>
-                                    </span>
-                                </div>
-                                <div className="prompt-body card-body">
-                                    <h5>
-                                        {prompt.title} |{' '}
-                                        <span className="text-muted">
-                                            {prompt.genre}
-                                        </span>
-                                    </h5>
-                                    <p className="prompt-content">
-                                        {prompt.content}
-                                    </p>
-                                </div>
-                                <div className="prompt-footer card-footer">
-                                    <div>
-                                        <span>
-                                            <i className="fa fa-thumbs-up"></i>
-                                            <span className="mx-2">
-                                                {prompt.likes.length}
-                                            </span>
-                                            <i className="fa fa-thumbs-down"></i>
-                                        </span>
-                                    </div>
-                                    <div>
-                                        <span>
-                                            <i className="fa fa-comment"></i>{' '}
-                                            {prompt.comments.length}
-                                        </span>
-                                    </div>
-                                    <div>
-                                        <span>
-                                            <i className="fa fa-heart"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
+                            <PromptItem key={prompt._id} prompt={prompt} />
                         ))
                     )}
                 </main>
@@ -87,7 +48,7 @@ const Prompts = ({ getAllPrompts, prompts: { prompts, loading } }) => {
 };
 
 Prompts.propTypes = {
-    getAllPrompts: PropTypes.func.isRequired,
+    getPrompts: PropTypes.func.isRequired,
     prompts: PropTypes.object.isRequired,
 };
 
@@ -95,4 +56,4 @@ const mapStateToProps = state => ({
     prompts: state.prompts,
 });
 
-export default connect(mapStateToProps, { getAllPrompts })(Prompts);
+export default connect(mapStateToProps, { getPrompts })(Prompts);
