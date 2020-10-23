@@ -160,7 +160,7 @@ body {
 }
 
 .prompt-wrapper-body {
-    width: 50%;
+    width: 80%;
     margin: 25px auto;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
@@ -168,11 +168,11 @@ body {
 }
 
 .prompt-wrapper-body main {
-    grid-column: 1/6;
+    grid-column: 1/7;
 }
 
 .prompt-wrapper-body aside {
-    grid-column: 6/9;
+    grid-column: 7/9;
 }
 
 .prompt {
