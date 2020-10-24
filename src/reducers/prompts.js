@@ -1,4 +1,9 @@
-import { GET_PROMPTS, PROMPT_ERROR } from '../actions/types';
+import {
+    GET_PROMPTS,
+    PROMPT_ERROR,
+    UPDATE_LIKES,
+    DELETE_PROMPT,
+} from '../actions/types';
 
 // init initial state
 const initialState = {
@@ -17,10 +22,26 @@ export default function(state = initialState, action) {
                 prompts: payload,
                 loading: false,
             };
+        case DELETE_PROMPT:
+            return {
+                ...state,
+                prompts: state.prompts.filter(prompt => prompt._id !== payload),
+                loading: false,
+            };
         case PROMPT_ERROR:
             return {
                 ...state,
                 error: payload,
+                loading: false,
+            };
+        case UPDATE_LIKES:
+            return {
+                ...state,
+                prompts: state.prompts.map(prompt =>
+                    prompt._id === payload.id
+                        ? { ...prompt, likes: payload.likes }
+                        : prompt
+                ),
                 loading: false,
             };
         default:

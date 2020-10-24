@@ -149,7 +149,7 @@ const Navbar = ({ auth: { isAuthenticated, user }, logout }) => {
                     <ul className="navbar-nav mr-auto ml-5">
                         <li className="nav-item">
                             <NavLink
-                                className="btn btn-primary"
+                                className="btn btn-secondary"
                                 to="/dashboard"
                             >
                                 Dashboard

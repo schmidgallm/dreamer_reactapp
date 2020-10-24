@@ -5,7 +5,10 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 
-const PromptItem = ({ prompt, auth }) => {
+// Redux Actions
+import { addLike, removeLike } from '../../../actions/prompts';
+
+const PromptItem = ({ prompt, auth, addLike, removeLike }) => {
     return (
         <div key={prompt._id} className="prompt card">
             <div className="prompt-header card-header">
@@ -29,15 +32,27 @@ const PromptItem = ({ prompt, auth }) => {
             <div className="prompt-footer card-footer">
                 <div>
                     <span>
-                        <i className="fa fa-thumbs-up"></i>
-                        <span className="mx-2">{prompt.likes.length}</span>
-                        <i className="fa fa-thumbs-down"></i>
+                        <i
+                            className="fa fa-thumbs-up"
+                            onClick={e => addLike(prompt._id)}
+                        ></i>
+                        <span className="mx-2">
+                            {prompt.likes.length === 0
+                                ? null
+                                : prompt.likes.length}
+                        </span>
+                        <i
+                            className="fa fa-thumbs-down"
+                            onClick={e => removeLike(prompt._id)}
+                        ></i>
                     </span>
                 </div>
                 <div>
                     <span>
                         <i className="fa fa-comment"></i>{' '}
-                        {prompt.comments.length}
+                        {prompt.comments.length === 0
+                            ? null
+                            : prompt.comments.length}
                     </span>
                 </div>
                 <div>
@@ -53,10 +68,12 @@ const PromptItem = ({ prompt, auth }) => {
 PromptItem.propTypes = {
     prompt: PropTypes.object.isRequired,
     auth: PropTypes.object.isRequired,
+    addLike: PropTypes.func.isRequired,
+    removeLike: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
     auth: state.auth,
 });
 
-export default connect(mapStateToProps, {})(PromptItem);
+export default connect(mapStateToProps, { addLike, removeLike })(PromptItem);
