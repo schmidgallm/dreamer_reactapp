@@ -13,8 +13,8 @@ const PromptItem = ({ prompt, auth, addLike, removeLike }) => {
         <div key={prompt._id} className="prompt card">
             <div className="prompt-header card-header">
                 <span>
-                    {prompt.penName} |{' '}
-                    {moment(prompt.publishedDate).format('MM/DD/YYYY')}
+                    <Link to={`/profile/${prompt.user}`}>{prompt.penName}</Link>{' '}
+                    | {moment(prompt.publishedDate).format('MM/DD/YYYY')}
                 </span>
 
                 <span>
