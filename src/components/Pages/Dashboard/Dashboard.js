@@ -26,6 +26,8 @@ const Dashboard = ({
         getCurrentProfile();
     }, [getCurrentProfile]);
 
+    console.log(slug);
+
     // render component based on slug prop
     const renderSlug = slug => {
         switch (slug) {

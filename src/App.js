@@ -9,8 +9,6 @@ import { loadUser } from './actions/auth';
 import setAuthToken from './utils/setAuthToken';
 
 // Components
-import SideNav from './components/Layout/SideNav';
-import GridWrapper from './components/Layout/GridWrapper';
 import RouteWrapper from './components/Layout/RouteWrapper';
 import Register from './components/Auth/Register';
 import Login from './components/Auth/Login';
@@ -40,67 +38,65 @@ const App = () => {
         <Provider store={store}>
             <Router>
                 <Route exact path="/" component={Login} />
-                <GridWrapper>
-                    <SideNav />
-                    <RouteWrapper>
-                        <Alert />
-                        <Switch>
-                            <Route
-                                exact
-                                path="/register"
-                                component={Register}
-                            />
-                            <PrivateRoute
-                                exact
-                                path="/prompts"
-                                component={Prompts}
-                            />
-                            <PrivateRoute
-                                exact
-                                path="/community"
-                                component={Community}
-                            />
-                            <PrivateRoute
-                                exact
-                                path="/resources"
-                                component={Resources}
-                            />
-                            <PrivateRoute
-                                exact
-                                path="/profile/:id"
-                                component={Profile}
-                            />
-                            <PrivateRoute
-                                path="/dashboard/profile"
-                                component={() => <Dashboard slug={'profile'} />}
-                            />
-                            <PrivateRoute
-                                path="/dashboard/prompts"
-                                component={() => <Dashboard slug={'prompts'} />}
-                            />
+                <RouteWrapper>
+                    <Alert />
+                    <Switch>
+                        <Route exact path="/register" component={Register} />
+                        <PrivateRoute
+                            exact
+                            path="/prompts"
+                            component={Prompts}
+                        />
+                        <PrivateRoute
+                            exact
+                            path="/community"
+                            component={Community}
+                        />
+                        <PrivateRoute
+                            exact
+                            path="/resources"
+                            component={Resources}
+                        />
+                        <PrivateRoute
+                            exact
+                            path="/profile/:id"
+                            component={Profile}
+                        />
+                        <PrivateRoute
+                            exact
+                            path="/dashboard"
+                            component={() => <Dashboard slug={'profile'} />}
+                        />
+                        <PrivateRoute
+                            path="/dashboard/profile"
+                            component={() => <Dashboard slug={'profile'} />}
+                        />
+                        <PrivateRoute
+                            path="/dashboard/prompts"
+                            component={() => <Dashboard slug={'prompts'} />}
+                        />
 
-                            <PrivateRoute
-                                path="/dashboard/stories"
-                                component={() => <Dashboard slug={'stories'} />}
-                            />
+                        <PrivateRoute
+                            path="/dashboard/stories"
+                            component={() => <Dashboard slug={'stories'} />}
+                        />
 
-                            <PrivateRoute
-                                path="/dashboard/charts"
-                                component={() => <Dashboard slug={'charts'} />}
-                            />
-                            <PrivateRoute
-                                exact
-                                path="/create-profile"
-                                component={CreateProfile}
-                            />
-                            <PrivateRoute
-                                exact
-                                path="/edit-profile"
-                                component={EditProfile}
-                            />
-                        </Switch>
-                    </RouteWrapper>
-                </GridWrapper>
+                        <PrivateRoute
+                            path="/dashboard/charts"
+                            component={() => <Dashboard slug={'charts'} />}
+                        />
+                        <PrivateRoute
+                            exact
+                            path="/create-profile"
+                            component={CreateProfile}
+                        />
+                        <PrivateRoute
+                            exact
+                            path="/edit-profile"
+                            component={EditProfile}
+                        />
+                    </Switch>
+                </RouteWrapper>
             </Router>
         </Provider>
     );
