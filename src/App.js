@@ -17,6 +17,7 @@ import EditProfile from './components/Auth/EditProfile';
 import Community from './components/Pages/Community';
 import PrivateRoute from './components/Routing/PrivateRoute';
 import Prompts from './components/Pages/Prompts';
+import PromptById from './components/Pages/Prompts/PromptById';
 import Resources from './components/Pages/Resources';
 import Profile from './components/Pages/Profile';
 import Alert from './components/Alert';
@@ -47,6 +48,11 @@ const App = () => {
                             exact
                             path="/prompts"
                             component={Prompts}
+                        />
+                        <PrivateRoute
+                            exact
+                            path="/prompts/:id"
+                            component={PromptById}
                         />
                         <PrivateRoute
                             exact

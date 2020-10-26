@@ -233,6 +233,10 @@ body {
     margin-top: 100px;
 }
 
+.prompt-id {
+    margin: 100px;
+}
+
 /* Dashboard */
 .auth-nav {
     height: 7vh;
