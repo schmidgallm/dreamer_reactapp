@@ -20,10 +20,11 @@ import Prompts from './components/Pages/Prompts';
 import Resources from './components/Pages/Resources';
 import Profile from './components/Pages/Profile';
 import Alert from './components/Alert';
+import Dashboard from './components/Pages/Dashboard/Dashboard';
+import AddPrompt from './components/Forms/AddPrompt/AddPrompt';
 
 // CSS
 import './App.css';
-import Dashboard from './components/Pages/Dashboard/Dashboard';
 
 if (localStorage.token) {
     setAuthToken(localStorage.token);
@@ -46,6 +47,11 @@ const App = () => {
                             exact
                             path="/prompts"
                             component={Prompts}
+                        />
+                        <PrivateRoute
+                            exact
+                            path="/prompts/submit"
+                            component={AddPrompt}
                         />
                         <PrivateRoute
                             exact

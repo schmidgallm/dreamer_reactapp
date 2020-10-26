@@ -1,5 +1,6 @@
 // Dependencies
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
@@ -33,6 +34,14 @@ const Prompts = ({ getPrompts, prompts: { prompts, loading } }) => {
             </div>
             <div className="prompt-wrapper-body container">
                 <main>
+                    <div className="add">
+                        <Link
+                            to="/prompts/submit"
+                            className="btn btn-secondary"
+                        >
+                            Create Prompt
+                        </Link>
+                    </div>
                     {loading ? (
                         <Spinner />
                     ) : (

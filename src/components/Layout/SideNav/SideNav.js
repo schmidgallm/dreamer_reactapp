@@ -20,14 +20,40 @@ const SideNav = () => {
                 </button>
                 <ul className="navbar-nav mr-auto flex-column">
                     <li className="nav-item">
-                        <a className="nav-link" href="/prompts">
-                            Prompts
-                        </a>
-                    </li>
-                    <li className="nav-item">
                         <a className="nav-link" href="/stories">
                             Stories
                         </a>
+                    </li>
+                    <li className="nav-item dropdown">
+                        <a
+                            className="nav-link dropdown-toggle"
+                            href="#"
+                            id="navbarDropdown"
+                            role="button"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                        >
+                            Prompts
+                        </a>
+                        <div
+                            className="dropdown-menu"
+                            aria-labelledby="navbarDropdown"
+                        >
+                            <a className="dropdown-item" href="/prompts">
+                                All Prompts
+                            </a>
+                            <a className="dropdown-item" href="/prompts/submit">
+                                Create a Prompt
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a
+                                className="dropdown-item"
+                                href="/dashboard/prompts"
+                            >
+                                Your Prompts
+                            </a>
+                        </div>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="/community">

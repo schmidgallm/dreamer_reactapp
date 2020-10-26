@@ -22,13 +22,15 @@ const PromptItem = ({ prompt, auth, addLike, removeLike }) => {
                     <i className="fa fa-ellipsis-h"></i>
                 </span>
             </div>
-            <div className="prompt-body card-body">
-                <h5>
-                    {prompt.title} |{' '}
-                    <span className="text-muted">{prompt.genre}</span>
-                </h5>
-                <p className="prompt-content">{prompt.content}</p>
-            </div>
+            <Link to={`/prompts/${prompt._id}`} className="prompt-body-link">
+                <div className="prompt-body card-body">
+                    <h5>
+                        {prompt.title} |{' '}
+                        <span className="text-muted">{prompt.genre}</span>
+                    </h5>
+                    <p className="prompt-content">{prompt.content}</p>
+                </div>
+            </Link>
             <div className="prompt-footer card-footer">
                 <div>
                     <span>

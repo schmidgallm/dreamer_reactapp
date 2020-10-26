@@ -1,8 +1,10 @@
 import {
     GET_PROMPTS,
+    GET_PROMPT,
     PROMPT_ERROR,
     UPDATE_LIKES,
     DELETE_PROMPT,
+    ADD_PROMPT,
 } from '../actions/types';
 
 // init initial state
@@ -20,6 +22,18 @@ export default function(state = initialState, action) {
             return {
                 ...state,
                 prompts: payload,
+                loading: false,
+            };
+        case GET_PROMPT:
+            return {
+                ...state,
+                prompt: payload,
+                loading: false,
+            };
+        case ADD_PROMPT:
+            return {
+                ...state,
+                prompts: [...state.prompts, payload],
                 loading: false,
             };
         case DELETE_PROMPT:

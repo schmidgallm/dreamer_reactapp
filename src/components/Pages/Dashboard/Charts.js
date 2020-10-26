@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Charts = profile => {
-    const userProfile = profile.profile;
+    const { userProfile } = profile;
     return (
         <div className="dashboard-header">
             <header>

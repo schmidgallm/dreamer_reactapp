@@ -156,11 +156,6 @@ const Navbar = ({ auth: { isAuthenticated, user }, logout }) => {
                             </NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/settings">
-                                Settings
-                            </NavLink>
-                        </li>
-                        <li className="nav-item">
                             <NavLink
                                 className="nav-link"
                                 onClick={logout}
