@@ -8,7 +8,7 @@ import moment from 'moment';
 // Redux Actions
 import { addLike, removeLike } from '../../../actions/prompts';
 
-const PromptItem = ({ prompt, auth, addLike, removeLike }) => {
+const PromptItem = ({ prompt, auth, addLike, removeLike, showLink }) => {
     return (
         <div key={prompt._id} className="prompt card">
             <div className="prompt-header card-header">
@@ -22,7 +22,20 @@ const PromptItem = ({ prompt, auth, addLike, removeLike }) => {
                     <i className="fa fa-ellipsis-h"></i>
                 </span>
             </div>
-            <Link to={`/prompts/${prompt._id}`} className="prompt-body-link">
+            {showLink ? (
+                <Link
+                    to={`/prompts/${prompt._id}`}
+                    className="prompt-body-link"
+                >
+                    <div className="prompt-body card-body">
+                        <h5>
+                            {prompt.title} |{' '}
+                            <span className="text-muted">{prompt.genre}</span>
+                        </h5>
+                        <p className="prompt-content">{prompt.content}</p>
+                    </div>
+                </Link>
+            ) : (
                 <div className="prompt-body card-body">
                     <h5>
                         {prompt.title} |{' '}
@@ -30,7 +43,8 @@ const PromptItem = ({ prompt, auth, addLike, removeLike }) => {
                     </h5>
                     <p className="prompt-content">{prompt.content}</p>
                 </div>
-            </Link>
+            )}
+
             <div className="prompt-footer card-footer">
                 <div>
                     <span>
@@ -72,6 +86,10 @@ PromptItem.propTypes = {
     auth: PropTypes.object.isRequired,
     addLike: PropTypes.func.isRequired,
     removeLike: PropTypes.func.isRequired,
+};
+
+PromptItem.defaultProps = {
+    showLink: true,
 };
 
 const mapStateToProps = state => ({

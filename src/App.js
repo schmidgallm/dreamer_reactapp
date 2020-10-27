@@ -56,7 +56,7 @@ const App = () => {
                         />
                         <PrivateRoute
                             exact
-                            path="/prompts/submit"
+                            path="/prompts/create/submit"
                             component={AddPrompt}
                         />
                         <PrivateRoute

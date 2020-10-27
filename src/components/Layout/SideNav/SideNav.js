@@ -43,7 +43,10 @@ const SideNav = () => {
                             <a className="dropdown-item" href="/prompts">
                                 All Prompts
                             </a>
-                            <a className="dropdown-item" href="/prompts/submit">
+                            <a
+                                className="dropdown-item"
+                                href="/prompts/create/submit"
+                            >
                                 Create a Prompt
                             </a>
                             <div className="dropdown-divider"></div>

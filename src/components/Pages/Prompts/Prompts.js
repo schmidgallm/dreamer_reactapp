@@ -36,7 +36,7 @@ const Prompts = ({ getPrompts, prompts: { prompts, loading } }) => {
                 <main>
                     <div className="add">
                         <Link
-                            to="/prompts/submit"
+                            to="/prompts/create/submit"
                             className="btn btn-secondary"
                         >
                             Create Prompt
