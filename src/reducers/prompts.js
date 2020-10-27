@@ -25,11 +25,10 @@ export default function(state = initialState, action) {
                 loading: false,
             };
         case GET_PROMPT:
-            return {
-                ...state,
+            return Object.assign({}, state, {
                 prompt: payload,
                 loading: false,
-            };
+            });
         case ADD_PROMPT:
             return {
                 ...state,
