@@ -8,7 +8,7 @@ import moment from 'moment';
 // Redux Actions
 import { addLike, removeLike } from '../../../actions/prompts';
 
-const PromptItem = ({ prompt, auth, addLike, removeLike, showLink }) => {
+const PromptItem = ({ prompt, auth, addLike, removeLike, showLinks }) => {
     return (
         <div key={prompt._id} className="prompt card">
             <div className="prompt-header card-header">
@@ -22,7 +22,7 @@ const PromptItem = ({ prompt, auth, addLike, removeLike, showLink }) => {
                     <i className="fa fa-ellipsis-h"></i>
                 </span>
             </div>
-            {showLink ? (
+            {showLinks ? (
                 <Link
                     to={`/prompts/${prompt._id}`}
                     className="prompt-body-link"
@@ -45,38 +45,40 @@ const PromptItem = ({ prompt, auth, addLike, removeLike, showLink }) => {
                 </div>
             )}
 
-            <div className="prompt-footer card-footer">
-                <div>
-                    <span>
-                        <i
-                            className="fa fa-thumbs-up"
-                            onClick={e => addLike(prompt._id)}
-                        ></i>
-                        <span className="mx-2">
-                            {prompt.likes.length === 0
-                                ? null
-                                : prompt.likes.length}
+            {showLinks ? (
+                <div className="prompt-footer card-footer">
+                    <div>
+                        <span>
+                            <i
+                                className="fa fa-thumbs-up"
+                                onClick={() => addLike(prompt._id)}
+                            ></i>
+                            <span className="mx-2">
+                                {prompt.likes.length === 0
+                                    ? null
+                                    : prompt.likes.length}
+                            </span>
+                            <i
+                                className="fa fa-thumbs-down"
+                                onClick={() => removeLike(prompt._id)}
+                            ></i>
                         </span>
-                        <i
-                            className="fa fa-thumbs-down"
-                            onClick={e => removeLike(prompt._id)}
-                        ></i>
-                    </span>
+                    </div>
+                    <div>
+                        <span>
+                            <i className="fa fa-comment"></i>{' '}
+                            {prompt.comments.length === 0
+                                ? null
+                                : prompt.comments.length}
+                        </span>
+                    </div>
+                    <div>
+                        <span>
+                            <i className="fa fa-heart"></i>
+                        </span>
+                    </div>
                 </div>
-                <div>
-                    <span>
-                        <i className="fa fa-comment"></i>{' '}
-                        {prompt.comments.length === 0
-                            ? null
-                            : prompt.comments.length}
-                    </span>
-                </div>
-                <div>
-                    <span>
-                        <i className="fa fa-heart"></i>
-                    </span>
-                </div>
-            </div>
+            ) : null}
         </div>
     );
 };
@@ -89,11 +91,14 @@ PromptItem.propTypes = {
 };
 
 PromptItem.defaultProps = {
-    showLink: true,
+    showLinks: true,
 };
 
 const mapStateToProps = state => ({
     auth: state.auth,
 });
 
-export default connect(mapStateToProps, { addLike, removeLike })(PromptItem);
+export default connect(mapStateToProps, {
+    addLike,
+    removeLike,
+})(PromptItem);

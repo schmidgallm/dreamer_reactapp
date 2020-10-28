@@ -3,6 +3,7 @@ import {
     GET_PROMPT,
     PROMPT_ERROR,
     UPDATE_LIKES,
+    UPDATE_ONE_LIKE,
     DELETE_PROMPT,
     ADD_PROMPT,
 } from '../actions/types';
@@ -25,10 +26,11 @@ export default function(state = initialState, action) {
                 loading: false,
             };
         case GET_PROMPT:
-            return Object.assign({}, state, {
+            return {
+                ...state,
                 prompt: payload,
                 loading: false,
-            });
+            };
         case ADD_PROMPT:
             return {
                 ...state,
