@@ -5,6 +5,7 @@ import {
     GET_PROMPT,
     PROMPT_ERROR,
     UPDATE_LIKES,
+    UPDATE_ONE_LIKE,
     DELETE_PROMPT,
     ADD_PROMPT,
 } from './types';
@@ -21,7 +22,7 @@ export const getPrompts = () => async dispatch => {
         dispatch({
             type: PROMPT_ERROR,
             payload: {
-                msg: err.response.statusText,
+                msg: err.response.data.msg,
                 status: err.response.status,
             },
         });
@@ -43,7 +44,7 @@ export const getPrompt = id => async dispatch => {
         dispatch({
             type: PROMPT_ERROR,
             payload: {
-                msg: err.response.statusText,
+                msg: err.response.data.msg,
                 status: err.response.status,
             },
         });
@@ -63,6 +64,31 @@ export const addLike = id => async dispatch => {
             payload: { id, likes: req.data },
         });
     } catch (err) {
+        console.log(err.response);
+        dispatch({
+            type: PROMPT_ERROR,
+            payload: {
+                msg: err.response.data.msg,
+                status: err.response.status,
+            },
+        });
+        dispatch(setAlert(err.response.data.msg, 'danger'));
+    }
+};
+
+// like a prompt
+export const addOneLike = id => async dispatch => {
+    try {
+        const req = await axios.put(
+            `http://localhost:5000/api/v1/prompts/like/${id}`
+        );
+
+        dispatch({
+            type: UPDATE_ONE_LIKE,
+            payload: { id, likes: req.data },
+        });
+    } catch (err) {
+        console.log(err.response);
         dispatch({
             type: PROMPT_ERROR,
             payload: {
@@ -83,6 +109,29 @@ export const removeLike = id => async dispatch => {
 
         dispatch({
             type: UPDATE_LIKES,
+            payload: { id, likes: req.data },
+        });
+    } catch (err) {
+        dispatch({
+            type: PROMPT_ERROR,
+            payload: {
+                msg: err.response.data.msg,
+                status: err.response.status,
+            },
+        });
+        dispatch(setAlert(err.response.data.msg, 'danger'));
+    }
+};
+
+// Remove a prompt like
+export const removeOneLike = id => async dispatch => {
+    try {
+        const req = await axios.put(
+            `http://localhost:5000/api/v1/prompts/unlike/${id}`
+        );
+
+        dispatch({
+            type: UPDATE_ONE_LIKE,
             payload: { id, likes: req.data },
         });
     } catch (err) {

@@ -11,7 +11,7 @@ import {
 // init initial state
 const initialState = {
     prompts: [],
-    prompt: null,
+    prompt: {},
     loading: true,
     error: {},
 };
@@ -59,6 +59,16 @@ export default function(state = initialState, action) {
                 ),
                 loading: false,
             };
+        case UPDATE_ONE_LIKE:
+            return {
+                ...state,
+                prompt:
+                    state.prompts.prompt._id === payload.id
+                        ? { ...prompt, likes: payload.likes }
+                        : prompt,
+                loading: false,
+            };
+
         default:
             return state;
     }

@@ -17,3 +17,4 @@ export const GET_PROMPT = 'GET_PROMPT';
 export const DELETE_PROMPT = 'DELETE_PROMPT';
 export const ACCOUNT_DELETED = 'ACCOUNT_DELETED';
 export const UPDATE_LIKES = 'UPDATE_LIKES';
+export const UPDATE_ONE_LIKE = 'UPDATE_ONE_LIKE';
