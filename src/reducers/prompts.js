@@ -62,10 +62,7 @@ export default function(state = initialState, action) {
         case UPDATE_ONE_LIKE:
             return {
                 ...state,
-                prompt:
-                    state.prompts.prompt._id === payload.id
-                        ? { ...prompt, likes: payload.likes }
-                        : prompt,
+                prompt: { ...state.prompt, likes: payload.likes },
                 loading: false,
             };
 
