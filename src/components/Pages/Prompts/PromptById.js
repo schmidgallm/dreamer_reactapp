@@ -15,10 +15,12 @@ import {
 
 // Components
 import Spinner from '../../Layout/Spinner';
+import PromptCommentForm from '../../Forms/PromptCommentForm';
+import CommentItem from './CommentItem';
 
 const PromptById = ({
     getPrompt,
-    prompts: { prompt, loading },
+    prompts: { prompt, loading, penName },
     match,
     addOneLike,
     removeOneLike,
@@ -96,6 +98,21 @@ const PromptById = ({
                         </span>
                     </div>
                 </div>
+            </div>
+            <div className="post-comment">
+                <PromptCommentForm
+                    commentAs={prompt.penName}
+                    promptId={prompt._id}
+                />
+            </div>
+            <div className="comment-section">
+                {prompt.comments.map(comment => (
+                    <CommentItem
+                        key={comment._id}
+                        comment={comment}
+                        promptId={prompt._id}
+                    />
+                ))}
             </div>
         </div>
     );

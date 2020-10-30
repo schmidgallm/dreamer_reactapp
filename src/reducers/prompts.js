@@ -6,6 +6,8 @@ import {
     UPDATE_ONE_LIKE,
     DELETE_PROMPT,
     ADD_PROMPT,
+    ADD_COMMENT,
+    REMOVE_COMMENT,
 } from '../actions/types';
 
 // init initial state
@@ -65,7 +67,23 @@ export default function(state = initialState, action) {
                 prompt: { ...state.prompt, likes: payload.likes },
                 loading: false,
             };
-
+        case ADD_COMMENT:
+            return {
+                ...state,
+                prompt: { ...state.prompt, comments: payload },
+                loading: false,
+            };
+        case REMOVE_COMMENT:
+            return {
+                ...state,
+                prompt: {
+                    ...state.prompt,
+                    comments: state.prompt.comments.filter(
+                        comment => comment._id !== payload
+                    ),
+                },
+                loading: false,
+            };
         default:
             return state;
     }

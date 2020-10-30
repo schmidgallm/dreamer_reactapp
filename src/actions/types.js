@@ -18,3 +18,5 @@ export const DELETE_PROMPT = 'DELETE_PROMPT';
 export const ACCOUNT_DELETED = 'ACCOUNT_DELETED';
 export const UPDATE_LIKES = 'UPDATE_LIKES';
 export const UPDATE_ONE_LIKE = 'UPDATE_ONE_LIKE';
+export const ADD_COMMENT = 'ADD_COMMENT';
+export const REMOVE_COMMENT = 'ADD_COMMENT';

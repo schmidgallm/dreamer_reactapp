@@ -8,6 +8,8 @@ import {
     UPDATE_ONE_LIKE,
     DELETE_PROMPT,
     ADD_PROMPT,
+    ADD_COMMENT,
+    REMOVE_COMMENT,
 } from './types';
 
 // Get all prompts
@@ -188,6 +190,61 @@ export const addPrompt = formData => async dispatch => {
         });
 
         dispatch(setAlert('Prompt Created', 'success'));
+    } catch (err) {
+        dispatch({
+            type: PROMPT_ERROR,
+            payload: {
+                msg: err.response.data.msg,
+                status: err.response.status,
+            },
+        });
+    }
+};
+
+// Add a comment to prompt
+export const addComment = (id, formData) => async dispatch => {
+    const config = {
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    };
+    try {
+        const req = await axios.post(
+            `http://localhost:5000/api/v1/prompts/comment/${id}`,
+            formData,
+            config
+        );
+
+        dispatch({
+            type: ADD_COMMENT,
+            payload: req.data,
+        });
+
+        dispatch(setAlert('Comment Added', 'success'));
+    } catch (err) {
+        dispatch({
+            type: PROMPT_ERROR,
+            payload: {
+                msg: err.response.data.msg,
+                status: err.response.status,
+            },
+        });
+    }
+};
+
+// Delete a comment from prompt
+export const removeComment = (promptId, commentId) => async dispatch => {
+    try {
+        await axios.delete(
+            `http://localhost:5000/api/v1/prompts/comment/${promptId}/${commentId}`
+        );
+
+        dispatch({
+            type: REMOVE_COMMENT,
+            payload: commentId,
+        });
+
+        dispatch(setAlert('Comment Removed', 'success'));
     } catch (err) {
         dispatch({
             type: PROMPT_ERROR,
