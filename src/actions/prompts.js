@@ -238,7 +238,6 @@ export const removeComment = (promptId, commentId) => async dispatch => {
         const req = await axios.delete(
             `http://localhost:5000/api/v1/prompts/comment/${promptId}/${commentId}`
         );
-
         dispatch({
             type: REMOVE_COMMENT,
             payload: req.data,

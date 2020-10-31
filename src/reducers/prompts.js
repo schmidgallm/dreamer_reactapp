@@ -78,9 +78,7 @@ export default function(state = initialState, action) {
                 ...state,
                 prompt: {
                     ...state.prompt,
-                    comments: state.prompt.comments.filter(
-                        comment => comment._id !== payload
-                    ),
+                    comments: payload,
                 },
                 loading: false,
             };
