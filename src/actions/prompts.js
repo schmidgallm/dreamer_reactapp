@@ -235,13 +235,13 @@ export const addComment = (id, formData) => async dispatch => {
 // Delete a comment from prompt
 export const removeComment = (promptId, commentId) => async dispatch => {
     try {
-        await axios.delete(
+        const req = await axios.delete(
             `http://localhost:5000/api/v1/prompts/comment/${promptId}/${commentId}`
         );
 
         dispatch({
             type: REMOVE_COMMENT,
-            payload: commentId,
+            payload: req.data,
         });
 
         dispatch(setAlert('Comment Removed', 'success'));

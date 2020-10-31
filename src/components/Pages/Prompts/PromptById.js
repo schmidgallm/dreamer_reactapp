@@ -10,7 +10,7 @@ import {
     getPrompt,
     addOneLike,
     removeOneLike,
-    removeLike,
+    removeComment,
 } from '../../../actions/prompts';
 
 // Components
@@ -20,16 +20,18 @@ import CommentItem from './CommentItem';
 
 const PromptById = ({
     getPrompt,
-    prompts: { prompt, loading, penName },
+    prompts: { prompt, loading },
     match,
     addOneLike,
     removeOneLike,
+    removeComment,
 }) => {
     // get prompt on component mount
     useEffect(() => {
         getPrompt(match.params.id);
     }, [getPrompt]);
 
+    // check if prompt is empty object
     const isEmtpy = obj => {
         for (var prop in obj) {
             if (obj.hasOwnProperty(prop)) {
@@ -111,6 +113,7 @@ const PromptById = ({
                         key={comment._id}
                         comment={comment}
                         promptId={prompt._id}
+                        removeComment={removeComment}
                     />
                 ))}
             </div>
@@ -123,6 +126,7 @@ PromptById.propTypes = {
     prompts: PropTypes.object.isRequired,
     addOneLike: PropTypes.func.isRequired,
     removeOneLike: PropTypes.func.isRequired,
+    removeComment: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -133,4 +137,5 @@ export default connect(mapStateToProps, {
     getPrompt,
     addOneLike,
     removeOneLike,
+    removeComment,
 })(PromptById);
