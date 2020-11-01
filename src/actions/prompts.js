@@ -252,5 +252,6 @@ export const removeComment = (promptId, commentId) => async dispatch => {
                 status: err.response.status,
             },
         });
+        dispatch(setAlert(err.response.data.msg, 'danger'));
     }
 };
