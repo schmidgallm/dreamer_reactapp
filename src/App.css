@@ -346,6 +346,13 @@ body {
     font-size: 14px;
 }
 
+/* Story Pages */
+/* Add Story */
+.add-story {
+    width: 60%;
+    margin: 75px auto;
+}
+
 /* Resources Page */
 .resources {
     margin-top: 50px;

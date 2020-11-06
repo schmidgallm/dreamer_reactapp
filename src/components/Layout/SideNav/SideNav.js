@@ -20,9 +20,43 @@ const SideNav = () => {
                 </button>
                 <ul className="navbar-nav mr-auto flex-column">
                     <li className="nav-item">
-                        <a className="nav-link" href="/stories">
+                        <a className="nav-link" href="/community">
+                            Community
+                        </a>
+                    </li>
+                    <li className="nav-item dropdown">
+                        <a
+                            className="nav-link dropdown-toggle"
+                            href="#"
+                            id="navbarDropdown"
+                            role="button"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                        >
                             Stories
                         </a>
+                        <div
+                            className="dropdown-menu"
+                            aria-labelledby="navbarDropdown"
+                        >
+                            <a className="dropdown-item" href="/stories">
+                                All Stories
+                            </a>
+                            <a
+                                className="dropdown-item"
+                                href="/dashboard/stories"
+                            >
+                                Your Stories
+                            </a>
+                            <div className="dropdown-divider"></div>
+                            <a
+                                className="dropdown-item"
+                                href="/stories/create/submit"
+                            >
+                                Create a Story
+                            </a>
+                        </div>
                     </li>
                     <li className="nav-item dropdown">
                         <a
@@ -45,23 +79,18 @@ const SideNav = () => {
                             </a>
                             <a
                                 className="dropdown-item"
-                                href="/prompts/create/submit"
-                            >
-                                Create a Prompt
-                            </a>
-                            <div className="dropdown-divider"></div>
-                            <a
-                                className="dropdown-item"
                                 href="/dashboard/prompts"
                             >
                                 Your Prompts
                             </a>
+                            <div className="dropdown-divider"></div>
+                            <a
+                                className="dropdown-item"
+                                href="/prompts/create/submit"
+                            >
+                                Create a Prompt
+                            </a>
                         </div>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="/community">
-                            Community
-                        </a>
                     </li>
                     <li className="nav-item dropdown">
                         <a

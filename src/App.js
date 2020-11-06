@@ -23,6 +23,7 @@ import Profile from './components/Pages/Profile';
 import Alert from './components/Alert';
 import Dashboard from './components/Pages/Dashboard/Dashboard';
 import AddPrompt from './components/Forms/AddPrompt/AddPrompt';
+import AddStory from './components/Forms/AddStory/AddStory';
 
 // CSS
 import './App.css';
@@ -46,6 +47,11 @@ const App = () => {
                         <Route exact path="/register" component={Register} />
                         <PrivateRoute
                             exact
+                            path="/community"
+                            component={Community}
+                        />
+                        <PrivateRoute
+                            exact
                             path="/prompts"
                             component={Prompts}
                         />
@@ -61,8 +67,8 @@ const App = () => {
                         />
                         <PrivateRoute
                             exact
-                            path="/community"
-                            component={Community}
+                            path="/stories/create/submit"
+                            component={AddStory}
                         />
                         <PrivateRoute
                             exact

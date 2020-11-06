@@ -20,3 +20,5 @@ export const UPDATE_LIKES = 'UPDATE_LIKES';
 export const UPDATE_ONE_LIKE = 'UPDATE_ONE_LIKE';
 export const ADD_COMMENT = 'ADD_COMMENT';
 export const REMOVE_COMMENT = 'REMOVE_COMMENT';
+export const ADD_STORY = 'ADD_STORY';
+export const STORY_ERROR = 'STORY_ERROR';
