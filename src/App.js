@@ -23,6 +23,7 @@ import Profile from './components/Pages/Profile';
 import Alert from './components/Alert';
 import Dashboard from './components/Pages/Dashboard/Dashboard';
 import AddPrompt from './components/Forms/AddPrompt/AddPrompt';
+import Stories from './components/Pages/Stories';
 import AddStory from './components/Forms/AddStory/AddStory';
 
 // CSS
@@ -64,6 +65,11 @@ const App = () => {
                             exact
                             path="/prompts/create/submit"
                             component={AddPrompt}
+                        />
+                        <PrivateRoute
+                            exact
+                            path="/stories"
+                            component={Stories}
                         />
                         <PrivateRoute
                             exact

@@ -177,9 +177,6 @@ body {
 
 .prompt-wrapper-header {
     background-color: #fff;
-}
-
-.prompt-wrapper-header {
     padding: 50px;
 }
 
@@ -320,20 +317,6 @@ body {
 
 .prompts-header {
     margin-top: 10px;
-    overflow: hidden;
-}
-
-.prompts-header img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-}
-
-.prompts-header span {
-    font-size: 12px;
-    display: block;
-    text-align: right;
-    color: #2780e3;
 }
 
 .prompts-header h1 {
@@ -347,6 +330,29 @@ body {
 }
 
 /* Story Pages */
+/* All Stories */
+.story-wrapper {
+    width: 95%;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+.story-wrapper header {
+    margin-top: 10px;
+    background-color: #fff;
+    padding: 50px;
+}
+
+.story-wrapper header h1 {
+    font-size: 40px;
+    margin-top: 5px;
+}
+
+.story-wrapper header p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
 /* Add Story */
 .add-story {
     width: 60%;

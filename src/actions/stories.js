@@ -1,7 +1,27 @@
 // Dependencies
 import axios from 'axios';
 import { setAlert } from './alert';
-import { ADD_STORY, STORY_ERROR } from './types';
+import { GET_STORIES, ADD_STORY, STORY_ERROR } from './types';
+
+// Get all stories
+export const getStories = () => async dispatch => {
+    try {
+        const req = await axios.get('http://localhost:5000/api/v1/stories');
+        dispatch({
+            type: GET_STORIES,
+            payload: req.data,
+        });
+    } catch (err) {
+        dispatch({
+            type: STORY_ERROR,
+            payload: {
+                msg: err.response.data.msg,
+                status: err.response.status,
+            },
+        });
+        dispatch(setAlert(err.response.statusText, 'danger'));
+    }
+};
 
 // Add a story
 export const addStory = formData => async dispatch => {

@@ -1,5 +1,5 @@
 // Action Types
-import { ADD_STORY, STORY_ERROR } from '../actions/types';
+import { ADD_STORY, GET_STORIES, STORY_ERROR } from '../actions/types';
 
 // init initial state
 const initialState = {
@@ -12,6 +12,12 @@ const initialState = {
 export default function(state = initialState, action) {
     const { type, payload } = action;
     switch (type) {
+        case GET_STORIES:
+            return {
+                ...state,
+                stories: payload,
+                loading: false,
+            };
         case ADD_STORY:
             return {
                 ...state,

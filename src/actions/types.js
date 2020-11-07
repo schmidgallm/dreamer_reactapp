@@ -22,3 +22,4 @@ export const ADD_COMMENT = 'ADD_COMMENT';
 export const REMOVE_COMMENT = 'REMOVE_COMMENT';
 export const ADD_STORY = 'ADD_STORY';
 export const STORY_ERROR = 'STORY_ERROR';
+export const GET_STORIES = 'GET_STORIES';
