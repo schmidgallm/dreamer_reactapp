@@ -36,7 +36,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
         return (
             <Redirect
                 to={{
-                    pathname: '/dashboard',
+                    pathname: '/dashboard/profile',
                     state: { newUser: true },
                 }}
             />

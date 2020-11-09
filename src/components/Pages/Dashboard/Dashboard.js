@@ -15,18 +15,15 @@ import Stories from './Stories';
 import Charts from './Charts';
 
 const Dashboard = ({
-    getCurrentProfile,
-    auth: { user },
-    profile: { profile, loading },
-    location,
-    slug,
+    getCurrentProfile, // redux action
+    auth: { user }, // redux state
+    profile: { profile, loading }, // redux state
+    slug, // prop passed to component to decide on which page to render
 }) => {
     // get profile on component render
     useEffect(() => {
         getCurrentProfile();
     }, [getCurrentProfile]);
-
-    console.log(slug);
 
     // render component based on slug prop
     const renderSlug = slug => {
@@ -55,16 +52,12 @@ const Dashboard = ({
                         <div>{renderSlug(slug)}</div>
                     ) : (
                         <Fragment>
-                            {location.state.newUser && (
-                                <Fragment>
-                                    <h1>Welcome to Dreamers!!!</h1>
-                                    <p>
-                                        While you are here please create a
-                                        profile for yourself. Feel free to
-                                        include a pen name as well!!
-                                    </p>
-                                </Fragment>
-                            )}
+                            <h1>Welcome to Dreamers!!!</h1>
+                            <p>
+                                While you are here please create a profile for
+                                yourself. Feel free to include a pen name as
+                                well!!
+                            </p>
                             <Link
                                 to="/create-profile"
                                 className="btn btn-primary my-2"
@@ -91,3 +84,11 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps, { getCurrentProfile })(Dashboard);
+
+/*
+    {location.state.newUser && (
+                                <Fragment>
+                                    
+                                </Fragment>
+                            )}
+*/
