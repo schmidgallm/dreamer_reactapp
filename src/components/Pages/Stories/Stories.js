@@ -30,7 +30,7 @@ const Stories = ({ getStories, stories: { stories, loading } }) => {
                 </p>
             </header>
 
-            <main className="container">
+            <main>
                 <div className="add">
                     <Link
                         to="/stories/create/submit"

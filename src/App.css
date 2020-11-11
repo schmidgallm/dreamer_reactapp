@@ -353,10 +353,17 @@ body {
 }
 
 .story-wrapper main {
-    width: 90%;
     margin: 100px auto;
 }
 
+.story .card-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.story .card-footer span {
+    margin: 0 10px;
+}
 /* Add Story */
 .add-story {
     width: 60%;

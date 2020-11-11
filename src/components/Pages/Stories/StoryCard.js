@@ -16,6 +16,19 @@ const StoryCard = ({ story }) => {
                 </h4>
                 <p>{story.synopsis}</p>
             </div>
+            <div className="card-footer">
+                <div className="likes">
+                    <i className="fa fa-thumbs-up"></i>
+                    <span>0</span>
+                    <i className="fa fa-thumbs-down"></i>
+                </div>
+                <div className="comments">
+                    <i className="fa fa-comment"></i>
+                </div>
+                <div className="hearts">
+                    <i className="fa fa-heart"></i>
+                </div>
+            </div>
         </div>
     );
 };
