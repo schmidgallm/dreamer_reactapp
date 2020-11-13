@@ -10,12 +10,14 @@ const StoryCard = ({ story }) => {
                 <Link to={`/profile/${story.user}`}>{story.penName}</Link> |{' '}
                 <Moment format="MM/DD/YYYY">{story.publishedDate}</Moment>
             </div>
-            <div className="card-body">
-                <h4>
-                    {story.title} | <span>{story.genre}</span>
-                </h4>
-                <p>{story.synopsis}</p>
-            </div>
+            <Link to={`/stories/${story._id}`} className="story-link">
+                <div className="card-body">
+                    <h4>
+                        {story.title} | <span>{story.genre}</span>
+                    </h4>
+                    <p>{story.synopsis}</p>
+                </div>
+            </Link>
             <div className="card-footer">
                 <div className="likes">
                     <i className="fa fa-thumbs-up"></i>
