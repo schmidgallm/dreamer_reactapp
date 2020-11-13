@@ -209,11 +209,13 @@ body {
     min-height: 150px;
 }
 
-.prompt-body-link {
+.prompt-body-link,
+.story-link {
     color: black;
 }
 
-.prompt-body-link:hover {
+.prompt-body-link:hover,
+.story-link:hover {
     text-decoration: none;
     color: black;
     border: 1px solid black;
@@ -363,6 +365,24 @@ body {
 
 .story .card-footer span {
     margin: 0 10px;
+}
+
+.story-id {
+    width: 80%;
+    margin: 100px auto;
+}
+
+.story-id .card-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.story-id .card-body {
+    min-height: 250px;
+}
+.story-id .card-footer {
+    display: flex;
+    justify-content: space-between;
 }
 /* Add Story */
 .add-story {
