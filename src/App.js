@@ -24,6 +24,7 @@ import Alert from './components/Alert';
 import Dashboard from './components/Pages/Dashboard/Dashboard';
 import AddPrompt from './components/Forms/AddPrompt/AddPrompt';
 import Stories from './components/Pages/Stories';
+import StoryById from './components/Pages/Stories/StoryById';
 import AddStory from './components/Forms/AddStory/AddStory';
 
 // CSS
@@ -70,6 +71,11 @@ const App = () => {
                             exact
                             path="/stories"
                             component={Stories}
+                        />
+                        <PrivateRoute
+                            exact
+                            path="/stories/:id"
+                            component={StoryById}
                         />
                         <PrivateRoute
                             exact
