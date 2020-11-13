@@ -1,5 +1,10 @@
 // Action Types
-import { ADD_STORY, GET_STORIES, STORY_ERROR } from '../actions/types';
+import {
+    ADD_STORY,
+    GET_STORIES,
+    GET_STORY,
+    STORY_ERROR,
+} from '../actions/types';
 
 // init initial state
 const initialState = {
@@ -16,6 +21,12 @@ export default function(state = initialState, action) {
             return {
                 ...state,
                 stories: payload,
+                loading: false,
+            };
+        case GET_STORY:
+            return {
+                ...state,
+                story: payload,
                 loading: false,
             };
         case ADD_STORY:
