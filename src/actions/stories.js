@@ -1,7 +1,16 @@
 // Dependencies
 import axios from 'axios';
 import { setAlert } from './alert';
-import { GET_STORIES, ADD_STORY, STORY_ERROR } from './types';
+import {
+    GET_STORIES,
+    GET_STORY,
+    ADD_STORY,
+    STORY_ERROR,
+    UPDATE_LIKES_STORY,
+    UPDATE_ONE_LIKES_STORY,
+    ADD_COMMENT,
+    REMOVE_COMMENT_STORY,
+} from './types';
 
 // Get all stories
 export const getStories = () => async dispatch => {
@@ -9,6 +18,28 @@ export const getStories = () => async dispatch => {
         const req = await axios.get('http://localhost:5000/api/v1/stories');
         dispatch({
             type: GET_STORIES,
+            payload: req.data,
+        });
+    } catch (err) {
+        dispatch({
+            type: STORY_ERROR,
+            payload: {
+                msg: err.response.data.msg,
+                status: err.response.status,
+            },
+        });
+        dispatch(setAlert(err.response.statusText, 'danger'));
+    }
+};
+
+// Get story by id
+export const getStory = id => async dispatch => {
+    try {
+        const req = await axios.get(
+            `http://localhost:5000/api/v1/stories/${id}`
+        );
+        dispatch({
+            type: GET_STORY,
             payload: req.data,
         });
     } catch (err) {
