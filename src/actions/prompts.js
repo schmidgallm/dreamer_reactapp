@@ -78,7 +78,7 @@ export const addLike = id => async dispatch => {
     }
 };
 
-// like a prompt
+// like a prompt from prompt by id page
 export const addOneLike = id => async dispatch => {
     try {
         const req = await axios.put(
@@ -125,7 +125,7 @@ export const removeLike = id => async dispatch => {
     }
 };
 
-// Remove a prompt like
+// Remove a prompt like from prompt by id page
 export const removeOneLike = id => async dispatch => {
     try {
         const req = await axios.put(
