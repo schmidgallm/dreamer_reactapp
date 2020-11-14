@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { addComment } from '../../actions/prompts';
+import { addComment } from '../../../actions/stories';
 
-const PromptCommentForm = ({ addComment, promptId, commentAs }) => {
+const StoryComment = ({ addComment, storyId, commentAs }) => {
     // init form state
     const [text, setText] = useState('');
 
@@ -13,7 +13,7 @@ const PromptCommentForm = ({ addComment, promptId, commentAs }) => {
         <div>
             <form
                 id="prompt-form"
-                onSubmit={e => addComment(promptId, { text })}
+                onSubmit={e => addComment(storyId, { text })}
             >
                 <div className="form-group">
                     <label htmlFor="text">
@@ -40,8 +40,8 @@ const PromptCommentForm = ({ addComment, promptId, commentAs }) => {
     );
 };
 
-PromptCommentForm.propTypes = {
+StoryComment.propTypes = {
     addComment: PropTypes.func.isRequired,
 };
 
-export default connect(null, { addComment })(PromptCommentForm);
+export default connect(null, { addComment })(StoryComment);
