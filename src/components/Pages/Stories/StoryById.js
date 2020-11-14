@@ -70,13 +70,19 @@ const StoryById = ({
                 <div className="card-footer">
                     <div>
                         <span>
-                            <i className="fa fa-thumbs-up"></i>
+                            <i
+                                className="fa fa-thumbs-up"
+                                onClick={() => addOneLike(story._id)}
+                            ></i>
                             <span className="mx-2">
                                 {story.likes.length === 0
                                     ? null
                                     : story.likes.length}
                             </span>
-                            <i className="fa fa-thumbs-down"></i>
+                            <i
+                                className="fa fa-thumbs-down"
+                                onClick={() => removeOneLike(story._id)}
+                            ></i>
                         </span>
                     </div>
                     <div>

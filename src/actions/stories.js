@@ -8,7 +8,6 @@ import {
     STORY_ERROR,
     UPDATE_LIKES_STORY,
     UPDATE_ONE_LIKES_STORY,
-    ADD_COMMENT,
     REMOVE_COMMENT_STORY,
     DELETE_STORY,
     ADD_COMMENT_STORY,
@@ -104,7 +103,6 @@ export const addLike = id => async dispatch => {
             payload: { id, likes: req.data },
         });
     } catch (err) {
-        console.log(err.response);
         dispatch({
             type: STORY_ERROR,
             payload: {

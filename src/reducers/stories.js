@@ -65,7 +65,7 @@ export default function(state = initialState, action) {
         case UPDATE_ONE_LIKES_STORY:
             return {
                 ...state,
-                story: { ...state.story1, likes: payload.likes },
+                story: { ...state.story, likes: payload.likes },
                 loading: false,
             };
         case ADD_COMMENT_STORY:

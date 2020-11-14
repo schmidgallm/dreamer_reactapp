@@ -66,7 +66,6 @@ export const addLike = id => async dispatch => {
             payload: { id, likes: req.data },
         });
     } catch (err) {
-        console.log(err.response);
         dispatch({
             type: PROMPT_ERROR,
             payload: {
