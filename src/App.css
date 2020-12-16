@@ -1,0 +1,410 @@
+/* Colors */
+:root {
+    --primary: #3b4e69;
+    --secondary: #445a79;
+    --accent: #eb5a8a;
+    --accent2: #326a75;
+    --light: rgb(211, 211, 211);
+    --dark: #1f2126;
+    --dark2: #040405;
+}
+
+/* Fonts */
+@font-face {
+    font-family: 'futuraBook';
+    src: local('futuraBook'), url('./assets/fonts/futuraBook.ttf');
+}
+
+@font-face {
+    font-family: 'futuraBold';
+    src: local('futuraBold'), url('./assets/fonts/futuraBold.ttf');
+}
+
+@font-face {
+    font-family: 'futuraLight';
+    src: local('futuraLight'), url('./assets/fonts/futuraLight.ttf');
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    overflow-x: hidden;
+}
+
+/* Positioning */
+.route-wrapper {
+    width: 100%;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+#side-nav {
+    grid-column: 1/3;
+}
+
+.routes {
+    grid-column: 3/13;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid {
+    display: grid;
+    gap: 10px;
+}
+
+/* Images */
+.bg-image {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.btn-primary {
+    background-color: var(--dark);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--dark2);
+    border: none;
+    color: var(--accent);
+}
+
+.btn-secondary {
+    background-color: var(--accent);
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: var(--accent2);
+}
+
+.btn-outline-primary {
+    border: 1px solid var(--dark);
+    color: var(--dark);
+}
+
+.btn-outline-primary:hover {
+    background-color: #fff;
+    color: var(--dark);
+    border: 1px solid var(--accent);
+}
+
+.btn-danger {
+    border: none;
+}
+
+/* Navar */
+#top-nav {
+    padding: 20px 50px;
+    box-shadow: 1px 1px 10px var(--dark);
+}
+
+.navbar {
+    padding: 25px 0;
+    font-weight: bold;
+}
+
+#top-nav-fa {
+    color: var(--accent);
+    font-size: 25px;
+}
+
+#top-nav .form-inline ul li {
+    margin: 0 10px;
+}
+
+#top-nav .form-inline .btn {
+    border-radius: 100px;
+}
+
+/* Side Nav */
+#side-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-right: 1px solid #888;
+    min-height: 100vh;
+}
+
+.side-nav-content {
+    padding-left: 15px;
+}
+
+.side-nav-content h1 {
+    margin-left: 5px;
+    margin-bottom: 0;
+}
+
+.side-nav-content ul {
+    margin-top: 50px;
+}
+
+/* Prompt Page */
+.prompt {
+    margin: 10px auto;
+    transition: ease-in-out;
+}
+
+.prompt i {
+    cursor: pointer;
+}
+
+.prompt i:hover {
+    color: var(--accent);
+}
+
+.prompt-wrapper-header {
+    background-color: #fff;
+    padding: 50px;
+}
+
+.prompt-wrapper-body {
+    width: 80%;
+    margin: 25px auto;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 15px;
+}
+
+.prompt-wrapper-body main {
+    grid-column: 1/7;
+}
+
+.prompt-wrapper-body aside {
+    grid-column: 7/9;
+}
+
+.prompt-wrapper-body .add {
+    margin: 30px 0;
+}
+
+.prompt-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.prompt-body {
+    min-height: 150px;
+}
+
+.prompt-body-link,
+.story-link {
+    color: black;
+}
+
+.prompt-body-link:hover,
+.story-link:hover {
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px #888;
+}
+
+.prompt-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-prompt {
+    margin-top: 100px;
+}
+
+.prompt-id {
+    margin: 100px;
+}
+
+/* Dashboard */
+.auth-nav {
+    height: 7vh;
+    background-color: var(--secondary);
+}
+
+.dashboard {
+    min-height: 93vh;
+}
+
+.data-wrapper {
+    width: 90%;
+    margin: 50px auto;
+}
+
+/* Login Page */
+.auth-form {
+    height: 90vh;
+}
+
+.auth-form .form-container {
+    margin-top: 100px;
+}
+
+.auth-form .form-container form {
+    width: 25%;
+    margin: 0 auto;
+    padding: 25px;
+    box-shadow: 2px 2px 10px #2e2e2e;
+}
+
+.auth-form .form-container form h3 {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.auth-form .form-container form p {
+    margin-top: 20px;
+}
+
+.auth-form .forgot-password {
+    display: block;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.sign-in-msg {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.login-btn {
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 5px 5px 8px #2e2e2e;
+}
+
+/* Register Page */
+.register {
+    margin-top: 20px;
+}
+
+.sign-in-msg {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.register-btn {
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 5px 5px 8px #2e2e2e;
+}
+
+/* Prompt Page */
+.prompts-wrapper {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.prompts-header {
+    margin-top: 10px;
+}
+
+.prompts-header h1 {
+    font-size: 25px;
+    margin-top: 5px;
+}
+
+.prompts-header p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* Story Pages */
+/* All Stories */
+.story-wrapper {
+    min-height: 100vh;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.story-wrapper header {
+    margin: 50px auto;
+    background-color: #fff;
+}
+
+.story-wrapper header h1 {
+    font-size: 40px;
+    margin-top: 5px;
+}
+
+.story-wrapper header p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.story-wrapper main {
+    margin: 100px auto;
+}
+
+.story .card-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.story .card-footer span {
+    margin: 0 10px;
+}
+
+.story-id {
+    width: 80%;
+    margin: 100px auto;
+}
+
+.story-id .card-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.story-id .card-body {
+    min-height: 250px;
+}
+.story-id .card-footer {
+    display: flex;
+    justify-content: space-between;
+}
+/* Add Story */
+.add-story {
+    width: 60%;
+    margin: 75px auto;
+}
+
+/* Resources Page */
+.resources {
+    margin-top: 50px;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 940px) {
+    .sm-hide {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 940px) {
+    .lg-hide {
+        display: none;
+    }
+}
